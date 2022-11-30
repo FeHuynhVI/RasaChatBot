@@ -32,11 +32,6 @@ pipeline:
     epochs: 100
     constrain_similarities: true
 
-- name: rasa_nlu_examples.featurizers.dense.BytePairFeaturizer
-    lang: vi
-    vs: 1000
-    dim: 25
-
 # pipeline:
 # - name: WhitespaceTokenizer
 # - name: LexicalSyntacticFeaturizer
