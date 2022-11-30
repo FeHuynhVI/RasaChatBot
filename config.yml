@@ -21,10 +21,10 @@ pipeline:
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
-  - name: rasa_nlu_examples.featurizers.dense.BytePairFeaturizer
-    lang: vi
-    vs: 1000
-    dim: 25
+  # - name: rasa_nlu_examples.featurizers.dense.BytePairFeaturizer
+  #   lang: vi
+  #   vs: 1000
+  #   dim: 25
   - name: LanguageModelFeaturizer
     model_name: "roberta"
     model_weights: "vinai/phobert-base"
