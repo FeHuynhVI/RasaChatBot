@@ -15,11 +15,11 @@ language: vi
 #   - name: EntitySynonymMapper
 
 pipeline:
-  - name: WhitespaceTokenizer
+  - name: VietnameseTokenizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
-    max_ngram: 4
+    max_ngram: 3
   # - name: rasa_nlu_examples.featurizers.dense.BytePairFeaturizer
   #   lang: vi
   #   vs: 1000
@@ -28,7 +28,7 @@ pipeline:
     model_name: "roberta"
     model_weights: "vinai/phobert-base"
   - name: DIETClassifier
-    epochs: 100
+    epochs: 200
     constrain_similarities: true
 
 # pipeline:

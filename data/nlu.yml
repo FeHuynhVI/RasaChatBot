@@ -11,6 +11,8 @@ nlu:
     - cho mình hỏi chút
     - hi
     - hello
+    - chào
+    - xin chào
 
 - intent: goodbye
   examples: |
@@ -19,6 +21,7 @@ nlu:
     - tạm biệt em
     - tạm biệt bot nhá
     - cút
+    - hẹn gặp lại
 
 - intent: ask_ability
   examples: |
@@ -52,7 +55,7 @@ nlu:
     - ui giỏi thế
     - bot thông minh
     - đẹp trai đấy
-    - Ênm đệnp léăm
+    - em đẹp lắm
 
 - intent: decry
   examples: |
@@ -63,6 +66,8 @@ nlu:
     - dở ghê
     - có thế mà cũng không biết
     - kém cói
+    - cùi bắp
+    - đồ con gà
 
 
 - intent: out_of_scope
@@ -141,12 +146,17 @@ nlu:
 
 - intent: corona_intro
   examples: |
+    - covid?
+    - corona?
+    - vũ hán
     - corona là gì?
     - covid-19 là gì?
-    - virus corona mới là gì?
+    - covid-19 là gì?
+    - bạn có thể cho tôi biết về virut vũ hán?
     - cho tôi biết về corona
     - bạn có thể cho tôi biết về corona
     - bạn có thể cho tôi biết về covid-19
+    - cho tôi biết về dịch bệnh vũ hán?
 
 - intent: corona_spread
   examples: |
@@ -195,6 +205,7 @@ nlu:
     - muỗi truyền virus corona như thế nào?
     - muỗi truyền virus covid-19.
     - muỗi truyền virut covid.
+    - muỗi truyền virut vũ hán.
 
 - intent: corona_vaccine
   examples: |
@@ -202,16 +213,20 @@ nlu:
     - Có vắc xin nào phòng ngừa virus covid19 không?
     - Còn vắc-xin có sẵn để phòng ngừa vi-rút corona thì sao?
     - Có vắc xin phòng virus corona??
+    - Có vắc xin phòng virus vũ hán?
     - Đã có vắc-xin được phát triển cho virus corona?
     - có vắc xin phòng virus corona chưa?
     - có vắc xin nào cho virus covid19 không?
+    - có vắc xin nào cho virus vũ hán?
 
 - intent: corona_prevent
   examples: |
+    - làm thế nào tôi có thể ngăn chặn dịch bệnh vũ hán
     - làm thế nào tôi có thể ngăn chặn covid19?
     - Làm thế nào tôi có thể ngăn ngừa virus corona?
     - làm thế nào tôi có thể ngăn chặn covid-19?
     - ngăn ngừa covid19?
+    - ngăn ngừa dịch bệnh vũ hán?
     - ngăn chặn corona
     - làm thế nào một lần có thể ngăn ngừa bản thân khỏi bị nhiễm covid19?
     - làm thế nào một lần có thể ngăn bản thân khỏi bị nhiễm corona?
@@ -292,15 +307,31 @@ nlu:
     - [Đê-li](state)
     - Tôi sống ở [Delhi](state:Delhi)
     - Tôi sống ở [Việt Nam](state:Hồ Chí Minh)
+    - Tôi sống ở [Kiên giang](state:Kiên giang)
+    - Tôi sống ở [Cần Thơ](state:Cần Thơ)
+    - Tôi sống ở [Vĩnh long](state:Vĩnh long)
+    - Tôi sống ở [Hồ Chí Minh](state:Hồ Chí Minh)\
+    - Tôi sống ở [Sài Gòn](state:Sài Gòn)
+    - Tôi sống ở [Tiền Giang](state:Tiền Giang)
+    - Tôi sống ở [An Giang](state:An Giang)
+    - Tôi sống ở [Cà Mau](state:Cà Mau)
 
 - intent: corona_stats_check
   examples: |
+    - Số liệu thống kê về covid19
+    - Số liệu thống kê về covid 19
     - Số liệu thống kê về corona
+    - Số liệu thống kê về dịch bệnh vũ hán
     - tôi muốn kiểm tra số liệu thống kê corona
-    - theo dõi corona
+    - số liệu theo dõi corona
     - số liệu thống kê corona
-    - theo dõi covid
+    - số liệu theo dõi covid
+    - số liệu theo dõi dịch bệnh vũ hán
     - thống kê covid
+    - thống kê corona
+    - thống kê covid19
+    - thống kê covid 19
+    - thống kê về dịch bệnh vũ hán
 
 - intent: name_entry
   examples: |
@@ -340,6 +371,8 @@ nlu:
     - Tên tôi là [Khang](name)
     - Tên tôi là [Hùng](name)
     - Tên tôi là [Tùng](name)
+    - Tên tôi là [Nhựt Khang](name)
+    - Tên tôi là [Khôi](name)
 
 - intent: ask_death
   examples: |
@@ -407,6 +440,7 @@ nlu:
     - thông tin tất cả về dịch bệnh corrona 2019
     - tất cả về dịch bệnh corrona 2019
     - tất tần tật về dịch bệnh corrona 2019
+    - tất tần tật về dịch bệnh vũ hán
 
 - intent: weather
   examples: |
@@ -418,6 +452,16 @@ nlu:
     - cho tôi biết dự báo thời tiết
     - cho tôi biết điều gì đó về thời tiết
     - Thời tiết hôm nay thế nào
+
+- intent: weather_specify_city
+  examples: |
+    - thời tiết [Cần Thơ]{"entity":"location"} ra sao
+    - nhiệt độ [Cần thơ]{"entity":"location"} hôm nay?
+    - Nhiệt độ [Sài gòn]{"entity":"location"}?
+    - tôi muốn biết nhiệt độ [Cần Thơ]{"entity":"location"}
+    - tôi muốn biết thời tiết hôm nay ở [Ninh Kiều]{"entity":"location"}
+    - cho tôi biết dự báo thời tiết [Vĩnh Long]{"entity":"location"}
+    - cho tôi biết điều gì đó về thời tiết [Cần Thơ]{"entity":"location"}
 
 - intent: city
   examples: |
@@ -543,7 +587,7 @@ nlu:
     - [Thái Bình]{"entity":"location"}
     - [Thái Nguyên]{"entity":"location"}
     - [Thanh Hóa]{"entity":"location"}
-    - [Thừa Thiên - Huế]{"entity":"location"}
+    - [Thừa Thiên Huế]{"entity":"location"}
     - [Trà Vinh]{"entity":"location"}
     - [Tuyên Quang]{"entity":"location"}
     - [Vĩnh Phúc]{"entity":"location"}
@@ -562,7 +606,6 @@ nlu:
     - Vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
     - ở [Luân Đôn]{"entity":"location"}
     - [Litva]{"entity":"location"}
-    - Ồ, xin lỗi, [ở Ý]{"entity":"location"}
     - Cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
     - Điều kiện thời tiết ở [Ý]{"entity":"location"}
     - thời tiết ở [Chennai]{"entity":"location"} như thế nào
@@ -588,7 +631,7 @@ nlu:
     - thời tiết ở [Chennai]{"entity":"location"} thế nào
     - ở [Paris]{"entity":"location"}
     - Ở [Chennai]{"entity":"location"}
-    - hú [Mumbai]{"entity":"location"}
+    - Ở [Mumbai]{"entity":"location"}
     - Thời tiết ở [London]{"entity":"location"}
     - Thời tiết ở [Việt Nam]{"entity":"location"}
     - Thời tiết ở [Hà nội]{"entity":"location"}

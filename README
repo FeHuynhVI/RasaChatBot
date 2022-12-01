@@ -1,0 +1,15 @@
+
+Lầy file từ thư mục customs
+
+Copy file: Ghi đè 2 file này
+C:\Users\Admin\anaconda3\Lib\site-packages\rasa\nlu\utils\hugging_face\registry.py
+C:\Users\Admin\anaconda3\Lib\site-packages\rasa\engine\recipes\default_components.py
+----------------------------------------------------------------------------------------------------
+Copy file: vi_tokenize.py vào thư mục bên dưới
+C:\Users\Admin\anaconda3\Lib\site-packages\rasa\nlu\tokenizers
+----------------------------------------------------------------------------------------------------
+Mở 2 CMD (Command line)
+CMD 1:
++rasa run actions
+CMD 2: Để test
++rasa run shell

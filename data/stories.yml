@@ -1,6 +1,36 @@
 version: "3.1"
 
 stories:
+- story: goodbye story
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask ability
+  steps:
+  - intent: ask_ability
+  - action: utter_ask_ability
+
+- story: thank you
+  steps:
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: praise story
+  steps:
+  - intent: praise
+  - action: utter_praise
+
+- story: decry story
+  steps:
+  - intent: decry
+  - action: utter_decry
+
+- story: ask for lunch
+  steps:
+  - intent: ask_for_lunch
+  - action: utter_ask_for_lunch
+
 - story: corona intro
   steps:
   - intent: corona_intro
@@ -106,4 +136,11 @@ stories:
   - intent: city
   - action: action_weather_tracker
   - intent: ask_weather
+  - action: action_weather_tracker
+
+- story: weather_story2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weather_specify_city
   - action: action_weather_tracker

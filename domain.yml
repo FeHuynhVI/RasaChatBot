@@ -31,7 +31,7 @@ intents:
   - weather
   - city
   - ask_weather
-  - state_stats
+  - weather_specify_city
 
 actions:
   - actions_corona_state_stat
@@ -69,27 +69,57 @@ slots:
 responses:
   utter_greet:
   - text: "Chào! Chào mừng bạn đến với Bot COVID-19."
+  - text: "Chào! bạn tôi có thể giúp gì cho bạn?"
+  - text: "Bạn cần gì?"
+  - text: "Rất vui khi bạn đã hỏi"
 
   utter_goodbye:
   - text: "Tạm biệt! Hy vọng sớm gặp lại bạn! Chỉ cần nhập 'hey' hoặc 'hi' bất cứ lúc nào để chuyển hướng đến Phần giới thiệu của Bot :))"
+  - text: "Bye bye"
+  - text: "hẹn gặp lại"
   
   utter_ask_ability:
-  - text: ""
+  - text: "Em có thể trò chuyện với anh đấy"
+  - text: "Em có thể nói về covid nè"
+  - text: "Tôi có thể trò chuyện với bạn"
+  - text: "Tôi có thể giúp bạn giải khuây"
+
 
   utter_thankyou:
-  - text: ""
+  - text: "Ngại quá!"
+  - text: "Không có chi"
+  - text: "Không có gì"
+  - text: "Ok"
 
   utter_praise:
-  - text: ""
+  - text: "Quá khen"
+  - text: "Được đấy"
+  - text: "Đa tạ"
 
   utter_decry:
-  - text: ""
+  - text: "Ờ"
+  - text: "Biết rồi"
+  - text: "Khổ quá nói mãi"
 
   utter_ask_for_lunch:
-  - text: ""
+  - text: "Gà hấp muối sả, gỏi tép bông điên điển, canh cà chua."
+  - text: "Chả giò, ếch xào hành, canh chua ếch."
+  - text: "Ba chỉ kho tiêu, đậu bắp và đậu rồng luộc, đu đủ"
+  - text: "Vịt rim xá xíu, canh mồng tơi tôm khô, chuối.."
+  - text: "Cơm sườn, cơm tấm"
+  - text: "Cơm rang dưa bò"
+  - text: "Cơm trộn Hàn Quốc (Bibimbap)"
+  - text: "Bún thịt nướng"
+  - text: "Bún đậu mắm tôm"
+  - text: "Bún riêu cua"
+  - text: "Bún chả"
+  - text: "Bánh canh bò viên"
+
 
   utter_corona_intro:
   - text: "Đại dịch COVID-19, còn được gọi là đại dịch vi-rút corona, là đại dịch đang diễn ra của bệnh vi-rút corona 2019 (COVID-19) do vi-rút corona gây hội chứng hô hấp cấp tính nặng 2 (SARS-CoV-2) gây ra.[1] Bệnh được xác định lần đầu tiên vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc.[4] Tổ chức Y tế Thế giới đã tuyên bố đợt bùng phát là Tình trạng Khẩn cấp về Sức khỏe Cộng đồng gây Quan ngại Quốc tế vào ngày 30 tháng 1 năm 2020 và là đại dịch vào ngày 11 tháng 3 năm 2020. Tính đến ngày 24 tháng 9 năm 2020, hơn 31,9 triệu trường hợp đã được báo cáo ở 188 quốc gia và vùng lãnh thổ, dẫn đến hơn 978.000 ca tử vong; hơn 22 triệu người đã hồi phục."
+  - text: "COVID-19 (từ tiếng Anh: coronavirus disease 2019 nghĩa là bệnh virus corona 2019) là một bệnh đường hô hấp cấp tính truyền nhiễm gây ra bởi chủng virus corona SARS-CoV-2 và các biến thể của nó. Đây là một loại virus được phát hiện điều tra ổ dịch bắt nguồn từ khu chợ lớn chuyên bán hải sản và động vật ở Vũ Hán, tỉnh Hồ Bắc, Trung Quốc. Virus gây viêm đường hô hấp cấp ở người và cho thấy có sự lây lan từ người sang người. Ngoài chủng virus corona mới phát hiện này, đã có 6 chủng virus corona khác được biết tới ngày nay có khả năng lây nhiễm ở người sang người. Bệnh được phát hiện lần đầu tiên trong đại dịch COVID-19 năm 2019 - 2020"
+  - text: "Virus Corona là chủng virus mới chưa từng xuất hiện ở người, có tên gọi từ nguồn gốc tiếng Latin. Vi rút Corona là chủng virus được bao bọc bằng những chiếc gai bao bọc bên ngoài, tương tác với thụ thể trên tế bào, theo cơ chế tương tự chìa khóa và ổ khóa, từ đó cho phép virus xâm nhập vào bên trong."
 
   utter_corona_spread:
   - text: "Loại virus này được phát hiện đầu tiên tại thành phố Vũ Hán, tỉnh Hồ Bắc, Trung Quốc. Các
@@ -127,7 +157,7 @@ responses:
   - text: "Bạn có thể vui lòng nhập trạng thái hiện tại của bạn từ Việt Nam không?"
 
   utter_corona_stats_check:
-  - text: "Trình theo dõi Covid-19 [Việt Nam] : Vui lòng nhập tên Bang bạn muốn xem Thống kê Covid-19 :"
+  - text: "Trình theo dõi Covid-19 [Việt Nam] : Vui lòng nhập tên tên thành phố bạn muốn xem Thống kê Covid-19"
 
   utter_corona_community:
   - text: "Lây lan trong cộng đồng có nghĩa là mọi người đã bị nhiễm vi-rút trong một khu vực, bao gồm cả một số người không chắc chắn về cách thức hoặc nơi họ bị nhiễm bệnh. Mỗi sở y tế xác định mức độ lây lan trong cộng đồng khác nhau dựa trên các điều kiện địa phương. Để biết thông tin về sự lây lan trong cộng đồng trong khu vực của bạn, vui lòng truy cập trang web của sở y tế.​"
@@ -157,9 +187,12 @@ Nếu có thể, hãy tránh xa những người khác, đặc biệt là nhữn
     - text: "Tôi ước tôi có thể trả lời câu hỏi của bạn, Vui lòng hỏi một số câu hỏi khác."
     - text: "Sorry I don't know the answer."
     - text: "Tôi vẫn đang học! Xin vui lòng hỏi tôi một số câu hỏi khác."
+    - text: "Yeah, bạn đã quay vào ô mất lượt"
+    - text: "Tuyệt cú mèo, câu hỏi không tồn tại trong bộ nhớ"
 
   utter_specify_city:
     - text: "Bạn có thể vui lòng chỉ định thành phố có thời tiết mà bạn muốn biết?"
+    - text: "Bạn nên cho tôi biết địa điểm truy vấn"
 
 
 session_config:
