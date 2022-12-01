@@ -1,34 +1,109 @@
-version: "3.0"
+version: "3.1"
 
 stories:
+- story: corona intro
+  steps:
+  - intent: corona_intro
+  - action: utter_corona_intro
 
-- story: happy path
+- story: corona spread
+  steps:
+  - intent: corona_spread
+  - action: utter_corona_spread
+
+- story: corona food spread
+  steps:
+  - intent: corona_food_spread
+  - action: utter_corona_food_spread
+
+- story: corona warm weather
+  steps:
+  - intent: corona_spread_warm
+  - action: utter_corona_spread_warm
+
+- story: corona risk
+  steps:
+  - intent: corona_spread_risk
+  - action: utter_corona_spread_risk
+
+- story: corona tracker path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
-  - intent: thankyou
-  - action: utter_noworries
+  - intent: corona_stats_check
+  - action: utter_corona_stats_check
+  - intent: corona_states_stat
+  - action: actions_corona_state_stat
 
-- story: covid
+- story: corona tracker 2 path
+  steps:
+  - intent: corona_stats_check
+  - action: utter_corona_stats_check
+  - intent: corona_states_stat
+  - action: actions_corona_state_stat
+
+- story: corona community spread path
+  steps:
+  - intent: corona_community
+  - action: utter_corona_community
+
+- story: corona mosquito path
+  steps:
+  - intent: corona_mosq_spread
+  - action: utter_corona_mosq_spread
+
+- story: corona prevent path
+  steps:
+  - intent: corona_prevent
+  - action: utter_corona_prevent
+
+- story: corona symptoms path
+  steps:
+  - intent: corona_symptoms
+  - action: utter_corona_symptoms
+
+- story: corona vaccine path
+  steps:
+  - intent: corona_vaccine
+  - action: utter_corona_vaccine
+
+- story: corona infected path
+  steps:
+  - intent: corona_infected_person
+  - action: utter_corona_infected_person
+
+- story: corona ask_death
   steps:
   - intent: ask_death
   - action: action_redeath
+
+- story: corona ask_confirm
+  steps:
   - intent: ask_confirm
   - action: action_reconfirm
+
+- story: corona ask_resolve
+  steps:
   - intent: ask_resolve
   - action: action_rerecovered
+
+- story: corona ask_all
+  steps:
   - intent: ask_all
   - action: action_summary
 
-- story: sad path 1
+- story: scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: weather_story1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_ability
-  - action: utter_show_ability
-  - intent: decry
-  - action: utter_sorry
-  - intent: ask_for_lunch
-  - action: action_recommend
+  - intent: weather
+  - action: utter_specify_city
+  - intent: city
+  - action: action_weather_tracker
+  - intent: ask_weather
+  - action: action_weather_tracker

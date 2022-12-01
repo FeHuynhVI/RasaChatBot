@@ -9,6 +9,28 @@ import csv
 from cachetools import cached, TTLCache
 from dateutil.parser import parse
 from dateutil import tz
+from rasa_sdk.events import SlotSet
+
+
+
+# This files contains your custom actions which can be used to run
+# custom Python code.
+#
+# See this guide on how to implement these action:
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+
+
+# This is a simple example for a custom action which utters "Hello World!"
+from bs4 import BeautifulSoup
+import urllib.request
+import ssl
+import json
+import os
+import html
+import random
+import pathlib
+
+from rasa_sdk.events import FollowupAction
 
 
 """
@@ -106,6 +128,23 @@ DATABASE = ["bún đậu mắm tôm",
             "bánh mì xúc xích",
             "bánh mì pate"]
 
+class ActionHelloLoc(Action):
+
+    def name(self) -> Text:
+        return "action_get_loc"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slot_name = tracker.get_slot("state")
+
+        print("slotname", slot_name)
+
+        dispatcher.utter_message(
+            text="So You Live In " + slot_name.title() + " , Here Are Your Location's Corona Stats: \n")
+
+        return []
+
 class ActionRecommend(Action):
 
     def name(self) -> Text:
@@ -190,3 +229,89 @@ class ActionSummary(Action):
             text="Ngày '{}' có tổng sô ca nhiễm bệnh: '{}' \nNgày '{}' có tổng số ca tử vong: '{}' \nNgày '{}' có tổng số ca hồi phục: '{}'".format(dataC['latest_date'], dataC['vn_latest'], dataD['latest_date'], dataD['vn_latest'], dataR['latest_date'], dataR['vn_latest']))
 
         return []
+
+
+class act_number_domestic(Action):
+
+    def name(self) -> Text:
+        return "actions_corona_state_stat"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        print('[%s] <- %s' % (self.name(), tracker.latest_message['text']))
+        url = 'https://ncov.moh.gov.vn/web/guest/trang-chu'
+        page = requests.get(url, verify=False)
+        soup = BeautifulSoup(page.text, 'html.parser')
+        #mydict = None
+
+        try:
+
+            domestic = soup.find_all("table", id='sailorTable')[0].find_all("tr")
+
+            # print(domestic)
+            all_of_it = "🇻🇳CHI TIẾT TÌNH HÌNH COVID-19 TRONG NƯỚC"
+
+            data = None
+            for d_row in domestic:
+                print("--")
+                d_col = d_row.find_all("td")
+                data = []
+                for el in d_col:
+                    # print(el.text)
+                    data.append(str(el.text))
+                # print(data[0])
+                if len(data) >= 5:
+                    all_of_it += ("\n▪ %s - Nhiễm: %s - Điều trị: %s - Khỏi: %s - Tử vong: %s" % (
+                        data[0], data[1], data[2], data[3], data[4]))  # test
+
+            all_of_it += "\nNguồn tin: Bộ Y Tế(https://moh.gov.vn/)"
+
+            del domestic, data
+
+        except:
+            all_of_it = "Dịch vụ xin tạm ngưng để bảo trì. Xin cảm ơn!"
+
+        del url, page, soup
+
+        dispatcher.utter_message(
+            text=all_of_it
+        )
+
+        return []
+
+
+class ActionWeatherTracker(Action):
+
+     def name(self) -> Text:
+        return "action_weather_tracker"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+         try:
+            loc = tracker.get_slot('location')
+            BASE_URL = "https://api.weatherapi.com/v1/current.json?"
+            API_KEY = "7b8c2098b1f741169ea43408220112&aqi=no"
+            URL = BASE_URL + "q=" + loc + "&key=" + API_KEY
+            response = requests.get(URL)
+            if response.status_code == 200:
+                data = response.json()
+                main = data['current']
+                city = loc
+                temperature = main['temp_f']
+                temp_cel = main["temp_c"]
+                humidity = main['humidity']
+                pressure = main['pressure_mb']
+
+                message = "Thời tiết " + city + ":" + "\n" "Nhiệt độ = " + str(temp_cel) + " Độ C" + "\n" "Áp suất không khí (in hPa unit) = " +str(pressure) + "\n""Humidity (in percentage) = " +str(humidity) + "\n"
+
+            dispatcher.utter_message(text=message)
+
+         except Exception as err:
+            error = "Lỗi call action: " +  err
+            dispatcher.utter_message(text=error)
+
+         return [SlotSet('location',loc)]

@@ -1,56 +1,168 @@
-version: "3.0"
+version: "3.1"
 
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - ask_ability
   - thankyou
   - praise
   - decry
   - ask_for_lunch
-  - ask_ability
+  - corona_intro
+  - corona_spread
+  - corona_food_spread
+  - corona_spread_warm
+  - corona_spread_risk
+  - corona_states_stat
+  - name_entry
+  - location_entry
+  - corona_stats_check
+  - corona_community
+  - corona_mosq_spread
+  - corona_prevent
+  - corona_symptoms
+  - corona_vaccine
+  - out_of_scope
+  - corona_infected_person
   - ask_death
   - ask_confirm
   - ask_resolve
   - ask_all
+  - weather
+  - city
+  - ask_weather
+  - state_stats
 
-responses:
-  utter_greet:
-    - text: "Em chào anh(chị) ạ. \nEm là chatbot"
-  utter_goodbye:
-    - text: Hẹn gặp lại anh chị ạ ^^
-      image: https://i.imgur.com/nGF1K8f.jpg
-  utter_happy:
-    - text: Hì hì, anh chị khen quá lơì rồi ạ
-  utter_sorry:
-    - text: Em xin lôĩ vì em chưa đủ thông minh ạ =(((
-  utter_noworries:
-    - text: Em luôn sẵn lòng giúp đỡ anh(chị) bất cứ lúc nào ạ ^^
-  utter_show_ability:
-    - text: Em có thể trò chuyện với anh(chị), thi thoảng có thể đề xuất anh(chị) nên ăn gì trưa nay ạ
-  utter_fallback:
-    - text: Em xin lỗi, em chưa hiểu ý muốn của anh(chị) ạ. Anh chị có thể nói lại được không ạ
-    
 actions:
-  - utter_greet
-  - utter_happy
-  - utter_goodbye
-  - utter_sorry
-  - utter_noworries
+  - actions_corona_state_stat
+  - actions_name_show
+  - action_get_loc
   - action_recommend
-  - utter_show_ability
-  - utter_fallback
   - action_redeath
   - action_reconfirm
   - action_rerecovered
   - action_summary
+  - act_number_domestic
+  - action_weather_tracker
+
+entities:
+  - name
+  - state
+  - location
+
+slots:
+  location:
+    type: any
+    mappings:
+    - type: from_text
+      entity: location
+  name:
+    type: text
+    mappings:
+    - type: custom
+  state:
+    type: text
+    mappings:
+    - type: custom
+
+
+responses:
+  utter_greet:
+  - text: "Chào! Chào mừng bạn đến với Bot COVID-19."
+
+  utter_goodbye:
+  - text: "Tạm biệt! Hy vọng sớm gặp lại bạn! Chỉ cần nhập 'hey' hoặc 'hi' bất cứ lúc nào để chuyển hướng đến Phần giới thiệu của Bot :))"
+  
+  utter_ask_ability:
+  - text: ""
+
+  utter_thankyou:
+  - text: ""
+
+  utter_praise:
+  - text: ""
+
+  utter_decry:
+  - text: ""
+
+  utter_ask_for_lunch:
+  - text: ""
+
+  utter_corona_intro:
+  - text: "Đại dịch COVID-19, còn được gọi là đại dịch vi-rút corona, là đại dịch đang diễn ra của bệnh vi-rút corona 2019 (COVID-19) do vi-rút corona gây hội chứng hô hấp cấp tính nặng 2 (SARS-CoV-2) gây ra.[1] Bệnh được xác định lần đầu tiên vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc.[4] Tổ chức Y tế Thế giới đã tuyên bố đợt bùng phát là Tình trạng Khẩn cấp về Sức khỏe Cộng đồng gây Quan ngại Quốc tế vào ngày 30 tháng 1 năm 2020 và là đại dịch vào ngày 11 tháng 3 năm 2020. Tính đến ngày 24 tháng 9 năm 2020, hơn 31,9 triệu trường hợp đã được báo cáo ở 188 quốc gia và vùng lãnh thổ, dẫn đến hơn 978.000 ca tử vong; hơn 22 triệu người đã hồi phục."
+
+  utter_corona_spread:
+  - text: "Loại virus này được phát hiện đầu tiên tại thành phố Vũ Hán, tỉnh Hồ Bắc, Trung Quốc. Các
+                  những ca nhiễm đầu tiên có liên quan đến chợ bán động vật sống, nhưng vi-rút hiện đã lây nhiễm
+                  lây lan từ người này sang người khác. Điều quan trọng cần lưu ý là giao tiếp giữa người với người
+                  lây lan có thể xảy ra liên tục. Một số vi-rút rất dễ lây lan (như
+                  bệnh sởi), trong khi các loại virus khác ít hơn. Vi-rút gây ra COVID-19
+                  đang lây lan từ người này sang người khác. Người đang mắc bệnh nghiêm trọng với COVID-19
+                  có thể lây bệnh cho người khác. Đó là lý do tại sao chúng tôi khuyên những bệnh nhân này
+                  bị cách ly trong bệnh viện hoặc tại nhà (tùy thuộc vào mức độ bệnh tật của họ
+                  are) cho đến khi chúng khỏe hơn và không còn có nguy cơ lây nhiễm cho người khác.
+
+                 Thời gian một người nào đó bị ốm nặng có thể khác nhau, vì vậy quyết định về thời điểm ra viện
+                  một người nào đó từ sự cô lập được thực hiện trên cơ sở từng trường hợp với sự tham vấn của 
+                  bác sĩ, chuyên gia phòng ngừa và kiểm soát nhiễm trùng và quan chức y tế công cộng
+                  và liên quan đến việc xem xét các chi tiết cụ thể của từng tình huống bao gồm cả mức độ nghiêm trọng của bệnh,
+                  các dấu hiệu và triệu chứng bệnh cũng như kết quả xét nghiệm trong phòng thí nghiệm cho bệnh nhân đó.
+
+                 Vi-rút gây ra COVID-19 dường như đang lây lan dễ dàng và bền vững
+                  trong cộng đồng (“lây lan trong cộng đồng”) ở một số khu vực địa lý bị ảnh hưởng. Cộng đồng
+                  lây lan có nghĩa là mọi người đã bị nhiễm vi-rút trong một khu vực, bao gồm
+                  một số người không chắc họ đã bị nhiễm bệnh như thế nào hoặc ở đâu."
+
+  utter_corona_food_spread:
+  - text: "Rất khó có khả năng mọi người có thể nhiễm COVID-19 từ thực phẩm hoặc bao bì thực phẩm. COVID-19 là một bệnh về đường hô hấp và đường lây truyền chính là qua tiếp xúc giữa người với người và qua tiếp xúc trực tiếp với các giọt hô hấp được tạo ra khi người nhiễm bệnh ho hoặc hắt hơi."
+
+  utter_corona_spread_warm:
+  - text: "Khi mùa hè sắp bắt đầu, nhiều người hy vọng rằng thời tiết ấm hơn sẽ làm chậm sự lây lan của SARS-CoV-2, loại vi-rút corona mới gây ra COVID-19. Đã có gợi ý từ các thí nghiệm trong phòng thí nghiệm rằng nhiệt độ và độ ẩm tăng lên có thể làm giảm khả năng tồn tại của SARS-CoV-2. Trong khi đó, các loại vi-rút corona khác gây ra các bệnh ít nghiêm trọng hơn, chẳng hạn như cảm lạnh thông thường, lây lan chậm hơn giữa mọi người trong mùa hè."
+
+  utter_corona_spread_risk:
+  - text: "COVID-19 thường nghiêm trọng hơn ở những người trên 60 tuổi hoặc những người mắc các bệnh như bệnh phổi hoặc tim, tiểu đường hoặc các bệnh ảnh hưởng đến hệ thống miễn dịch của họ.​
+           Nếu bạn có nguy cơ cao, hãy biết phải làm gì và thực hiện các hành động phù hợp ngay bây giờ để bảo vệ chính mình. Nếu bạn không có nguy cơ cao, hãy góp phần ngăn chặn sự lây lan của vi-rút corona sang những người có nguy cơ cao. Ngày càng có nhiều bằng chứng rằng những người mắc các bệnh mãn tính hiện có hoặc hệ thống miễn dịch bị tổn thương do khuyết tật có nguy cơ tử vong cao hơn do COVID-19."
+
+  utter_country_entry:
+  - text: "Bạn có thể vui lòng nhập trạng thái hiện tại của bạn từ Việt Nam không?"
+
+  utter_corona_stats_check:
+  - text: "Trình theo dõi Covid-19 [Việt Nam] : Vui lòng nhập tên Bang bạn muốn xem Thống kê Covid-19 :"
+
+  utter_corona_community:
+  - text: "Lây lan trong cộng đồng có nghĩa là mọi người đã bị nhiễm vi-rút trong một khu vực, bao gồm cả một số người không chắc chắn về cách thức hoặc nơi họ bị nhiễm bệnh. Mỗi sở y tế xác định mức độ lây lan trong cộng đồng khác nhau dựa trên các điều kiện địa phương. Để biết thông tin về sự lây lan trong cộng đồng trong khu vực của bạn, vui lòng truy cập trang web của sở y tế.​"
+
+  utter_corona_mosq_spread:
+  - text: "Tại thời điểm này, CDC không có dữ liệu nào cho thấy loại vi-rút corona mới này hoặc các loại vi-rút corona tương tự khác lây lan qua muỗi hoặc bọ ve. Cách lây lan chính của COVID-19 là từ người sang người. Xem Cách Vi-rút Corona Lây Lan để biết thêm thông tin."
+  
+  
+  utter_corona_prevent:
+  - text: "Cách tốt nhất để ngăn ngừa bệnh tật là tránh tiếp xúc với vi-rút. CDC khuyến nghị các hành động phòng ngừa hàng ngày để giúp ngăn ngừa sự lây lan của các bệnh về đường hô hấp. CDC khuyến nghị rửa tay thường xuyên bằng xà phòng và nước trong ít nhất 20 giây, đặc biệt là sau khi bạn ở nơi công cộng hoặc sau khi xì mũi, ho hoặc hắt hơi. Nếu không có xà phòng và nước, CDC khuyến nghị sử dụng chất khử trùng tay chứa cồn có chứa ít nhất 60 phần trăm cồn.
+Đeo khẩu trang ở những nơi công cộng khi xung quanh những người không sống cùng nhà với bạn và đặc biệt là những nơi khó duy trì các biện pháp giãn cách xã hội khác , chẳng hạn như cửa hàng tạp hóa, hiệu thuốc và trạm xăng. Khẩu trang có thể làm chậm sự lây lan của vi-rút và giúp những người có thể nhiễm vi-rút và không biết vi-rút truyền sang người khác. COVID-19 có thể lây lan bởi những người không có triệu chứng và không biết rằng họ bị nhiễm. Đó là lý do tại sao điều quan trọng là mọi người phải thực hành giãn cách xã hội (cách xa người khác ít nhất 6 feet) và đeo khẩu trang ở những nơi công cộng. Khẩu trang cung cấp thêm một lớp để giúp ngăn các giọt bắn từ đường hô hấp bay trong không khí và sang người khác. Loại khẩu trang được khuyên dùng không phải là khẩu trang phẫu thuật hoặc mặt nạ phòng độc N-95. Đó là những vật tư quan trọng phải tiếp tục được dành riêng cho nhân viên y tế và những người ứng phó y tế đầu tiên khác, theo khuyến nghị trong hướng dẫn hiện hành của CDC."
+
+  utter_corona_symptoms:
+  - text: "COVID-19 symptoms include:\nCough\nFever or chills\nShortness of breath or \ndifficulty breathing\nMuscle or body aches\nSore throat\nNew loss of taste or smell\nDiarrhea\nHeadache\nNew fatigue\nNausea or vomiting\nCongestion or runny noseIn confirmed cases of illness in humans, common symptoms have been acute, serious respiratory illness with fever, cough, shortness of breath, and breathing difficulties. Based on current clinical experience, the infection generally presents as pneumonia. It has caused kidney failure and death in some cases. It is important to note that the current understanding of the illness caused by this infection is based on a limited number of cases and may change as more information becomes available."
+  
+  utter_corona_vaccine:
+  - text: "Các thử nghiệm lâm sàng trên người đối với vắc xin Covid-19 được khởi xướng ở Ấn Độ: ICMR. Các thử nghiệm lâm sàng trên người đối với vắc-xin Covid-19 đã được bắt đầu với khoảng 1.000 tình nguyện viên tham gia thử nghiệm cho mỗi trong số hai ứng cử viên vắc-xin được phát triển trong nước
+Mặc dù một số biện pháp khắc phục phương Tây, truyền thống hoặc tại nhà có thể mang lại sự thoải mái và giảm bớt các triệu chứng của COVID-19 nhẹ , không có loại thuốc nào được chứng minh là ngăn ngừa hoặc chữa khỏi bệnh. WHO không khuyến nghị tự dùng thuốc với bất kỳ loại thuốc nào, kể cả thuốc kháng sinh, như một biện pháp phòng ngừa hoặc chữa bệnh cho COVID-19. Tuy nhiên, có một số thử nghiệm lâm sàng đang diễn ra đối với cả thuốc tây và thuốc truyền thống. WHO đang phối hợp các nỗ lực để phát triển vắc-xin và thuốc để ngăn ngừa và điều trị COVID-19, đồng thời sẽ tiếp tục cung cấp thông tin cập nhật
+Tại thời điểm này, không có vắc-xin để ngăn ngừa bệnh do vi-rút corona 2019 (COVID-19). FDA đang hợp tác với các nhà phát triển vắc-xin cũng như các nhà nghiên cứu và nhà sản xuất khác để giúp đẩy nhanh quá trình phát triển và cung cấp các sản phẩm y tế như vắc-xin, kháng thể và thuốc ngăn ngừa COVID-19"
+ 
+  utter_corona_infected_person:
+  - text: "Ở nhà trong 14 ngày sau lần tiếp xúc cuối cùng của bạn với người mắc COVID-19.
+Hãy cảnh giác với các triệu chứng. Theo dõi các triệu chứng sốt, ho, khó thở hoặc các triệu chứng khác của COVID-19.
+Nếu có thể, hãy tránh xa những người khác, đặc biệt là những người có nguy cơ cao mắc bệnh nặng do COVID-19."
+
+  utter_out_of_scope:
+    - text: "Tôi ước tôi có thể trả lời câu hỏi của bạn, Vui lòng hỏi một số câu hỏi khác."
+    - text: "Sorry I don't know the answer."
+    - text: "Tôi vẫn đang học! Xin vui lòng hỏi tôi một số câu hỏi khác."
+
+  utter_specify_city:
+    - text: "Bạn có thể vui lòng chỉ định thành phố có thời tiết mà bạn muốn biết?"
+
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 

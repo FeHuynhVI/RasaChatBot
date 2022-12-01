@@ -1,95 +1,6 @@
-version: "3.0"
+version: "3.1"
 
-nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    
+nlu:    
 - intent: greet
   examples: |
     - chào em
@@ -98,6 +9,8 @@ nlu:
     - em ơi, cho anh hỏi
     - bot ơi
     - cho mình hỏi chút
+    - hi
+    - hello
 
 - intent: goodbye
   examples: |
@@ -105,6 +18,7 @@ nlu:
     - bye bye
     - tạm biệt em
     - tạm biệt bot nhá
+    - cút
 
 - intent: ask_ability
   examples: |
@@ -150,6 +64,70 @@ nlu:
     - có thế mà cũng không biết
     - kém cói
 
+
+- intent: out_of_scope
+  examples: |
+    - làm ơn giúp tôi với kem đang nhỏ giọt
+    - tôi muốn một cây kem không nhỏ giọt
+    - ai đó gọi cảnh sát tôi nghĩ bot đã chết
+    - cho tôi xem hình con gà
+    - cũng không
+    - Tôi muốn ẩm thực Pháp
+    - tôi đói
+    - quán ăn
+    - tôi có thể được chỉ cho một nhà hàng không chứa gluten không
+    - Tôi không quan tâm!!!!
+    - tôi không quan tâm bạn thế nào
+    - lại?
+    - oh chờ đã, tôi đã cho bạn địa chỉ email công việc của tôi, tôi có thể thay đổi nó không?
+    - đợi tí để em tìm
+    - thôi đi, tôi không quan tâm!!!
+    - làm thế nào mà?
+    - Tôi đã thay đổi tâm trí của tôi
+    - Gì?
+    - tôi đã phá vỡ bạn
+    - liên kết đó không hoạt động!
+    - bạn đã có cái đó rồi
+    - đây là một kinh nghiệm thực sự bực bội
+    - không dừng lại
+    - cho tôi thức ăn
+    - tôi muốn thực phẩm
+    - Tôi có thể đặt câu hỏi cho bạn trước được không?
+    - đó có phải là một vùng đất hoang đầy những bộ phận robot bị hỏng không?
+    - chúng ta tiếp tục nói chuyện được không?
+    - nói với tôi
+    - robot yêu thích của bạn là ai?
+    - bạn có thể giúp tôi xây dựng bot không
+    - mâm cặp gỗ không thể kẹp bất kỳ loại gỗ nào
+    - một mâm cặp gỗ không thể tặc gỗ
+    - em có mặc gì không?
+    - tôi có thể sắp xếp một chiếc taxi được không?
+    - tôi có thể đặt một chiếc taxi không?
+    - tôi gọi pizza được không?
+    - cho quiche một cơ hội
+    - mâm cặp gỗ có thể gắp được bao nhiêu gỗ nếu mâm cặp gỗ sẽ gắp gỗ?
+    - tôi là người có vũ khí hạng nặng và đây là vũ khí của tôi
+    - tôi biết võ công
+    - tôi cần một chiếc taxi
+    - tôi muốn một chiếc bánh pizza pepperoni
+    - tôi muốn đặt một chiếc bánh pizza
+    - tôi muốn một chiếc bánh pizza
+    - tôi hết kẹo cao su rồi
+    - anh cầu hôn em
+    - đó là một biểu thức albany
+    - kết hôn với tôi
+    - bây giờ tôi có một khẩu súng máy ho-ho-ho!
+    - xin hãy cưới anh
+    - nói cho tôi biết bạn đang mặc gì?
+    - thử thách bằng đá!
+    - bạn đang mặc gì?
+    - em sẽ lấy anh chứ?
+    - bạn đến với tôi vào ngày cưới của con gái tôi
+    - bạn không giành được bạn bè với salad
+    - bạn sẽ cần một chiếc thuyền lớn hơn
+    - mẹ kiếp
+    - Ôi chúa ơi
+
 - intent: ask_for_lunch
   examples: |
     - trưa nay anh nên ăn gì nhỉ
@@ -160,7 +138,209 @@ nlu:
     - bữa trưa
     - ăn gì bây giờ
     - chọn giúp anh một quán ăn
+
+- intent: corona_intro
+  examples: |
+    - corona là gì?
+    - covid-19 là gì?
+    - virus corona mới là gì?
+    - cho tôi biết về corona
+    - bạn có thể cho tôi biết về corona
+    - bạn có thể cho tôi biết về covid-19
+
+- intent: corona_spread
+  examples: |
+    - virus corona lây lan như thế nào?
+    - virus này lây lan như thế nào?
+    - corona lây lan như thế nào?
+    - lây lan corona?
+    - sự lây lan của covid.
+    - sự lây lan covid-19.
+
+- intent: corona_food_spread
+  examples: |
+    - thức ăn lây lan virus corona như thế nào?
+    - ăn đồ ăn vặt có làm lây lan virus corona không?
+    - corona sẽ lây lan từ thực phẩm như thế nào?
+
+- intent: corona_spread_warm
+  examples: |
+    - Làm thế nào thời tiết ấm áp sẽ ngăn chặn virus corona?
+    - Thời tiết ấm áp thực sự có thể ngăn chặn corona?
+    - nó sẽ dừng lại với thời tiết ấm áp?
     
+- intent: corona_spread_risk
+  examples: |
+    - ai có nguy cơ nhiễm trùng cao hơn
+    - ai dễ bị nhiễm virus corona hơn
+
+- intent: corona_community
+  examples: |
+    - lây lan cộng đồng là gì
+    - Làm thế nào để lây lan cộng đồng xảy ra?
+    - lây lan trong cộng đồng
+
+- intent: corona_symptoms
+  examples: |
+    - Các triệu chứng của coronavirus mới là gì?
+    - Các triệu chứng của virus corona mới là gì?
+    - Các triệu chứng của virus covid-19 mới là gì?
+    - Các triệu chứng của virus corona là gì?
+    - triệu chứng của virus corona?
+    - triệu chứng của virus covid19?
+
+- intent: corona_mosq_spread
+  examples: |
+    - muỗi có thể lây lan virus corona?
+    - muỗi truyền virus corona như thế nào?
+    - muỗi truyền virus covid-19.
+    - muỗi truyền virut covid.
+
+- intent: corona_vaccine
+  examples: |
+    - Đã có vắc xin phòng ngừa virus corona chưa?
+    - Có vắc xin nào phòng ngừa virus covid19 không?
+    - Còn vắc-xin có sẵn để phòng ngừa vi-rút corona thì sao?
+    - Có vắc xin phòng virus corona??
+    - Đã có vắc-xin được phát triển cho virus corona?
+    - có vắc xin phòng virus corona chưa?
+    - có vắc xin nào cho virus covid19 không?
+
+- intent: corona_prevent
+  examples: |
+    - làm thế nào tôi có thể ngăn chặn covid19?
+    - Làm thế nào tôi có thể ngăn ngừa virus corona?
+    - làm thế nào tôi có thể ngăn chặn covid-19?
+    - ngăn ngừa covid19?
+    - ngăn chặn corona
+    - làm thế nào một lần có thể ngăn ngừa bản thân khỏi bị nhiễm covid19?
+    - làm thế nào một lần có thể ngăn bản thân khỏi bị nhiễm corona?
+
+- intent: corona_infected_person
+  examples: |
+    - Nếu Bạn hoặc Ai đó mà Bạn biết bị ốm hoặc đã tiếp xúc với người mắc COVID-19
+    - Nếu Bạn hoặc Ai đó Bạn Biết Bị Bệnh hoặc Đã Tiếp Xúc Với Người Bị Corona?
+    - tôi nên làm gì nếu ai đó trong nhà tôi bị nhiễm corona?
+    - tôi nên làm gì nếu ai đó trong nhà tôi bị nhiễm covid-19?
+    - ai đó bị covid-19 tôi biết?
+    - thành viên gia đình tôi bị nhiễm corona?
+    - ai đó bị nhiễm corona tôi biết?
+    - ai đó bị nhiễm corona mà tôi đã tiếp xúc?
+    - ai đó bị nhiễm covid mà tôi đã tiếp xúc?
+    - phải làm gì nếu ai đó bị nhiễm covid mà tôi đã tiếp xúc?
+
+- intent: corona_states_stat
+  examples: |
+    - [Ấn Độ](state)
+    - Tôi sống ở [Ấn Độ](state:Ấn Độ)
+    - [Gujarat](state)
+    - Tôi sống ở [Gujarat](state:Gujarat)
+    - [Andhra Pradesh](state)
+    - Tôi sống ở [Andhra Pradesh](state:Andhra Pradesh)
+    - [Arunachal Pradesh](state)
+    - Tôi sống ở [Arunachal Pradesh](state:Arunachal Pradesh)
+    - [Assam](state)
+    - Tôi sống ở [Assam](state:Assam)
+    - [Bihar](state)
+    - Tôi sống ở [Bihar](state:Bihar)
+    - [Goa](state)
+    - Tôi sống ở [Goa](state:Goa)
+    - [Chhattisgarh](state)
+    - Tôi sống ở [Chhattisgarh](state:Chhattisgarh)
+    - [Haryana](state)
+    - Tôi sống ở [Haryana](state:Haryana)
+    - [Himachal Pradesh](state)
+    - Tôi sống ở [Himachal Pradesh](state:Himachal Pradesh)
+    - [Jharkhand](state)
+    - Tôi sống ở [Jharkhand](state:Jharkhand)
+    - [Karnataka](state)
+    - Tôi sống ở [Karnataka](state:Karnataka)
+    - [Madhya Pradesh](state)
+    - Tôi sống ở [Madhya Pradesh](state:Madhya Pradesh)
+    - [Kerala](state)
+    - Tôi sống ở [Kerala](state:Kerala)
+    - [Maharashtra](state)
+    - Tôi sống ở [Maharashtra](state:Maharashtra)
+    - [Manipur](state)
+    - Tôi sống ở [Manipur](state:Manipur)
+    - [Meghalaya](state)
+    - Tôi sống ở [Meghalaya](state:Meghalaya)
+    - [Mizoram](state)
+    - Tôi sống ở [Mizoram](state:Mizoram)
+    - [Nagaland](state)
+    - Tôi sống ở [Nagaland](state:Nagaland)
+    - [Odisha](state)
+    - Tôi sống ở [Odisha](state:Odisha)
+    - [Punjab](state)
+    - Tôi sống ở [Punjab](state:Punjab)
+    - [Rajasthan](state)
+    - Tôi sống ở [Rajasthan](state:Rajasthan)
+    - [Sikkim](state)
+    - Tôi sống ở [Sikkim](state:Sikkim)
+    - [Tamil Nadu](state)
+    - Tôi sống ở [Tamil Nadu](state:Tamil Nadu)
+    - [Telangana](state)
+    - Tôi sống ở [Telangana](state:Telangana)
+    - [Tripura](state)
+    - Tôi sống ở [Tripura](state:Tripura)
+    - [Uttar Pradesh](state)
+    - Tôi sống ở [Uttar Pradesh](state:Uttar Pradesh)
+    - [Uttarakhand](state)
+    - Tôi sống ở [Uttarakhand](state:Uttarakhand)
+    - [Tây Bengal](state)
+    - Tôi sống ở [Tây Bengal](state:Tây Bengal)
+    - [Đê-li](state)
+    - Tôi sống ở [Delhi](state:Delhi)
+    - Tôi sống ở [Việt Nam](state:Hồ Chí Minh)
+
+- intent: corona_stats_check
+  examples: |
+    - Số liệu thống kê về corona
+    - tôi muốn kiểm tra số liệu thống kê corona
+    - theo dõi corona
+    - số liệu thống kê corona
+    - theo dõi covid
+    - thống kê covid
+
+- intent: name_entry
+  examples: |
+    - Tên tôi là [Ashish](name)
+    - [ashish](name:Ashish) bên này
+    - [vĩ](name:Vĩ) bên này
+    - [nguyễn](name:Nguyễn) bên này
+    - Đó là [ashish](name:Ashish)
+    - [ashish](name:Ashish) là tên của tôi
+    - [Ashish](name)
+    - [Rahul](name)
+    - Tên tôi là [Harsh](name)
+    - [harsh](name:Harsh) bên này
+    - [Harsh](name:Harsh) là tên của tôi
+    - [Vĩ](name:Vĩ) là tên của tôi
+    - [Harsh](name)
+    - [Rahul](name)
+    - [Harsh](name:Harsh)
+    - Đó là [Tom](name)
+    - Tên tôi là [Bob](name)
+    - tên tôi là [Harsh](name)
+    - tên là [Rajesh](name)
+    - tên tôi là [demo](name)
+    - tên là [demo](name)
+    - Tôi là [Harsh](name)
+    - Tôi là [Nandan](name)
+    - Tôi là [demo](name)
+    - bản thân tôi [demo](name)
+    - bản thân tôi [demo](name)
+    - tôi là [Vĩ](name)
+    - tôi là [Nguyễn](name)
+    - tôi là [Khang](name)
+    - tôi là [Hùng](name)
+    - tôi là [Tùng](name)
+    - Tên tôi là [Vĩ](name)
+    - Tên tôi là [Nguyễn](name)
+    - Tên tôi là [Khang](name)
+    - Tên tôi là [Hùng](name)
+    - Tên tôi là [Tùng](name)
+
 - intent: ask_death
   examples: |
     - bao người chết rồi
@@ -227,3 +407,189 @@ nlu:
     - thông tin tất cả về dịch bệnh corrona 2019
     - tất cả về dịch bệnh corrona 2019
     - tất tần tật về dịch bệnh corrona 2019
+
+- intent: weather
+  examples: |
+    - thời tiết ra sao
+    - nhiệt độ hôm nay là bao nhiêu
+    - Nhiệt độ là gì
+    - tôi muốn biết nhiệt độ
+    - tôi muốn biết thời tiết hôm nay
+    - cho tôi biết dự báo thời tiết
+    - cho tôi biết điều gì đó về thời tiết
+    - Thời tiết hôm nay thế nào
+
+- intent: city
+  examples: |
+    - [delhi]{"entity":"location"}
+    - [chandigarh]{"entity":"location"}
+    - [london]{"entity":"location"}
+    - [berlin]{"entity":"location"}
+    - [ohio]{"entity":"location"}
+    - [france]{"entity":"location"}
+    - [bangalore]{"entity":"location"}
+    - [mumbai]{"entity":"location"}
+    - [jaipur]{"entity":"location"}
+    - [gorakhpur]{"entity":"location"}
+    - [sydney]{"entity":"location"}
+    - [melbourne]{"entity":"location"}
+    - [new york]{"entity":"location"}
+    - [tokyo]{"entity":"location"}
+    - [kanpur]{"entity":"location"}
+    - [faridabad]{"entity":"location"}
+    - [mexico]{"entity":"location"}
+    - [udaipur]{"entity":"location"}
+    - [nasik]{"entity":"location"}
+    - [nagpur]{"entity":"location"}
+    - [bhopal]{"entity":"location"}
+    - [indore]{"entity":"location"}
+    - [ranchi]{"entity":"location"}
+    - [patna]{"entity":"location"}
+    - [ahemdabad]{"entity":"location"}
+    - [panaji]{"entity":"location"}
+    - [dallas]{"entity":"location"}
+    - [las vegas]{"entity":"location"}
+    - [jerusalem]{"entity":"location"}
+    - [islamabad]{"entity":"location"}
+    - [karachi]{"entity":"location"}
+    - [rawalpindi]{"entity":"location"}
+    - [dhaka]{"entity":"location"}
+    - [colombo]{"entity":"location"}
+    - [kathamandu]{"entity":"location"}
+    - [shanghai]{"entity":"location"}
+    - [canberra]{"entity":"location"}
+    - [muzzafarnagar]{"entity":"location"}
+    - [Beijing]{"entity":"location"}
+    - [Cape town]{"entity":"location"}
+    - [Shimla]{"entity":"location"}
+    - [Rhotak]{"entity":"location"}
+    - [Baghpat]{"entity":"location"}
+    - [Ghaziabad]{"entity":"location"}
+    - [Moradabad]{"entity":"location"}
+    - [Hồ Chí Minh]{"entity":"location"}
+    - [Hà Nội]{"entity":"location"}
+    - [Cần Thơ]{"entity":"location"}
+    - [Kiên Giang]{"entity":"location"}
+    - [Tiền Giang]{"entity":"location"}
+    - [Vĩnh Long]{"entity":"location"}
+    - [Kiên Giang]{"entity":"location"}
+    - [An Giang]{"entity":"location"}
+    - [Cà Mau]{"entity":"location"}
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"}
+    - [Bạc Liêu]{"entity":"location"}
+    - [Bắc Kạn]{"entity":"location"}
+    - [Bắc Giang]{"entity":"location"}
+    - [Bắc Ninh]{"entity":"location"}
+    - [Bến Tre]{"entity":"location"}
+    - [Bình Dương]{"entity":"location"}
+    - [Bình Định]{"entity":"location"}
+    - [Bình Phước]{"entity":"location"}
+    - [Bình Thuận]{"entity":"location"}
+    - [Cao Bằng]{"entity":"location"}
+    - [Đà Nẵng]{"entity":"location"}
+    - [Đắk Lắk]{"entity":"location"}
+    - [Đắk Nông]{"entity":"location"}
+    - [Điện Biên]{"entity":"location"}
+    - [Đồng Nai]{"entity":"location"}
+    - [Đồng Tháp]{"entity":"location"}
+    - [Gia Lai]{"entity":"location"}
+    - [Hà Giang]{"entity":"location"}
+    - [Hà Nam]{"entity":"location"}
+    - [Hà Tây]{"entity":"location"}
+    - [Hà Tĩnh]{"entity":"location"}
+    - [Hải Dương]{"entity":"location"}
+    - [Hải Phòng]{"entity":"location"}
+    - [Hòa Bình]{"entity":"location"}
+    - [Hưng Yên]{"entity":"location"}
+    - [Khánh Hòa]{"entity":"location"}
+    - [Bình Thuận]{"entity":"location"}
+    - [Cao Bằng]{"entity":"location"}
+    - [Đà Nẵng]{"entity":"location"}
+    - [Đắk Lắk]{"entity":"location"}
+    - [Đắk Nông]{"entity":"location"}
+    - [Điện Biên]{"entity":"location"}
+    - [Đồng Nai]{"entity":"location"}
+    - [Đồng Tháp]{"entity":"location"}
+    - [Gia Lai]{"entity":"location"}
+    - [Hà Giang]{"entity":"location"}
+    - [Hà Nam]{"entity":"location"}
+    - [Hà Tây]{"entity":"location"}
+    - [Hà Tĩnh]{"entity":"location"}
+    - [Hải Dương]{"entity":"location"}
+    - [Hải Phòng]{"entity":"location"}
+    - [Hòa Bình]{"entity":"location"}
+    - [Hưng Yên]{"entity":"location"}
+    - [Khánh Hòa]{"entity":"location"}
+    - [Kon Tum]{"entity":"location"}
+    - [Lai Châu]{"entity":"location"}
+    - [Lào Cai]{"entity":"location"}
+    - [Lạng Sơn]{"entity":"location"}
+    - [Lâm Đồng]{"entity":"location"}
+    - [Long An]{"entity":"location"}
+    - [Nam Định]{"entity":"location"}
+    - [Nghệ An]{"entity":"location"}
+    - [Ninh Bình]{"entity":"location"}
+    - [Ninh Thuận]{"entity":"location"}
+    - [Phú Thọ]{"entity":"location"}
+    - [Phú Yên]{"entity":"location"}
+    - [Quảng Bình]{"entity":"location"}
+    - [Quảng Nam]{"entity":"location"}
+    - [Quảng Ngãi]{"entity":"location"}
+    - [Quảng Ninh]{"entity":"location"}
+    - [Quảng Trị]{"entity":"location"}
+    - [Sóc Trăng]{"entity":"location"}\
+    - [Sơn La]{"entity":"location"}
+    - [Tây Ninh]{"entity":"location"}
+    - [Thái Bình]{"entity":"location"}
+    - [Thái Nguyên]{"entity":"location"}
+    - [Thanh Hóa]{"entity":"location"}
+    - [Thừa Thiên - Huế]{"entity":"location"}
+    - [Trà Vinh]{"entity":"location"}
+    - [Tuyên Quang]{"entity":"location"}
+    - [Vĩnh Phúc]{"entity":"location"}
+    - [Yên Bái]{"entity":"location"}
+
+
+- intent: ask_weather
+  examples: |
+    - Hiện tại thời tiết ở [Berlin]{"entity":"location"} như thế nào?
+    - Thời tiết ở [London]{"entity":"location"} hôm nay như thế nào?
+    - Cho tôi biết tình hình thời tiết ở [Paris]{"entity":"location"}
+    - Tôi muốn biết thời tiết ở [Vilnius]{"entity":"location"} hiện tại như thế nào?
+    - Hôm nay thời tiết ở [Barcelona]{"entity":"location"} có đẹp không?
+    - Tôi sẽ đến [London]{"entity":"location"} hôm nay và tôi muốn biết thời tiết ngoài đó như thế nào?
+    - Tôi đang lên kế hoạch cho chuyến đi tới [Amsterdam]{"entity":"location"} . Thời tiết ngoài đó thế nào?
+    - Vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
+    - ở [Luân Đôn]{"entity":"location"}
+    - [Litva]{"entity":"location"}
+    - Ồ, xin lỗi, [ở Ý]{"entity":"location"}
+    - Cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
+    - Điều kiện thời tiết ở [Ý]{"entity":"location"}
+    - thời tiết ở [Chennai]{"entity":"location"} như thế nào
+    - thời tiết ở [Hungary]{"entity":"location"}
+    - [mumbai]{"entity":"location"}
+    - Nhiệt độ tại [Paris]{"entity":"location"}
+    - [Chennai]{"entity":"location"}
+    - thời tiết ở [Berlin]{"entity":"location"} như thế nào
+    - thời tiết ở [Dublin]{"entity":"location"} như thế nào
+    - thời tiết ở [gurgaon]{"entity":"location"} thế nào
+    - thời tiết ở [Greater noida]{"entity":"location"} như thế nào
+    - Hows [Tình hình Chennai hôm nay]{"entity":"location"}
+    - ở [banglore]{"entity":"location"}
+    - [lucknow]{"entity":"location"} hôm nay thế nào rồi?
+    - [Chennai]{"entity":"location"}
+    - [Paris]{"entity":"location"} hôm nay thế nào?
+    - Cho tôi biết thời tiết hôm nay]{"entity":"location"}
+    - Nhiệt độ ở [hapur]{"entity":"location"}
+    - Thời tiết ở [noida]{"entity":"location"} thế nào
+    - nhiệt độ ở [mohali]{"entity":"location"}
+    - Thời tiết ở [pune]{"entity":"location"} thế nào
+    - Thời tiết ở [kolkata]{"entity":"location"} thế nào
+    - thời tiết ở [Chennai]{"entity":"location"} thế nào
+    - ở [Paris]{"entity":"location"}
+    - Ở [Chennai]{"entity":"location"}
+    - hú [Mumbai]{"entity":"location"}
+    - Thời tiết ở [London]{"entity":"location"}
+    - Thời tiết ở [Việt Nam]{"entity":"location"}
+    - Thời tiết ở [Hà nội]{"entity":"location"}
+    - Thời tiết ở [Hồ Chí Minh]{"entity":"location"}
