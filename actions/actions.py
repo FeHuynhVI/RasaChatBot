@@ -10,7 +10,7 @@ from cachetools import cached, TTLCache
 from dateutil.parser import parse
 from dateutil import tz
 from rasa_sdk.events import SlotSet
-
+import pytz
 
 
 # This files contains your custom actions which can be used to run
@@ -29,6 +29,7 @@ import os
 import html
 import random
 import pathlib
+from datetime import date, datetime, timedelta
 
 from rasa_sdk.events import FollowupAction
 
@@ -53,6 +54,14 @@ def to_date(string, fuzzy=False):
         return date.astimezone(VN_TZ)
     except ValueError:
         return ""
+
+def get_now():
+	now = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh'))
+	return '{}/{}/{}'.format( now.day, now.month, now.year)
+
+def get_yesterday():
+	yesterday = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh')) - timedelta(days=1)
+	return '{}/{}/{}'.format( yesterday.day, yesterday.month, yesterday.year)
 
 @cached(cache=TTLCache(maxsize=1024, ttl=3600))
 def get_data(category):
@@ -107,6 +116,83 @@ def get_data(category):
         'latest_date': locations[0]['latest_date']
     }
 
+def get_province_data(id):
+    url = 'https://covid19.ncsc.gov.vn/api/v3/covid/province/%s'
+    request = requests.get(url % id)
+    data = json.loads(request.text)
+    return data
+
+
+PROVINCE = {
+	"hà nội": 1,
+	"tp hcm": 2,
+	"tp hồ chí minh": 2,
+	"thành phố hồ chí minh": 2,
+	"hải phòng": 3,
+	"đà nẵng": 4,
+	"hà giang": 5,
+	"cao bằng": 6,
+	"lai châu": 7,
+	"lào cai": 8,
+	"tuyên quang": 9,
+	"lạng sơn": 10,
+	"bắc kạn": 11,
+	"thái nguyên": 12,
+	"yên bái": 13,
+	"sơn la": 14,
+	"phú thọ": 15,
+	"vĩnh phúc": 16,
+	"quảng ninh": 17,
+	"bắc giang": 18,
+	"bắc ninh": 19,
+	"hà nội": 1,
+	"hải dương": 21,
+	"hưng yên": 22,
+	"hòa bình": 23,
+	"hà nam": 24,
+	"nam định": 25,
+	"thái bình": 26,
+	"ninh bình": 27,
+	"thanh hóa": 28,
+	"nghệ an": 29,
+	"hà tĩnh": 30,
+	"quảng bình": 31,
+	"quảng trị": 32,
+	"thừa thiên huế": 33,
+	"huế": 33,
+	"quảng nam": 34,
+	"quảng ngãi": 35,
+	"kon tum": 36,
+	"bình định": 37,
+	"gia lai": 38,
+	"phú yên": 39,
+	"đắk lắk": 40,
+	"khánh hòa": 41,
+	"lâm đồng": 42,
+	"bình phước": 43,
+	"bình dương": 44,
+	"ninh thuận": 45,
+	"tây ninh": 46,
+	"bình thuận": 47,
+	"đồng nai": 48,
+	"long an": 49,
+	"đồng tháp": 50,
+	"an giang": 51,
+	"bà rịa - vũng tàu": 52,
+	"tiền giang": 53,
+	"kiên giang": 54,
+	"cần thơ": 55,
+	"tp cần thơ": 55,
+	"thành phố cần thơ": 55,
+	"bến tre": 56,
+	"vĩnh long": 57,
+	"trà vinh": 58,
+	"sóc trăng": 59,
+	"bạc liêu": 60,
+	"cà mau": 61,
+	"điện biên": 62,
+	"đắk nông": 63
+}
 
 DATABASE = ["bún đậu mắm tôm",
             "bún đậu nước mắm",
@@ -177,7 +263,7 @@ class ActionRedeath(Action):
         dataD = get_data('deaths_global')
         
         dispatcher.utter_message(
-            text="Tổng sô người mất: '{}' \nNgày ghi nhận '{}'".format(dataD['vn_latest'], dataD['latest_date']))
+            text="Tổng sô ca tử vong: '{}' \nNgày ghi nhận '{}'".format(dataD['vn_latest'], dataD['latest_date']))
 
         return []
 
@@ -315,3 +401,105 @@ class ActionWeatherTracker(Action):
             dispatcher.utter_message(text=error)
 
          return [SlotSet('location',loc)]
+         
+class ActionRedeathProvince(Action):
+
+    def name(self) -> Text:
+        return "action_redeath_province"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            loc = tracker.get_slot('location')
+            loc = loc.lower()
+            if (loc in PROVINCE.keys()):
+                dataLocD = get_province_data(PROVINCE[loc])
+                yesterday = get_yesterday()
+                text = "{}\nĐến ngày '{}', Tổng số ca tử vong được ghi nhận là {}\nNgày {} có thêm {} ca tử vong".format(dataLocD['name'], get_now(), dataLocD['total_death'], yesterday, dataLocD['death_by_day'][yesterday])
+            else:
+                dataD = get_data('deaths_global')
+                text = "Tại Việt Nam\nTổng sô ca tử vong là: '{}' \nNgày ghi nhận '{}'".format(dataD['vn_latest'], dataD['latest_date'])
+
+            dispatcher.utter_message(text)
+        except Exception as err:
+            error = "Lỗi call action: " +  str(err)
+            dispatcher.utter_message(text = error)
+        return []
+        
+class ActionReconfirmProvince(Action):
+
+    def name(self) -> Text:
+        return "action_reconfirm_province"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            loc = tracker.get_slot('location')
+            loc = loc.lower()
+            if (loc in PROVINCE.keys()):
+                dataLocD = get_province_data(PROVINCE[loc])
+                yesterday = get_yesterday()
+                text = "{}\nĐến ngày '{}', Tổng số ca nhiễm bệnh được ghi nhận là {}\n Ngày {} có thêm {} ca nhiễm mới".format(dataLocD['name'], get_now(), dataLocD['total_case'], yesterday, dataLocD['case_by_day'][yesterday])
+            else:
+                dataD = get_data('confirmed_global')
+                text = "Tại Việt Nam\nTổng số ca nhiễm bệnh là: '{}' \nNgày ghi nhận '{}'".format(dataD['vn_latest'], dataD['latest_date'])
+
+            dispatcher.utter_message(text)
+        except Exception as err:
+            error = "Lỗi call action: " +  str(err)
+            dispatcher.utter_message(text = error)
+        return []
+        
+class ActionReresolveProvince(Action):
+
+    def name(self) -> Text:
+        return "action_reresolve_province"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            loc = tracker.get_slot('location')
+            loc = loc.lower()
+            print("________")
+            print(loc)
+            if (loc in PROVINCE.keys()):
+                dataLocD = get_province_data(PROVINCE[loc])
+                yesterday = get_yesterday()
+                text = "{}\nNgày {} có thêm {} ca hồi phục".format(dataLocD['name'], yesterday, dataLocD['recovered_by_day'][yesterday])
+            else:
+                dataD = get_data('recovered_global')
+                text = "Tại Việt Nam\nTổng sô ca hồi phục là: '{}' \nNgày ghi nhận '{}'".format(dataD['vn_latest'], dataD['latest_date'])
+
+            dispatcher.utter_message(text)
+        except Exception as err:
+            error = "Lỗi call action: " +  str(err)
+            dispatcher.utter_message(text = error)
+        return []
+
+class ActionReallProvince(Action):
+
+    def name(self) -> Text:
+        return "action_reall_province"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            loc = tracker.get_slot('location')
+            loc = loc.lower()
+            if (loc in PROVINCE.keys()):
+                dataLocD = get_province_data(PROVINCE[loc])
+                yesterday = get_yesterday()
+                text1 = "{}\nĐến ngày '{}'\n\tTổng số ca tử vong được ghi nhận là {}\n\tTổng số ca nhiễm mới được ghi nhận là {}".format(dataLocD['name'], get_now(), dataLocD['total_death'], dataLocD['total_case'])
+                text2 = "Ngày {}\n\tcó {} ca tử vong\n\tCó {} ca nhiễm mới\n\tCó thêm {} ca hồi phục".format(yesterday, dataLocD['death_by_day'][yesterday], dataLocD['case_by_day'][yesterday], dataLocD['recovered_by_day'][yesterday])
+                text = "{}\n{}".format(text1, text2)
+            else:
+                dataD = get_data('deaths_global')
+                dataC = get_data('confirmed_global')
+                dataR = get_data('recovered_global')
+                text = "Tại Việt Nam\nNgày '{}' có tổng số ca nhiễm bệnh: '{}' \nNgày '{}' có tổng số ca tử vong: '{}' \nNgày '{}' có tổng số ca hồi phục: '{}'".format(dataC['latest_date'], dataC['vn_latest'], dataD['latest_date'], dataD['vn_latest'], dataR['latest_date'], dataR['vn_latest'])
+
+            dispatcher.utter_message(text)
+        except Exception as err:
+            error = "Lỗi call action: " +  str(err)
+            dispatcher.utter_message(text = error)
+        return []

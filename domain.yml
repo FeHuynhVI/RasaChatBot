@@ -32,6 +32,10 @@ intents:
   - city
   - ask_weather
   - weather_specify_city
+  - ask_death_province
+  - ask_confirm_province
+  - ask_resolve_province
+  - ask_all_province
 
 actions:
   - actions_corona_state_stat
@@ -44,9 +48,13 @@ actions:
   - action_summary
   - act_number_domestic
   - action_weather_tracker
+  - action_redeath_province
+  - action_reconfirm_province
+  - action_reresolve_province
+  - action_reall_province
 
 entities:
-  - name
+  - namerr
   - state
   - location
 

@@ -423,11 +423,13 @@ nlu:
     - có bao nhiêu người khỏi bệnh
     - con số người khỏi bệnh là bao nhiêu
     - hiện có bao nhiêu người khỏi bệnh rồi
-    - có nhiều người khỏi bệnh chưaReDa
+    - có nhiều người khỏi bệnh chưa
     - số trường hợp khỏi bệnh là bao nhiêu
     - nhiều người được chữa khỏi chưa
     - hiện nay đã có bao nhiêu người được chữa khỏi
     - có bao nhiêu người được chữa khỏi
+    - số ca nhiễm bệnh hồi phục
+    - số bệnh nhân đã hồi phục
 
 - intent: ask_all
   examples: |
@@ -636,3 +638,484 @@ nlu:
     - Thời tiết ở [Việt Nam]{"entity":"location"}
     - Thời tiết ở [Hà nội]{"entity":"location"}
     - Thời tiết ở [Hồ Chí Minh]{"entity":"location"}
+    
+ 
+- intent: ask_confirm_province
+  examples: |
+    - [Hồ Chí Minh]{"entity":"location"} bao người nhiễm rồi
+    - [Hà Nội]{"entity":"location"} bao người nhiễm rồi
+    - [Cần Thơ]{"entity":"location"} bao người nhiễm rồi
+    - [Kiên Giang]{"entity":"location"} bao người nhiễm rồi
+    - [Tiền Giang]{"entity":"location"} có bao nhiêu người nhiễm
+    - [Vĩnh Long]{"entity":"location"} có bao nhiêu người nhiễm
+    - [Kiên Giang]{"entity":"location"} có bao nhiêu người nhiễm
+    - [An Giang]{"entity":"location"} có bao nhiêu người nhiễm
+    - [Cà Mau]{"entity":"location"} con số người nhiễm là bao nhiêu
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"} con số người nhiễm là bao nhiêu
+    - [Bạc Liêu]{"entity":"location"} con số người nhiễm là bao nhiêu
+    - [Bắc Kạn]{"entity":"location"} con số người nhiễm là bao nhiêu
+    - [Bắc Giang]{"entity":"location"} hiện có bao nhiêu người nhiễm rồi
+    - [Bắc Ninh]{"entity":"location"} hiện có bao nhiêu người nhiễm rồi
+    - [Bến Tre]{"entity":"location"} hiện có bao nhiêu người nhiễm rồi
+    - [Bình Dương]{"entity":"location"} hiện có bao nhiêu người nhiễm rồi
+    - [Bình Định]{"entity":"location"} có nhiều người nhiễm chưa
+    - [Bình Phước]{"entity":"location"} có nhiều người nhiễm chưa
+    - [Bình Thuận]{"entity":"location"} có nhiều người nhiễm chưa
+    - [Cao Bằng]{"entity":"location"} có nhiều người nhiễm chưa
+    - [Đà Nẵng]{"entity":"location"} bao người lây bệnh rồi
+    - [Đắk Lắk]{"entity":"location"} bao người lây bệnh rồi
+    - [Đắk Nông]{"entity":"location"} bao người lây bệnh rồi
+    - [Điện Biên]{"entity":"location"} bao người lây bệnh rồi
+    - [Đồng Nai]{"entity":"location"} bao người lây bệnh rồi
+    - [Đồng Tháp]{"entity":"location"} có bao nhiêu người bị lây bệnh
+    - [Gia Lai]{"entity":"location"} có bao nhiêu người bị lây bệnh
+    - [Hà Giang]{"entity":"location"} có bao nhiêu người bị lây bệnh
+    - [Hà Nam]{"entity":"location"} có bao nhiêu người bị lây bệnh
+    - [Hà Tây]{"entity":"location"} có bao nhiêu người bị lây bệnh
+    - [Hà Tĩnh]{"entity":"location"} con số người lây bệnh là bao nhiêu
+    - [Hải Dương]{"entity":"location"} con số người lây bệnh là bao nhiêu
+    - [Hải Phòng]{"entity":"location"} con số người lây bệnh là bao nhiêu
+    - [Hòa Bình]{"entity":"location"} con số người lây bệnh là bao nhiêu
+    - [Hưng Yên]{"entity":"location"} hiện có bao nhiêu người lây bệnh rồi
+    - [Khánh Hòa]{"entity":"location"} hiện có bao nhiêu người lây bệnh rồi
+    - [Bình Thuận]{"entity":"location"} hiện có bao nhiêu người lây bệnh rồi
+    - [Cao Bằng]{"entity":"location"} hiện có bao nhiêu người lây bệnh rồi
+    - [Đà Nẵng]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Đắk Lắk]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Đắk Nông]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Điện Biên]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Đồng Nai]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Đồng Tháp]{"entity":"location"} có nhiều người lây bệnh chưa
+    - [Đồng Tháp]{"entity":"location"} bao người mắc bệnh rồi
+    - [Gia Lai]{"entity":"location"} bao người mắc bệnh rồi
+    - [Hà Giang]{"entity":"location"} bao người mắc bệnh rồi
+    - [Hà Nam]{"entity":"location"} bao người mắc bệnh rồi
+    - [Hà Tây]{"entity":"location"} có bao nhiêu người bị mắc bệnh
+    - [Hà Tĩnh]{"entity":"location"} có bao nhiêu người bị mắc bệnh
+    - [Hải Dương]{"entity":"location"} có bao nhiêu người bị mắc bệnh
+    - [Hải Phòng]{"entity":"location"} có bao nhiêu người bị mắc bệnh
+    - [Hòa Bình]{"entity":"location"} con số người mắc bệnh là bao nhiêu
+    - [Hưng Yên]{"entity":"location"} con số người mắc bệnh là bao nhiêu
+    - [Khánh Hòa]{"entity":"location"} con số người mắc bệnh là bao nhiêu
+    - [Kon Tum]{"entity":"location"} con số người mắc bệnh là bao nhiêu
+    - [Lai Châu]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Lào Cai]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Lạng Sơn]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Lâm Đồng]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Long An]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Nam Định]{"entity":"location"} hiện có bao nhiêu người mắc bệnh rồi
+    - [Ninh Thuận]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Phú Thọ]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Phú Yên]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Quảng Bình]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Quảng Nam]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Quảng Ngãi]{"entity":"location"} có nhiều người mắc bệnh chưa
+    - [Quảng Ninh]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    - [Quảng Trị]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    - [Sóc Trăng]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    - [Sơn La]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    - [Tây Ninh]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    - [Thái Bình]{"entity":"location"} số ca bị nhiễm bệnh là bao nhiêu
+    -  bao người nhiễm rồi ở [Trà Vinh]{"entity":"location"}
+    -  bao người nhiễm rồi ở [Tuyên Quang]{"entity":"location"}
+    -  bao người nhiễm rồi ở [Vĩnh Phúc]{"entity":"location"}
+    -  bao người nhiễm rồi ở [Yên Bái]{"entity":"location"}
+    -  có bao nhiêu người nhiễm ở [Thái Bình]{"entity":"location"}
+    -  có bao nhiêu người nhiễm ở [Thái Nguyên]{"entity":"location"}
+    -  có bao nhiêu người nhiễm ở [Thanh Hóa]{"entity":"location"}
+    -  có bao nhiêu người nhiễm ở [Thừa Thiên Huế]{"entity":"location"}
+    -  con số người nhiễm là bao nhiêu ở [Quảng Trị]{"entity":"location"}
+    -  con số người nhiễm là bao nhiêu ở [Sóc Trăng]{"entity":"location"}
+    -  con số người nhiễm là bao nhiêu ở [Sơn La]{"entity":"location"}
+    -  con số người nhiễm là bao nhiêu ở [Tây Ninh]{"entity":"location"}
+    -  hiện có bao nhiêu người nhiễm rồi ở [Phú Yên]{"entity":"location"}
+    -  hiện có bao nhiêu người nhiễm rồi ở [Quảng Bình]{"entity":"location"}
+    -  hiện có bao nhiêu người nhiễm rồi ở [Quảng Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người nhiễm rồi ở [Quảng Ngãi]{"entity":"location"}
+    -  có nhiều người nhiễm chưa ở [Nghệ An]{"entity":"location"}
+    -  có nhiều người nhiễm chưa ở [Ninh Bình]{"entity":"location"}
+    -  có nhiều người nhiễm chưa ở [Ninh Thuận]{"entity":"location"}
+    -  có nhiều người nhiễm chưa ở [Phú Thọ]{"entity":"location"}
+    -  bao người lây bệnh rồi ở [Lạng Sơn]{"entity":"location"}
+    -  bao người lây bệnh rồi ở [Lâm Đồng]{"entity":"location"}
+    -  bao người lây bệnh rồi ở [Long An]{"entity":"location"}
+    -  bao người lây bệnh rồi ở [Nam Định]{"entity":"location"}
+    -  có bao nhiêu người bị lây bệnh ở [Khánh Hòa]{"entity":"location"}
+    -  có bao nhiêu người bị lây bệnh ở [Kon Tum]{"entity":"location"}
+    -  có bao nhiêu người bị lây bệnh ở [Lai Châu]{"entity":"location"}
+    -  có bao nhiêu người bị lây bệnh ở [Lào Cai]{"entity":"location"}
+    -  con số người lây bệnh là bao nhiêu ở [Hải Dương]{"entity":"location"}
+    -  con số người lây bệnh là bao nhiêu ở [Hải Phòng]{"entity":"location"}
+    -  con số người lây bệnh là bao nhiêu ở [Hòa Bình]{"entity":"location"}
+    -  con số người lây bệnh là bao nhiêu ở [Hưng Yên]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi ở [Hà Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi ở [Hà Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi ở [Hà Tây]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi ở [Hà Tĩnh]{"entity":"location"}
+    -  số ca bị nhiễm bệnh là bao nhiêu tại [Hồ Chí Minh]{"entity":"location"}
+    -  số ca bị nhiễm bệnh là bao nhiêu tại [Hà Nội]{"entity":"location"}
+    -  số ca bị nhiễm bệnh là bao nhiêu tại [Cần Thơ]{"entity":"location"}
+    -  số ca bị nhiễm bệnh là bao nhiêu tại [Kiên Giang]{"entity":"location"}
+    -  có nhiều người mắc bệnh chưa tại [Tiền Giang]{"entity":"location"}
+    -  có nhiều người mắc bệnh chưa tại [Vĩnh Long]{"entity":"location"}
+    -  có nhiều người mắc bệnh chưa tại [Kiên Giang]{"entity":"location"}
+    -  có nhiều người mắc bệnh chưa tại [An Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người mắc bệnh rồi tạ [Cà Mau]{"entity":"location"}
+    -  hiện có bao nhiêu người mắc bệnh rồi tạ [Bà Rịa-Vũng Tàu]{"entity":"location"}
+    -  hiện có bao nhiêu người mắc bệnh rồi tạ [Bạc Liêu]{"entity":"location"}
+    -  hiện có bao nhiêu người mắc bệnh rồi tạ [Bắc Kạn]{"entity":"location"}
+    -  con số người mắc bệnh là bao nhiêu tại [Bắc Giang]{"entity":"location"}
+    -  con số người mắc bệnh là bao nhiêu tại [Bắc Ninh]{"entity":"location"}
+    -  con số người mắc bệnh là bao nhiêu tại [Bến Tre]{"entity":"location"}
+    -  con số người mắc bệnh là bao nhiêu tại [Bình Dương]{"entity":"location"}
+    -  có bao nhiêu người bị mắc bệnh tại [Bình Định]{"entity":"location"}
+    -  có bao nhiêu người bị mắc bệnh tại [Bình Phước]{"entity":"location"}
+    -  có bao nhiêu người bị mắc bệnh tại [Bình Thuận]{"entity":"location"}
+    -  có bao nhiêu người bị mắc bệnh tại [Cao Bằng]{"entity":"location"}
+    -  bao người mắc bệnh rồi tại [Đà Nẵng]{"entity":"location"}
+    -  bao người mắc bệnh rồi tại [Đắk Lắk]{"entity":"location"}
+    -  bao người mắc bệnh rồi tại [Đắk Nông]{"entity":"location"}
+    -  bao người mắc bệnh rồi tại [Điện Biên]{"entity":"location"}
+    -  có nhiều người lây bệnh chưa tại [Đồng Nai]{"entity":"location"}
+    -  có nhiều người lây bệnh chưa tại [Đồng Tháp]{"entity":"location"}
+    -  có nhiều người lây bệnh chưa tại [Gia Lai]{"entity":"location"}
+    -  có nhiều người lây bệnh chưa tại [Hà Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi tại [Hà Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi tại [Hà Tây]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi tại [Hà Tĩnh]{"entity":"location"}
+    -  hiện có bao nhiêu người lây bệnh rồi tại [Hải Dương]{"entity":"location"}
+    
+- intent: ask_death_province
+  examples: |
+    - [Hồ Chí Minh]{"entity":"location"} bao người chết rồi
+    - [Hà Nội]{"entity":"location"} bao người chết rồi
+    - [Cần Thơ]{"entity":"location"} bao người chết rồi
+    - [Kiên Giang]{"entity":"location"} bao người chết rồi
+    - [Tiền Giang]{"entity":"location"} con số người chết là bao nhiêu
+    - [Vĩnh Long]{"entity":"location"} con số người chết là bao nhiêu
+    - [Kiên Giang]{"entity":"location"} con số người chết là bao nhiêu
+    - [An Giang]{"entity":"location"} con số người chết là bao nhiêu
+    - [Cà Mau]{"entity":"location"} hiện có bao nhiêu người chết rồi
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"} hiện có bao nhiêu người chết rồi
+    - [Bạc Liêu]{"entity":"location"} hiện có bao nhiêu người chết rồi
+    - [Bắc Kạn]{"entity":"location"} hiện có bao nhiêu người chết rồi
+    - [Bắc Giang]{"entity":"location"} có bao nhiêu người chết
+    - [Bắc Ninh]{"entity":"location"} có bao nhiêu người chết
+    - [Bến Tre]{"entity":"location"} có bao nhiêu người chếtnhiêu*
+    - [Bình Dương]{"entity":"location"} có bao nhiêu người chết
+    - [Bình Định]{"entity":"location"} có nhiều người chết chưa
+    - [Bình Phước]{"entity":"location"} có nhiều người chết chưa
+    - [Bình Thuận]{"entity":"location"} có nhiều người chết chưa
+    - [Cao Bằng]{"entity":"location"} có nhiều người chết chưa
+    - [Đà Nẵng]{"entity":"location"} bao người tử vong rồi
+    - [Đắk Lắk]{"entity":"location"} bao người tử vong rồi
+    - [Đắk Nông]{"entity":"location"} bao người tử vong rồi
+    - [Điện Biên]{"entity":"location"} bao người tử vong rồi
+    - [Đồng Nai]{"entity":"location"} bao người tử vong rồi
+    - [Đồng Tháp]{"entity":"location"} có bao nhiêu người tử vong
+    - [Gia Lai]{"entity":"location"} có bao nhiêu người tử vong
+    - [Hà Giang]{"entity":"location"} có bao nhiêu người tử vong
+    - [Hà Nam]{"entity":"location"} có bao nhiêu người tử vong
+    - [Hà Tây]{"entity":"location"} có bao nhiêu người tử vong
+    - [Hà Tĩnh]{"entity":"location"} con số người tử vong là bao nhiêu
+    - [Hải Dương]{"entity":"location"} con số người tử vong là bao nhiêu
+    - [Hải Phòng]{"entity":"location"} con số người tử vong là bao nhiêu
+    - [Hòa Bình]{"entity":"location"} con số người tử vong là bao nhiêu
+    - [Hưng Yên]{"entity":"location"} hiện có bao nhiêu người tử vong rồi
+    - [Khánh Hòa]{"entity":"location"} hiện có bao nhiêu người tử vong rồi
+    - [Bình Thuận]{"entity":"location"} hiện có bao nhiêu người tử vong rồi
+    - [Cao Bằng]{"entity":"location"} hiện có bao nhiêu người tử vong rồi
+    - [Đà Nẵng]{"entity":"location"} có nhiều người tử vong chưa
+    - [Đắk Lắk]{"entity":"location"} có nhiều người tử vong chưa
+    - [Đắk Nông]{"entity":"location"} có nhiều người tử vong chưa
+    - [Điện Biên]{"entity":"location"} có nhiều người tử vong chưa
+    - [Đồng Nai]{"entity":"location"} có nhiều người tử vong chưa
+    - [Đồng Tháp]{"entity":"location"} có nhiều người tử vong chưa
+    - [Đồng Tháp]{"entity":"location"} bao người thiệt mạng rồi
+    - [Gia Lai]{"entity":"location"} bao người thiệt mạng rồi
+    - [Hà Giang]{"entity":"location"} bao người thiệt mạng rồi
+    - [Hà Nam]{"entity":"location"} bao người thiệt mạng rồi
+    - [Hà Tây]{"entity":"location"} có bao nhiêu người thiệt mạng
+    - [Hà Tĩnh]{"entity":"location"} có bao nhiêu người thiệt mạng
+    - [Hải Dương]{"entity":"location"} có bao nhiêu người thiệt mạng
+    - [Hải Phòng]{"entity":"location"} có bao nhiêu người thiệt mạng
+    - [Hòa Bình]{"entity":"location"} con số người thiệt mạng là bao nhiêu
+    - [Hưng Yên]{"entity":"location"} con số người thiệt mạng là bao nhiêu
+    - [Khánh Hòa]{"entity":"location"} con số người thiệt mạng là bao nhiêu
+    - [Kon Tum]{"entity":"location"} con số người thiệt mạng là bao nhiêu
+    - [Lai Châu]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Lào Cai]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Lạng Sơn]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Lâm Đồng]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Long An]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Nam Định]{"entity":"location"} hiện có bao nhiêu người thiệt mạng rồi
+    - [Ninh Thuận]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Phú Thọ]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Phú Yên]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Quảng Bình]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Quảng Nam]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Quảng Ngãi]{"entity":"location"} có nhiều người thiệt mạng chưa
+    - [Quảng Ninh]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    - [Quảng Trị]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    - [Sóc Trăng]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    - [Sơn La]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    - [Tây Ninh]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    - [Thái Bình]{"entity":"location"} có bao nhiêu người bệnh bị chết
+    -  bao người chết rồi ở [Trà Vinh]{"entity":"location"}
+    -  bao người chết rồi ở [Tuyên Quang]{"entity":"location"}
+    -  bao người chết rồi ở [Vĩnh Phúc]{"entity":"location"}
+    -  bao người chết rồi ở [Yên Bái]{"entity":"location"}
+    -  con số người chết là bao nhiêu ở [Thái Bình]{"entity":"location"}
+    -  con số người chết là bao nhiêu ở [Thái Nguyên]{"entity":"location"}
+    -  con số người chết là bao nhiêu ở [Thanh Hóa]{"entity":"location"}
+    -  con số người chết là bao nhiêu ở [Thừa Thiên Huế]{"entity":"location"}
+    -  hiện có bao nhiêu người chết rồi ở [Quảng Trị]{"entity":"location"}
+    -  hiện có bao nhiêu người chết rồi ở [Sóc Trăng]{"entity":"location"}
+    -  hiện có bao nhiêu người chết rồi ở [Sơn La]{"entity":"location"}
+    -  hiện có bao nhiêu người chết rồi ở [Tây Ninh]{"entity":"location"}
+    -  có bao nhiêu người chết ở [Phú Yên]{"entity":"location"}
+    -  có bao nhiêu người chết ở [Quảng Bình]{"entity":"location"}
+    -  có bao nhiêu người chết ở [Quảng Nam]{"entity":"location"}
+    -  có bao nhiêu người chết ở [Quảng Ngãi]{"entity":"location"}
+    -  có nhiều người chết chưa ở [Nghệ An]{"entity":"location"}
+    -  có nhiều người chết chưa ở [Ninh Bình]{"entity":"location"}
+    -  có nhiều người chết chưa ở [Ninh Thuận]{"entity":"location"}
+    -  có nhiều người chết chưa ở [Phú Thọ]{"entity":"location"}
+    -  bao người tử vong rồi ở [Lạng Sơn]{"entity":"location"}
+    -  bao người tử vong rồi ở [Lâm Đồng]{"entity":"location"}
+    -  bao người tử vong rồi ở [Long An]{"entity":"location"}
+    -  bao người tử vong rồi ở [Nam Định]{"entity":"location"}
+    -  có bao nhiêu người tử vong ở [Khánh Hòa]{"entity":"location"}
+    -  có bao nhiêu người tử vong ở [Kon Tum]{"entity":"location"}
+    -  có bao nhiêu người tử vong ở [Lai Châu]{"entity":"location"}
+    -  có bao nhiêu người tử vong ở [Lào Cai]{"entity":"location"}
+    -  con số người tử vong là bao nhiêu ở [Hải Dương]{"entity":"location"}
+    -  con số người tử vong là bao nhiêu ở [Hải Phòng]{"entity":"location"}
+    -  con số người tử vong là bao nhiêu ở [Hòa Bình]{"entity":"location"}
+    -  con số người tử vong là bao nhiêu ở [Hưng Yên]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi ở [Hà Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi ở [Hà Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi ở [Hà Tây]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi ở [Hà Tĩnh]{"entity":"location"}
+    -  có bao nhiêu người bệnh bị chết tại [Hồ Chí Minh]{"entity":"location"}
+    -  có bao nhiêu người bệnh bị chết tại [Hà Nội]{"entity":"location"}
+    -  có bao nhiêu người bệnh bị chết tại [Cần Thơ]{"entity":"location"}
+    -  có bao nhiêu người bệnh bị chết tại [Kiên Giang]{"entity":"location"}
+    -  có nhiều người thiệt mạng chưa tại [Tiền Giang]{"entity":"location"}
+    -  có nhiều người thiệt mạng chưa tại [Vĩnh Long]{"entity":"location"}
+    -  có nhiều người thiệt mạng chưa tại [Kiên Giang]{"entity":"location"}
+    -  có nhiều người thiệt mạng chưa tại [An Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người thiệt mạng rồi tạ [Cà Mau]{"entity":"location"}
+    -  hiện có bao nhiêu người thiệt mạng rồi tạ [Bà Rịa-Vũng Tàu]{"entity":"location"}
+    -  hiện có bao nhiêu người thiệt mạng rồi tạ [Bạc Liêu]{"entity":"location"}
+    -  hiện có bao nhiêu người thiệt mạng rồi tạ [Bắc Kạn]{"entity":"location"}
+    -  con số người thiệt mạng là bao nhiêu tại [Bắc Giang]{"entity":"location"}
+    -  con số người thiệt mạng là bao nhiêu tại [Bắc Ninh]{"entity":"location"}
+    -  con số người thiệt mạng là bao nhiêu tại [Bến Tre]{"entity":"location"}
+    -  con số người thiệt mạng là bao nhiêu tại [Bình Dương]{"entity":"location"}
+    -  có bao nhiêu người thiệt mạng tại [Bình Định]{"entity":"location"}
+    -  có bao nhiêu người thiệt mạng tại [Bình Phước]{"entity":"location"}
+    -  có bao nhiêu người thiệt mạng tại [Bình Thuận]{"entity":"location"}
+    -  có bao nhiêu người thiệt mạng tại [Cao Bằng]{"entity":"location"}
+    -  bao người thiệt mạng rồi tại [Đà Nẵng]{"entity":"location"}
+    -  bao người thiệt mạng rồi tại [Đắk Lắk]{"entity":"location"}
+    -  bao người thiệt mạng rồi tại [Đắk Nông]{"entity":"location"}
+    -  bao người thiệt mạng rồi tại [Điện Biên]{"entity":"location"}
+    -  có nhiều người tử vong chưa tại [Đồng Nai]{"entity":"location"}
+    -  có nhiều người tử vong chưa tại [Đồng Tháp]{"entity":"location"}
+    -  có nhiều người tử vong chưa tại [Gia Lai]{"entity":"location"}
+    -  có nhiều người tử vong chưa tại [Hà Giang]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi tại [Hà Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi tại [Hà Tây]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi tại [Hà Tĩnh]{"entity":"location"}
+    -  hiện có bao nhiêu người tử vong rồi tại [Hải Dương]{"entity":"location"}
+    
+- intent: ask_resolve_province
+  examples: |
+    - [Hồ Chí Minh]{"entity":"location"} bao người khỏi bệnh rồi
+    - [Hà Nội]{"entity":"location"} bao người khỏi bệnh rồi
+    - [Cần Thơ]{"entity":"location"} bao người khỏi bệnh rồi
+    - [Kiên Giang]{"entity":"location"} bao người khỏi bệnh rồi
+    - [Tiền Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Vĩnh Long]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Kiên Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [An Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Cà Mau]{"entity":"location"} con số người khỏi bệnh là bao nhiêu
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"} con số người khỏi bệnh là bao nhiêu
+    - [Bạc Liêu]{"entity":"location"} con số người khỏi bệnh là bao nhiêu
+    - [Bắc Kạn]{"entity":"location"} con số người khỏi bệnh là bao nhiêu
+    - [Bắc Giang]{"entity":"location"} hiện có bao nhiêu người khỏi bệnh rồi
+    - [Bắc Ninh]{"entity":"location"} hiện có bao nhiêu người khỏi bệnh rồi
+    - [Bến Tre]{"entity":"location"} hiện có bao nhiêu người khỏi bệnh rồi
+    - [Bình Dương]{"entity":"location"} hiện có bao nhiêu người khỏi bệnh rồi
+    - [Bình Định]{"entity":"location"} có nhiều người khỏi bệnh chưa
+    - [Bình Phước]{"entity":"location"} có nhiều người khỏi bệnh chưa
+    - [Bình Thuận]{"entity":"location"} có nhiều người khỏi bệnh chưa
+    - [Cao Bằng]{"entity":"location"} có nhiều người khỏi bệnh chưa
+    - [Đà Nẵng]{"entity":"location"} số trường hợp khỏi bệnh là bao nhiêu
+    - [Đắk Lắk]{"entity":"location"} số trường hợp khỏi bệnh là bao nhiêu
+    - [Đắk Nông]{"entity":"location"} số trường hợp khỏi bệnh là bao nhiêu
+    - [Điện Biên]{"entity":"location"} số trường hợp khỏi bệnh là bao nhiêu
+    - [Đồng Nai]{"entity":"location"} số trường hợp khỏi bệnh là bao nhiêu
+    - [Đồng Tháp]{"entity":"location"} nhiều người được chữa khỏi chưa
+    - [Gia Lai]{"entity":"location"} nhiều người được chữa khỏi chưa
+    - [Hà Giang]{"entity":"location"} nhiều người được chữa khỏi chưa
+    - [Hà Nam]{"entity":"location"} nhiều người được chữa khỏi chưa
+    - [Hà Tây]{"entity":"location"} nhiều người được chữa khỏi chưa
+    - [Hà Tĩnh]{"entity":"location"} hiện nay đã có bao nhiêu người được chữa khỏi
+    - [Hải Dương]{"entity":"location"} hiện nay đã có bao nhiêu người được chữa khỏi
+    - [Hải Phòng]{"entity":"location"} hiện nay đã có bao nhiêu người được chữa khỏi
+    - [Hòa Bình]{"entity":"location"} hiện nay đã có bao nhiêu người được chữa khỏi
+    - [Hưng Yên]{"entity":"location"} có bao nhiêu người được chữa khỏi
+    - [Khánh Hòa]{"entity":"location"} có bao nhiêu người được chữa khỏi
+    - [Bình Thuận]{"entity":"location"} có bao nhiêu người được chữa khỏi
+    - [Cao Bằng]{"entity":"location"} có bao nhiêu người được chữa khỏi
+    - [Đà Nẵng]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Đắk Lắk]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Đắk Nông]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Điện Biên]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Đồng Nai]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Đồng Tháp]{"entity":"location"} số ca nhiễm bệnh hồi phục
+    - [Đồng Tháp]{"entity":"location"} số bệnh nhân đã hồi phục
+    - [Gia Lai]{"entity":"location"} số bệnh nhân đã hồi phục
+    - [Hà Giang]{"entity":"location"} số bệnh nhân đã hồi phục
+    - [Hà Nam]{"entity":"location"} số bệnh nhân đã hồi phục
+    -  bao người khỏi bệnh rồi ở [Trà Vinh]{"entity":"location"}
+    -  bao người khỏi bệnh rồi ở [Tuyên Quang]{"entity":"location"}
+    -  bao người khỏi bệnh rồi ở [Vĩnh Phúc]{"entity":"location"}
+    -  bao người khỏi bệnh rồi ở [Yên Bái]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thái Bình]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thái Nguyên]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thanh Hóa]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thừa Thiên Huế]{"entity":"location"}
+    -  con số người khỏi bệnh là bao nhiêu ở [Quảng Trị]{"entity":"location"}
+    -  con số người khỏi bệnh là bao nhiêu ở [Sóc Trăng]{"entity":"location"}
+    -  con số người khỏi bệnh là bao nhiêu ở [Sơn La]{"entity":"location"}
+    -  con số người khỏi bệnh là bao nhiêu ở [Tây Ninh]{"entity":"location"}
+    -  hiện có bao nhiêu người khỏi bệnh rồi ở [Phú Yên]{"entity":"location"}
+    -  hiện có bao nhiêu người khỏi bệnh rồi ở [Quảng Bình]{"entity":"location"}
+    -  hiện có bao nhiêu người khỏi bệnh rồi ở [Quảng Nam]{"entity":"location"}
+    -  hiện có bao nhiêu người khỏi bệnh rồi ở [Quảng Ngãi]{"entity":"location"}
+    -  có nhiều người khỏi bệnh chưa ở [Nghệ An]{"entity":"location"}
+    -  có nhiều người khỏi bệnh chưa ở [Ninh Bình]{"entity":"location"}
+    -  có nhiều người khỏi bệnh chưa ở [Ninh Thuận]{"entity":"location"}
+    -  có nhiều người khỏi bệnh chưa ở [Phú Thọ]{"entity":"location"}
+    -  số trường hợp khỏi bệnh là bao nhiêu ở [Lạng Sơn]{"entity":"location"}
+    -  số trường hợp khỏi bệnh là bao nhiêu ở [Lâm Đồng]{"entity":"location"}
+    -  số trường hợp khỏi bệnh là bao nhiêu ở [Long An]{"entity":"location"}
+    -  số trường hợp khỏi bệnh là bao nhiêu ở [Nam Định]{"entity":"location"}
+    -  nhiều người được chữa khỏi chưa ở [Khánh Hòa]{"entity":"location"}
+    -  nhiều người được chữa khỏi chưa ở [Kon Tum]{"entity":"location"}
+    -  nhiều người được chữa khỏi chưa ở [Lai Châu]{"entity":"location"}
+    -  nhiều người được chữa khỏi chưa ở [Lào Cai]{"entity":"location"}
+    -  hiện nay đã có bao nhiêu người được chữa khỏi ở [Hải Dương]{"entity":"location"}
+    -  hiện nay đã có bao nhiêu người được chữa khỏi ở [Hải Phòng]{"entity":"location"}
+    -  hiện nay đã có bao nhiêu người được chữa khỏi ở [Hòa Bình]{"entity":"location"}
+    -  hiện nay đã có bao nhiêu người được chữa khỏi ở [Hưng Yên]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi ở [Hà Giang]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi ở [Hà Nam]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi ở [Hà Tây]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi ở [Hà Tĩnh]{"entity":"location"}
+    -  số bệnh nhân đã hồi phục tại [Đà Nẵng]{"entity":"location"}
+    -  số bệnh nhân đã hồi phục tại [Đắk Lắk]{"entity":"location"}
+    -  số bệnh nhân đã hồi phục tại [Đắk Nông]{"entity":"location"}
+    -  số bệnh nhân đã hồi phục tại [Điện Biên]{"entity":"location"}
+    -  số ca nhiễm bệnh hồi phục tại [Đồng Nai]{"entity":"location"}
+    -  số ca nhiễm bệnh hồi phục tại [Đồng Tháp]{"entity":"location"}
+    -  số ca nhiễm bệnh hồi phục tại [Gia Lai]{"entity":"location"}
+    -  số ca nhiễm bệnh hồi phục tại [Hà Giang]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi tại [Hà Nam]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi tại [Hà Tây]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi tại [Hà Tĩnh]{"entity":"location"}
+    -  có bao nhiêu người được chữa khỏi tại [Hải Dương]{"entity":"location"}
+    
+- intent: ask_all_province
+  examples: |
+    - [Hồ Chí Minh]{"entity":"location"} tình hình dịch bệnh thế nào
+    - [Hà Nội]{"entity":"location"} tình hình dịch bệnh thế nào
+    - [Cần Thơ]{"entity":"location"} tình hình dịch bệnh thế nào
+    - [Kiên Giang]{"entity":"location"} tình hình dịch bệnh thế nào
+    - [Tiền Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Vĩnh Long]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Kiên Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [An Giang]{"entity":"location"} có bao nhiêu người khỏi bệnh
+    - [Cà Mau]{"entity":"location"} xem thống kê dịch bệnh
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"} xem thống kê dịch bệnh
+    - [Bạc Liêu]{"entity":"location"} xem thống kê dịch bệnh
+    - [Bắc Kạn]{"entity":"location"} xem thống kê dịch bệnh
+    - [Bắc Giang]{"entity":"location"} xem chi tiết dịch bệnh
+    - [Bắc Ninh]{"entity":"location"} xem chi tiết dịch bệnh
+    - [Bến Tre]{"entity":"location"} xem chi tiết dịch bệnh
+    - [Bình Dương]{"entity":"location"} xem chi tiết dịch bệnh
+    - [Bình Định]{"entity":"location"} dịch bệnh thế nào rồi
+    - [Bình Phước]{"entity":"location"} dịch bệnh thế nào rồi
+    - [Bình Thuận]{"entity":"location"} dịch bệnh thế nào rồi
+    - [Cao Bằng]{"entity":"location"} dịch bệnh thế nào rồi
+    - [Đà Nẵng]{"entity":"location"} dịch bệnh ra sao rồi
+    - [Đắk Lắk]{"entity":"location"} dịch bệnh ra sao rồi
+    - [Đắk Nông]{"entity":"location"} dịch bệnh ra sao rồi
+    - [Điện Biên]{"entity":"location"} dịch bệnh ra sao rồi
+    - [Đồng Nai]{"entity":"location"} dịch bệnh ra sao rồi
+    - [Đồng Tháp]{"entity":"location"} thông tin tất cả về dịch bệnh corrona 2019
+    - [Gia Lai]{"entity":"location"} thông tin tất cả về dịch bệnh corrona 2019
+    - [Hà Giang]{"entity":"location"} thông tin tất cả về dịch bệnh corrona 2019
+    - [Hà Nam]{"entity":"location"} thông tin tất cả về dịch bệnh corrona 2019
+    - [Hà Tây]{"entity":"location"} thông tin tất cả về dịch bệnh corrona 2019
+    - [Hà Tĩnh]{"entity":"location"} tất cả về dịch bệnh corrona 2019
+    - [Hải Dương]{"entity":"location"} tất cả về dịch bệnh corrona 2019
+    - [Hải Phòng]{"entity":"location"} tất cả về dịch bệnh corrona 2019
+    - [Hòa Bình]{"entity":"location"} tất cả về dịch bệnh corrona 2019
+    - [Hưng Yên]{"entity":"location"} tất tần tật về dịch bệnh corrona 2019
+    - [Khánh Hòa]{"entity":"location"} tất tần tật về dịch bệnh corrona 2019
+    - [Bình Thuận]{"entity":"location"} tất tần tật về dịch bệnh corrona 2019
+    - [Cao Bằng]{"entity":"location"} tất tần tật về dịch bệnh corrona 2019
+    - [Đà Nẵng]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    - [Đắk Lắk]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    - [Đắk Nông]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    - [Điện Biên]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    - [Đồng Nai]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    - [Đồng Tháp]{"entity":"location"} tất tần tật về dịch bệnh vũ hán
+    -  tình hình dịch bệnh thế nào ở [Trà Vinh]{"entity":"location"}
+    -  tình hình dịch bệnh thế nào ở [Tuyên Quang]{"entity":"location"}
+    -  tình hình dịch bệnh thế nào ở [Vĩnh Phúc]{"entity":"location"}
+    -  tình hình dịch bệnh thế nào ở [Yên Bái]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thái Bình]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thái Nguyên]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thanh Hóa]{"entity":"location"}
+    -  có bao nhiêu người khỏi bệnh ở [Thừa Thiên Huế]{"entity":"location"}
+    -  xem thống kê dịch bệnh ở [Quảng Trị]{"entity":"location"}
+    -  xem thống kê dịch bệnh ở [Sóc Trăng]{"entity":"location"}
+    -  xem thống kê dịch bệnh ở [Sơn La]{"entity":"location"}
+    -  xem thống kê dịch bệnh ở [Tây Ninh]{"entity":"location"}
+    -  xem chi tiết dịch bệnh ở [Phú Yên]{"entity":"location"}
+    -  xem chi tiết dịch bệnh ở [Quảng Bình]{"entity":"location"}
+    -  xem chi tiết dịch bệnh ở [Quảng Nam]{"entity":"location"}
+    -  xem chi tiết dịch bệnh ở [Quảng Ngãi]{"entity":"location"}
+    -  dịch bệnh thế nào rồi ở [Nghệ An]{"entity":"location"}
+    -  dịch bệnh thế nào rồi ở [Ninh Bình]{"entity":"location"}
+    -  dịch bệnh thế nào rồi ở [Ninh Thuận]{"entity":"location"}
+    -  dịch bệnh thế nào rồi ở [Phú Thọ]{"entity":"location"}
+    -  dịch bệnh ra sao rồi ở [Lạng Sơn]{"entity":"location"}
+    -  dịch bệnh ra sao rồi ở [Lâm Đồng]{"entity":"location"}
+    -  dịch bệnh ra sao rồi ở [Long An]{"entity":"location"}
+    -  dịch bệnh ra sao rồi ở [Nam Định]{"entity":"location"}
+    -  thông tin tất cả về dịch bệnh corrona 2019 ở [Khánh Hòa]{"entity":"location"}
+    -  thông tin tất cả về dịch bệnh corrona 2019 ở [Kon Tum]{"entity":"location"}
+    -  thông tin tất cả về dịch bệnh corrona 2019 ở [Lai Châu]{"entity":"location"}
+    -  thông tin tất cả về dịch bệnh corrona 2019 ở [Lào Cai]{"entity":"location"}
+    -  tất cả về dịch bệnh corrona 2019 ở [Hải Dương]{"entity":"location"}
+    -  tất cả về dịch bệnh corrona 2019 ở [Hải Phòng]{"entity":"location"}
+    -  tất cả về dịch bệnh corrona 2019 ở [Hòa Bình]{"entity":"location"}
+    -  tất cả về dịch bệnh corrona 2019 ở [Hưng Yên]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 ở [Hà Giang]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 ở [Hà Nam]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 ở [Hà Tây]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 ở [Hà Tĩnh]{"entity":"location"}
+    -  tất tần tật về dịch bệnh vũ hán tại [Đồng Nai]{"entity":"location"}
+    -  tất tần tật về dịch bệnh vũ hán tại [Đồng Tháp]{"entity":"location"}
+    -  tất tần tật về dịch bệnh vũ hán tại [Gia Lai]{"entity":"location"}
+    -  tất tần tật về dịch bệnh vũ hán tại [Hà Giang]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 tại [Hà Nam]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 tại [Hà Tây]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 tại [Hà Tĩnh]{"entity":"location"}
+    -  tất tần tật về dịch bệnh corrona 2019 tại [Hải Dương]{"entity":"location"}
