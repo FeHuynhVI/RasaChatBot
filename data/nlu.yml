@@ -32,6 +32,9 @@ nlu:
     - em biết làm gì?
     - em hỗ trợ anh như thế nào?
     - cho anh xem các chức năng của em
+    - bạn có thể làm gì?
+    - bot có thể làm gì?
+    - chức năng của bạn
 
 - intent: thankyou
   examples: |
@@ -155,6 +158,20 @@ nlu:
     - corrona
     - corrona 19
     - coronavirus
+
+- synonym: Thành phố Hồ Chí Minh
+  examples: |
+    - TP Hồ Chí Minh
+    - TP Sài Gòn
+    - Thành phố Sài Gòn
+
+- synonym: Thành phố Cần Thơ
+  examples: |
+    - TP Cần Thơ
+
+- synonym: Thủ đô Hà Nội
+  examples: |
+    - Hà nội
 
 - intent: corona_intro
   examples: |
@@ -519,9 +536,9 @@ nlu:
     - [Baghpat]{"entity":"location"}
     - [Ghaziabad]{"entity":"location"}
     - [Moradabad]{"entity":"location"}
-    - [Hồ Chí Minh]{"entity":"location"}
+    - [Thành phố Hồ Chí Minh]{"entity":"location"}
     - [Hà Nội]{"entity":"location"}
-    - [Cần Thơ]{"entity":"location"}
+    - [Thành phố Cần Thơ]{"entity":"location"}
     - [Kiên Giang]{"entity":"location"}
     - [Tiền Giang]{"entity":"location"}
     - [Vĩnh Long]{"entity":"location"}
