@@ -122,6 +122,26 @@ stories:
   - intent: ask_all
   - action: action_summary
 
+- story: corona ask_death_province
+  steps:
+  - intent: ask_death_province
+  - action: action_redeath_province
+
+- story: corona ask_confirm_province
+  steps:
+  - intent: ask_confirm_province
+  - action: action_reconfirm_province
+
+- story: corona ask_resolve_province
+  steps:
+  - intent: ask_resolve_province
+  - action: action_reresolve_province
+  
+- story: corona ask_all_province
+  steps:
+  - intent: ask_all_province
+  - action: action_reall_province
+
 - story: scope
   steps:
   - intent: out_of_scope
