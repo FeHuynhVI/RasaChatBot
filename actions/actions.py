@@ -10,8 +10,7 @@ from cachetools import cached, TTLCache
 from dateutil.parser import parse
 from dateutil import tz
 from rasa_sdk.events import SlotSet
-
-
+import wikipedia
 
 # This files contains your custom actions which can be used to run
 # custom Python code.
@@ -32,6 +31,9 @@ import pathlib
 
 from rasa_sdk.events import FollowupAction
 
+import warnings
+
+warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 
 """
 Base URL for fetching data.
@@ -309,6 +311,35 @@ class ActionWeatherTracker(Action):
                 message = "Thời tiết " + city + ":" + "\n" "Nhiệt độ = " + str(temp_cel) + " Độ C" + "\n" "Áp suất không khí (in hPa unit) = " +str(pressure) + "\n""Humidity (in percentage) = " +str(humidity) + "\n"
 
             dispatcher.utter_message(text=message)
+
+         except Exception as err:
+            error = "Lỗi call action: " +  err
+            dispatcher.utter_message(text=error)
+
+         return [SlotSet('location',loc)]
+
+
+class ActionWikipediaTracker(Action):
+     wikipedia.set_lang("vi")
+     def name(self) -> Text:
+        return "action_wiki_pedia_tracker"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+         try:
+            loc = tracker.get_slot('location')
+
+            result = wikipedia.summary(loc, sentences = 3)
+
+            if not result:
+                resultSearch = wikipedia.search(loc, results = 1)
+                if len(resultSearch):
+                    result = wikipedia.summary(resultSearch[0], sentences = 3)
+
+
+            dispatcher.utter_message(text=result)
 
          except Exception as err:
             error = "Lỗi call action: " +  err

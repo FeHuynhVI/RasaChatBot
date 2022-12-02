@@ -127,6 +127,11 @@ stories:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
+- story: city_story
+  steps:
+  - intent: city
+  - action: action_wiki_pedia_tracker
+
 - story: weather_story1
   steps:
   - intent: greet

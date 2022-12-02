@@ -144,13 +144,23 @@ nlu:
     - ăn gì bây giờ
     - chọn giúp anh một quán ăn
 
+- synonym: covid
+  examples: |
+    - corona
+    - covid-19
+    - covid 19
+    - dịch vũ hán
+    - virut vũ hán
+    - corona 19
+    - corrona
+    - corrona 19
+    - coronavirus
+
 - intent: corona_intro
   examples: |
     - covid?
     - corona?
-    - vũ hán
     - corona là gì?
-    - covid-19 là gì?
     - covid-19 là gì?
     - bạn có thể cho tôi biết về virut vũ hán?
     - cho tôi biết về corona
@@ -192,10 +202,10 @@ nlu:
 
 - intent: corona_symptoms
   examples: |
-    - Các triệu chứng của coronavirus mới là gì?
-    - Các triệu chứng của virus corona mới là gì?
-    - Các triệu chứng của virus covid-19 mới là gì?
-    - Các triệu chứng của virus corona là gì?
+    - các triệu chứng của coronavirus mới là gì?
+    - các triệu chứng của virus corona mới là gì?
+    - các triệu chứng của virus covid-19 mới là gì?
+    - các triệu chứng của virus corona là gì?
     - triệu chứng của virus corona?
     - triệu chứng của virus covid19?
 
@@ -209,12 +219,12 @@ nlu:
 
 - intent: corona_vaccine
   examples: |
-    - Đã có vắc xin phòng ngừa virus corona chưa?
-    - Có vắc xin nào phòng ngừa virus covid19 không?
-    - Còn vắc-xin có sẵn để phòng ngừa vi-rút corona thì sao?
-    - Có vắc xin phòng virus corona??
-    - Có vắc xin phòng virus vũ hán?
-    - Đã có vắc-xin được phát triển cho virus corona?
+    - đã có vắc xin phòng ngừa virus corona chưa?
+    - có vắc xin nào phòng ngừa virus covid19 không?
+    - còn vắc-xin có sẵn để phòng ngừa vi-rút corona thì sao?
+    - có vắc xin phòng virus corona??
+    - có vắc xin phòng virus vũ hán?
+    - đã có vắc-xin được phát triển cho virus corona?
     - có vắc xin phòng virus corona chưa?
     - có vắc xin nào cho virus covid19 không?
     - có vắc xin nào cho virus vũ hán?
@@ -233,8 +243,8 @@ nlu:
 
 - intent: corona_infected_person
   examples: |
-    - Nếu Bạn hoặc Ai đó mà Bạn biết bị ốm hoặc đã tiếp xúc với người mắc COVID-19
-    - Nếu Bạn hoặc Ai đó Bạn Biết Bị Bệnh hoặc Đã Tiếp Xúc Với Người Bị Corona?
+    - nếu bạn hoặc ai đó mà bạn biết bị ốm hoặc đã tiếp xúc với người mắc COVID-19
+    - nếu bạn hoặc Ai đó bạn biết bị bệnh hoặc đã tiếp xúc với người bị Corona?
     - tôi nên làm gì nếu ai đó trong nhà tôi bị nhiễm corona?
     - tôi nên làm gì nếu ai đó trong nhà tôi bị nhiễm covid-19?
     - ai đó bị covid-19 tôi biết?
@@ -247,118 +257,112 @@ nlu:
 - intent: corona_states_stat
   examples: |
     - [Ấn Độ](state)
-    - Tôi sống ở [Ấn Độ](state:Ấn Độ)
-    - [Gujarat](state)
-    - Tôi sống ở [Gujarat](state:Gujarat)
-    - [Andhra Pradesh](state)
-    - Tôi sống ở [Andhra Pradesh](state:Andhra Pradesh)
-    - [Arunachal Pradesh](state)
-    - Tôi sống ở [Arunachal Pradesh](state:Arunachal Pradesh)
-    - [Assam](state)
-    - Tôi sống ở [Assam](state:Assam)
-    - [Bihar](state)
-    - Tôi sống ở [Bihar](state:Bihar)
-    - [Goa](state)
-    - Tôi sống ở [Goa](state:Goa)
-    - [Chhattisgarh](state)
-    - Tôi sống ở [Chhattisgarh](state:Chhattisgarh)
-    - [Haryana](state)
-    - Tôi sống ở [Haryana](state:Haryana)
-    - [Himachal Pradesh](state)
-    - Tôi sống ở [Himachal Pradesh](state:Himachal Pradesh)
-    - [Jharkhand](state)
-    - Tôi sống ở [Jharkhand](state:Jharkhand)
-    - [Karnataka](state)
-    - Tôi sống ở [Karnataka](state:Karnataka)
-    - [Madhya Pradesh](state)
-    - Tôi sống ở [Madhya Pradesh](state:Madhya Pradesh)
-    - [Kerala](state)
-    - Tôi sống ở [Kerala](state:Kerala)
-    - [Maharashtra](state)
-    - Tôi sống ở [Maharashtra](state:Maharashtra)
-    - [Manipur](state)
-    - Tôi sống ở [Manipur](state:Manipur)
-    - [Meghalaya](state)
-    - Tôi sống ở [Meghalaya](state:Meghalaya)
-    - [Mizoram](state)
-    - Tôi sống ở [Mizoram](state:Mizoram)
-    - [Nagaland](state)
-    - Tôi sống ở [Nagaland](state:Nagaland)
-    - [Odisha](state)
-    - Tôi sống ở [Odisha](state:Odisha)
-    - [Punjab](state)
-    - Tôi sống ở [Punjab](state:Punjab)
-    - [Rajasthan](state)
-    - Tôi sống ở [Rajasthan](state:Rajasthan)
-    - [Sikkim](state)
-    - Tôi sống ở [Sikkim](state:Sikkim)
-    - [Tamil Nadu](state)
-    - Tôi sống ở [Tamil Nadu](state:Tamil Nadu)
-    - [Telangana](state)
-    - Tôi sống ở [Telangana](state:Telangana)
-    - [Tripura](state)
-    - Tôi sống ở [Tripura](state:Tripura)
-    - [Uttar Pradesh](state)
-    - Tôi sống ở [Uttar Pradesh](state:Uttar Pradesh)
-    - [Uttarakhand](state)
-    - Tôi sống ở [Uttarakhand](state:Uttarakhand)
-    - [Tây Bengal](state)
-    - Tôi sống ở [Tây Bengal](state:Tây Bengal)
-    - [Đê-li](state)
-    - Tôi sống ở [Delhi](state:Delhi)
-    - Tôi sống ở [Việt Nam](state:Hồ Chí Minh)
-    - Tôi sống ở [Kiên giang](state:Kiên giang)
-    - Tôi sống ở [Cần Thơ](state:Cần Thơ)
-    - Tôi sống ở [Vĩnh long](state:Vĩnh long)
-    - Tôi sống ở [Hồ Chí Minh](state:Hồ Chí Minh)\
-    - Tôi sống ở [Sài Gòn](state:Sài Gòn)
-    - Tôi sống ở [Tiền Giang](state:Tiền Giang)
-    - Tôi sống ở [An Giang](state:An Giang)
-    - Tôi sống ở [Cà Mau](state:Cà Mau)
+    - tôi sống ở [Ấn Độ](state:Ấn Độ)
+    - [Gujarat](state) nơi tôi sống
+    - tôi sống ở [Gujarat](state:Gujarat)
+    - [Andhra Pradesh](state) nơi tôi sống
+    - tôi sống ở [Andhra Pradesh](state:Andhra Pradesh)
+    - [Arunachal Pradesh](state) nơi tôi sống
+    - tôi sống ở [Arunachal Pradesh](state:Arunachal Pradesh)
+    - [Assam](state) nơi tôi sống
+    - tôi sống ở [Assam](state:Assam)
+    - [Bihar](state) nơi tôi sống
+    - tôi sống ở [Bihar](state:Bihar)
+    - [Goa](state) nơi tôi sống
+    - tôi sống ở [Goa](state:Goa)
+    - [Chhattisgarh](state) nơi tôi sống
+    - tôi sống ở [Chhattisgarh](state:Chhattisgarh)
+    - [Haryana](state) nơi tôi sống
+    - tôi sống ở [Haryana](state:Haryana)
+    - [Himachal Pradesh](state) nơi tôi sống
+    - tôi sống ở [Himachal Pradesh](state:Himachal Pradesh)
+    - [Jharkhand](state) nơi tôi sống
+    - tôi sống ở [Jharkhand](state:Jharkhand)
+    - [Karnataka](state) nơi tôi sống
+    - tôi sống ở [Karnataka](state:Karnataka)
+    - [Madhya Pradesh](state) nơi tôi sống
+    - tôi sống ở [Madhya Pradesh](state:Madhya Pradesh)
+    - [Kerala](state) nơi tôi sống
+    - tôi sống ở [Kerala](state:Kerala)
+    - [Maharashtra](state) nơi tôi sống
+    - tôi sống ở [Maharashtra](state:Maharashtra)
+    - [Manipur](state) nơi tôi sống
+    - tôi sống ở [Manipur](state:Manipur)
+    - [Meghalaya](state) nơi tôi sống
+    - tôi sống ở [Meghalaya](state:Meghalaya)
+    - [Mizoram](state) nơi tôi sống
+    - tôi sống ở [Mizoram](state:Mizoram)
+    - [Nagaland](state) nơi tôi sống
+    - tôi sống ở [Nagaland](state:Nagaland)
+    - [Odisha](state) nơi tôi sống
+    - tôi sống ở [Odisha](state:Odisha)
+    - [Punjab](state) nơi tôi sống
+    - tôi sống ở [Punjab](state:Punjab)
+    - [Rajasthan](state) nơi tôi sống
+    - tôi sống ở [Rajasthan](state:Rajasthan)
+    - [Sikkim](state) nơi tôi sống
+    - tôi sống ở [Sikkim](state:Sikkim)
+    - [Tamil Nadu](state) nơi tôi sống
+    - tôi sống ở [Tamil Nadu](state:Tamil Nadu)
+    - [Telangana](state) nơi tôi sống
+    - tôi sống ở [Telangana](state:Telangana)
+    - [Tripura](state) nơi tôi sống
+    - tôi sống ở [Tripura](state:Tripura)
+    - [Uttar Pradesh](state) nơi tôi sống
+    - tôi sống ở [Uttar Pradesh](state:Uttar Pradesh)
+    - [Uttarakhand](state) nơi tôi sống
+    - tôi sống ở [Uttarakhand](state:Uttarakhand)
+    - [Tây Bengal](state) nơi tôi sống
+    - tôi sống ở [Tây Bengal](state:Tây Bengal)
+    - [Đê-li](state) nơi tôi sống
+    - tôi sống ở [Delhi](state:Delhi)
+    - tôi sống ở [Việt Nam](state:Việt Nam)
+    - tôi sống ở [Kiên giang](state:Kiên giang)
+    - tôi sống ở [Cần Thơ](state:Cần Thơ)
+    - tôi sống ở [Vĩnh long](state:Vĩnh long)
+    - tôi sống ở [Hồ Chí Minh](state:Hồ Chí Minh)
+    - tôi sống ở [Sài Gòn](state:Sài Gòn)
+    - tôi sống ở [Tiền Giang](state:Tiền Giang)
+    - tôi sống ở [An Giang](state:An Giang)
+    - tôi sống ở [Cà Mau](state:Cà Mau)
 
 - intent: corona_stats_check
   examples: |
     - Số liệu thống kê về covid19
-    - Số liệu thống kê về covid 19
-    - Số liệu thống kê về corona
     - Số liệu thống kê về dịch bệnh vũ hán
     - tôi muốn kiểm tra số liệu thống kê corona
     - số liệu theo dõi corona
     - số liệu thống kê corona
-    - số liệu theo dõi covid
     - số liệu theo dõi dịch bệnh vũ hán
     - thống kê covid
-    - thống kê corona
-    - thống kê covid19
-    - thống kê covid 19
     - thống kê về dịch bệnh vũ hán
 
 - intent: name_entry
   examples: |
-    - Tên tôi là [Ashish](name)
+    - tên tôi là [Ashish](name)
     - [ashish](name:Ashish) bên này
     - [vĩ](name:Vĩ) bên này
     - [nguyễn](name:Nguyễn) bên này
-    - Đó là [ashish](name:Ashish)
+    - đó là [ashish](name:Ashish)
     - [ashish](name:Ashish) là tên của tôi
-    - [Ashish](name)
-    - [Rahul](name)
+    - [Ashish](name) tên tôi
+    - [Rahul](name) tên tôi
     - Tên tôi là [Harsh](name)
     - [harsh](name:Harsh) bên này
     - [Harsh](name:Harsh) là tên của tôi
     - [Vĩ](name:Vĩ) là tên của tôi
-    - [Harsh](name)
-    - [Rahul](name)
-    - [Harsh](name:Harsh)
-    - Đó là [Tom](name)
-    - Tên tôi là [Bob](name)
+    - [Harsh](name) tên tôi
+    - [Rahul](name) tên tôi
+    - [Harsh](name:Harsh) tên tôi
+    - đó là [Tom](name)
+    - tên tôi là [Bob](name)
     - tên tôi là [Harsh](name)
     - tên là [Rajesh](name)
     - tên tôi là [demo](name)
     - tên là [demo](name)
-    - Tôi là [Harsh](name)
-    - Tôi là [Nandan](name)
-    - Tôi là [demo](name)
+    - tôi là [Harsh](name)
+    - tôi là [Nandan](name)
+    - tôi là [demo](name)
     - bản thân tôi [demo](name)
     - bản thân tôi [demo](name)
     - tôi là [Vĩ](name)
@@ -366,13 +370,13 @@ nlu:
     - tôi là [Khang](name)
     - tôi là [Hùng](name)
     - tôi là [Tùng](name)
-    - Tên tôi là [Vĩ](name)
-    - Tên tôi là [Nguyễn](name)
-    - Tên tôi là [Khang](name)
-    - Tên tôi là [Hùng](name)
-    - Tên tôi là [Tùng](name)
-    - Tên tôi là [Nhựt Khang](name)
-    - Tên tôi là [Khôi](name)
+    - tên tôi là [Vĩ](name)
+    - tên tôi là [Nguyễn](name)
+    - tên tôi là [Khang](name)
+    - tên tôi là [Hùng](name)
+    - tên tôi là [Tùng](name)
+    - tên tôi là [Nhựt Khang](name)
+    - tên tôi là [Khôi](name)
 
 - intent: ask_death
   examples: |
@@ -431,6 +435,11 @@ nlu:
 
 - intent: ask_all
   examples: |
+    - tình hình covid
+    - tình hình corrona
+    - tình hình corona
+    - tình hình covid 19
+    - tình hình covid-19
     - tình hình dịch bệnh thế nào
     - dịch bệnh tiến triển thế nào
     - xem thống kê dịch bệnh
@@ -446,18 +455,18 @@ nlu:
   examples: |
     - thời tiết ra sao
     - nhiệt độ hôm nay là bao nhiêu
-    - Nhiệt độ là gì
+    - nhiệt độ là gì
     - tôi muốn biết nhiệt độ
     - tôi muốn biết thời tiết hôm nay
     - cho tôi biết dự báo thời tiết
     - cho tôi biết điều gì đó về thời tiết
-    - Thời tiết hôm nay thế nào
+    - thời tiết hôm nay thế nào
 
 - intent: weather_specify_city
   examples: |
     - thời tiết [Cần Thơ]{"entity":"location"} ra sao
     - nhiệt độ [Cần thơ]{"entity":"location"} hôm nay?
-    - Nhiệt độ [Sài gòn]{"entity":"location"}?
+    - nhiệt độ [Sài gòn]{"entity":"location"}?
     - tôi muốn biết nhiệt độ [Cần Thơ]{"entity":"location"}
     - tôi muốn biết thời tiết hôm nay ở [Ninh Kiều]{"entity":"location"}
     - cho tôi biết dự báo thời tiết [Vĩnh Long]{"entity":"location"}
@@ -596,43 +605,43 @@ nlu:
 
 - intent: ask_weather
   examples: |
-    - Hiện tại thời tiết ở [Berlin]{"entity":"location"} như thế nào?
-    - Thời tiết ở [London]{"entity":"location"} hôm nay như thế nào?
-    - Cho tôi biết tình hình thời tiết ở [Paris]{"entity":"location"}
-    - Tôi muốn biết thời tiết ở [Vilnius]{"entity":"location"} hiện tại như thế nào?
-    - Hôm nay thời tiết ở [Barcelona]{"entity":"location"} có đẹp không?
-    - Tôi sẽ đến [London]{"entity":"location"} hôm nay và tôi muốn biết thời tiết ngoài đó như thế nào?
-    - Tôi đang lên kế hoạch cho chuyến đi tới [Amsterdam]{"entity":"location"} . Thời tiết ngoài đó thế nào?
-    - Vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
-    - ở [Luân Đôn]{"entity":"location"}
-    - [Litva]{"entity":"location"}
-    - Cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
-    - Điều kiện thời tiết ở [Ý]{"entity":"location"}
+    - hiện tại thời tiết ở [Berlin]{"entity":"location"} như thế nào?
+    - thời tiết ở [London]{"entity":"location"} hôm nay như thế nào?
+    - cho tôi biết tình hình thời tiết ở [Paris]{"entity":"location"}
+    - tôi muốn biết thời tiết ở [Vilnius]{"entity":"location"} hiện tại như thế nào?
+    - hôm nay thời tiết ở [Barcelona]{"entity":"location"} có đẹp không?
+    - tôi sẽ đến [London]{"entity":"location"} hôm nay và tôi muốn biết thời tiết ngoài đó như thế nào?
+    - tôi đang lên kế hoạch cho chuyến đi tới [Amsterdam]{"entity":"location"} . Thời tiết ngoài đó thế nào?
+    - vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
+    - chi tiết thời tiết [Luân Đôn]{"entity":"location"}
+    - khí hậu ở [Litva]{"entity":"location"}
+    - cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
+    - điều kiện thời tiết ở [Ý]{"entity":"location"}
     - thời tiết ở [Chennai]{"entity":"location"} như thế nào
     - thời tiết ở [Hungary]{"entity":"location"}
-    - [mumbai]{"entity":"location"}
-    - Nhiệt độ tại [Paris]{"entity":"location"}
-    - [Chennai]{"entity":"location"}
+    - nhiệt độ ở [mumbai]{"entity":"location"}
+    - nhiệt độ tại [Paris]{"entity":"location"}
+    - áp suất ở [Chennai]{"entity":"location"}
     - thời tiết ở [Berlin]{"entity":"location"} như thế nào
     - thời tiết ở [Dublin]{"entity":"location"} như thế nào
     - thời tiết ở [gurgaon]{"entity":"location"} thế nào
     - thời tiết ở [Greater noida]{"entity":"location"} như thế nào
-    - Hows [Tình hình Chennai hôm nay]{"entity":"location"}
-    - ở [banglore]{"entity":"location"}
+    - tình hình thời tiết [Tình hình Chennai hôm nay]{"entity":"location"}
+    - ở [banglore]{"entity":"location"} hôm nay thế nào rồi?
     - [lucknow]{"entity":"location"} hôm nay thế nào rồi?
-    - [Chennai]{"entity":"location"}
+    - [Chennai]{"entity":"location"} hôm nay nào rồi?
     - [Paris]{"entity":"location"} hôm nay thế nào?
-    - Cho tôi biết thời tiết hôm nay]{"entity":"location"}
-    - Nhiệt độ ở [hapur]{"entity":"location"}
-    - Thời tiết ở [noida]{"entity":"location"} thế nào
+    - cho tôi biết thời tiết hôm nay]{"entity":"location"}
+    - nhiệt độ ở [hapur]{"entity":"location"}
+    - thời tiết ở [noida]{"entity":"location"} thế nào
     - nhiệt độ ở [mohali]{"entity":"location"}
-    - Thời tiết ở [pune]{"entity":"location"} thế nào
-    - Thời tiết ở [kolkata]{"entity":"location"} thế nào
+    - thời tiết ở [pune]{"entity":"location"} thế nào
+    - thời tiết ở [kolkata]{"entity":"location"} thế nào
     - thời tiết ở [Chennai]{"entity":"location"} thế nào
-    - ở [Paris]{"entity":"location"}
-    - Ở [Chennai]{"entity":"location"}
-    - Ở [Mumbai]{"entity":"location"}
-    - Thời tiết ở [London]{"entity":"location"}
-    - Thời tiết ở [Việt Nam]{"entity":"location"}
-    - Thời tiết ở [Hà nội]{"entity":"location"}
-    - Thời tiết ở [Hồ Chí Minh]{"entity":"location"}
+    - thời tiết ở [Paris]{"entity":"location"}
+    - thới tiết Ở [Chennai]{"entity":"location"}
+    - thời tiết Ở [Mumbai]{"entity":"location"}
+    - thời tiết ở [London]{"entity":"location"}
+    - thời tiết ở [Việt Nam]{"entity":"location"}
+    - thời tiết ở [Hà nội]{"entity":"location"}
+    - thời tiết ở [Hồ Chí Minh]{"entity":"location"}

@@ -44,6 +44,8 @@ actions:
   - action_summary
   - act_number_domestic
   - action_weather_tracker
+  - action_get_city
+  - action_wiki_pedia_tracker
 
 entities:
   - name
