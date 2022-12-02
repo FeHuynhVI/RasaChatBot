@@ -1,6 +1,33 @@
 version: "3.0"
 
 nlu:    
+
+- synonym: covid
+  examples: |
+    - corona
+    - covid-19
+    - covid 19
+    - dịch vũ hán
+    - virut vũ hán
+    - corona 19
+    - corrona
+    - corrona 19
+    - coronavirus
+
+- synonym: Thành phố Hồ Chí Minh
+  examples: |
+    - TP Hồ Chí Minh
+    - TP Sài Gòn
+    - Thành phố Sài Gòn
+
+- synonym: Thành phố Cần Thơ
+  examples: |
+    - TP Cần Thơ
+
+- synonym: Thủ đô Hà Nội
+  examples: |
+    - Hà nội
+
 - intent: greet
   examples: |
     - chào em
@@ -147,31 +174,198 @@ nlu:
     - ăn gì bây giờ
     - chọn giúp anh một quán ăn
 
-- synonym: covid
-  examples: |
-    - corona
-    - covid-19
-    - covid 19
-    - dịch vũ hán
-    - virut vũ hán
-    - corona 19
-    - corrona
-    - corrona 19
-    - coronavirus
+# - intent: ask_weather
+#   examples: |
+#     - hiện tại thời tiết ở [Berlin]{"entity":"location"} như thế nào?
+#     - thời tiết ở [London]{"entity":"location"} hôm nay như thế nào?
+#     - cho tôi biết tình hình thời tiết ở [Paris]{"entity":"location"}
+#     - tôi muốn biết thời tiết ở [Vilnius]{"entity":"location"} hiện tại như thế nào?
+#     - hôm nay thời tiết ở [Barcelona]{"entity":"location"} có đẹp không?
+#     - tôi sẽ đến [London]{"entity":"location"} hôm nay và tôi muốn biết thời tiết ngoài đó như thế nào?
+#     - tôi đang lên kế hoạch cho chuyến đi tới [Amsterdam]{"entity":"location"} . Thời tiết ngoài đó thế nào?
+#     - vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
+#     - chi tiết thời tiết [Luân Đôn]{"entity":"location"}
+#     - khí hậu ở [Litva]{"entity":"location"}
+#     - cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
+#     - điều kiện thời tiết ở [Ý]{"entity":"location"}
+#     - thời tiết ở [Chennai]{"entity":"location"} như thế nào
+#     - thời tiết ở [Hungary]{"entity":"location"}
+#     - nhiệt độ ở [mumbai]{"entity":"location"}
+#     - nhiệt độ tại [Paris]{"entity":"location"}
+#     - áp suất ở [Chennai]{"entity":"location"}
+#     - thời tiết ở [Berlin]{"entity":"location"} như thế nào
+#     - thời tiết ở [Dublin]{"entity":"location"} như thế nào
+#     - thời tiết ở [gurgaon]{"entity":"location"} thế nào
+#     - thời tiết ở [Greater noida]{"entity":"location"} như thế nào
+#     - tình hình thời tiết [Tình hình Chennai hôm nay]{"entity":"location"}
+#     - ở [banglore]{"entity":"location"} hôm nay thế nào rồi?
+#     - [lucknow]{"entity":"location"} hôm nay thế nào rồi?
+#     - [Chennai]{"entity":"location"} hôm nay nào rồi?
+#     - [Paris]{"entity":"location"} hôm nay thế nào?
+#     - cho tôi biết thời tiết hôm nay]{"entity":"location"}
+#     - nhiệt độ ở [hapur]{"entity":"location"}
+#     - thời tiết ở [noida]{"entity":"location"} thế nào
+#     - nhiệt độ ở [mohali]{"entity":"location"}
+#     - thời tiết ở [pune]{"entity":"location"} thế nào
+#     - thời tiết ở [kolkata]{"entity":"location"} thế nào
+#     - thời tiết ở [Chennai]{"entity":"location"} thế nào
+#     - thời tiết ở [Paris]{"entity":"location"}
+#     - thới tiết Ở [Chennai]{"entity":"location"}
+#     - thời tiết Ở [Mumbai]{"entity":"location"}
+#     - thời tiết ở [London]{"entity":"location"}
+#     - thời tiết ở [Việt Nam]{"entity":"location"}
+#     - thời tiết ở [Hà nội]{"entity":"location"}
+#     - thời tiết ở [Hồ Chí Minh]{"entity":"location"}
 
-- synonym: Thành phố Hồ Chí Minh
-  examples: |
-    - TP Hồ Chí Minh
-    - TP Sài Gòn
-    - Thành phố Sài Gòn
+# - intent: weather
+#   examples: |
+#     - thời tiết ra sao
+#     - nhiệt độ hôm nay là bao nhiêu
+#     - nhiệt độ là gì
+#     - tôi muốn biết nhiệt độ
+#     - tôi muốn biết thời tiết hôm nay
+#     - cho tôi biết dự báo thời tiết
+#     - cho tôi biết điều gì đó về thời tiết
+#     - thời tiết hôm nay thế nào
 
-- synonym: Thành phố Cần Thơ
-  examples: |
-    - TP Cần Thơ
+# - intent: weather_specify_city
+#   examples: |
+#     - thời tiết [Cần Thơ]{"entity":"location"} ra sao
+#     - nhiệt độ [Cần thơ]{"entity":"location"} hôm nay?
+#     - nhiệt độ [Sài gòn]{"entity":"location"}?
+#     - tôi muốn biết nhiệt độ [Cần Thơ]{"entity":"location"}
+#     - tôi muốn biết thời tiết hôm nay ở [Ninh Kiều]{"entity":"location"}
+#     - cho tôi biết dự báo thời tiết [Vĩnh Long]{"entity":"location"}
+#     - cho tôi biết điều gì đó về thời tiết [Cần Thơ]{"entity":"location"}
 
-- synonym: Thủ đô Hà Nội
+- intent: city
   examples: |
-    - Hà nội
+    - [delhi]{"entity":"location"}
+    - [chandigarh]{"entity":"location"}
+    - [london]{"entity":"location"}
+    - [berlin]{"entity":"location"}
+    - [ohio]{"entity":"location"}
+    - [france]{"entity":"location"}
+    - [bangalore]{"entity":"location"}
+    - [mumbai]{"entity":"location"}
+    - [jaipur]{"entity":"location"}
+    - [gorakhpur]{"entity":"location"}
+    - [sydney]{"entity":"location"}
+    - [melbourne]{"entity":"location"}
+    - [new york]{"entity":"location"}
+    - [tokyo]{"entity":"location"}
+    - [kanpur]{"entity":"location"}
+    - [faridabad]{"entity":"location"}
+    - [mexico]{"entity":"location"}
+    - [udaipur]{"entity":"location"}
+    - [nasik]{"entity":"location"}
+    - [nagpur]{"entity":"location"}
+    - [bhopal]{"entity":"location"}
+    - [indore]{"entity":"location"}
+    - [ranchi]{"entity":"location"}
+    - [patna]{"entity":"location"}
+    - [ahemdabad]{"entity":"location"}
+    - [panaji]{"entity":"location"}
+    - [dallas]{"entity":"location"}
+    - [las vegas]{"entity":"location"}
+    - [jerusalem]{"entity":"location"}
+    - [islamabad]{"entity":"location"}
+    - [karachi]{"entity":"location"}
+    - [rawalpindi]{"entity":"location"}
+    - [dhaka]{"entity":"location"}
+    - [colombo]{"entity":"location"}
+    - [kathamandu]{"entity":"location"}
+    - [shanghai]{"entity":"location"}
+    - [canberra]{"entity":"location"}
+    - [muzzafarnagar]{"entity":"location"}
+    - [Beijing]{"entity":"location"}
+    - [Cape town]{"entity":"location"}
+    - [Shimla]{"entity":"location"}
+    - [Rhotak]{"entity":"location"}
+    - [Baghpat]{"entity":"location"}
+    - [Ghaziabad]{"entity":"location"}
+    - [Moradabad]{"entity":"location"}
+    - [Thành phố Hồ Chí Minh]{"entity":"location"}
+    - [Hà Nội]{"entity":"location"}
+    - [Thành phố Cần Thơ]{"entity":"location"}
+    - [Kiên Giang]{"entity":"location"}
+    - [Tiền Giang]{"entity":"location"}
+    - [Vĩnh Long]{"entity":"location"}
+    - [Kiên Giang]{"entity":"location"}
+    - [An Giang]{"entity":"location"}
+    - [Cà Mau]{"entity":"location"}
+    - [Bà Rịa-Vũng Tàu]{"entity":"location"}
+    - [Bạc Liêu]{"entity":"location"}
+    - [Bắc Kạn]{"entity":"location"}
+    - [Bắc Giang]{"entity":"location"}
+    - [Bắc Ninh]{"entity":"location"}
+    - [Bến Tre]{"entity":"location"}
+    - [Bình Dương]{"entity":"location"}
+    - [Bình Định]{"entity":"location"}
+    - [Bình Phước]{"entity":"location"}
+    - [Bình Thuận]{"entity":"location"}
+    - [Cao Bằng]{"entity":"location"}
+    - [Đà Nẵng]{"entity":"location"}
+    - [Đắk Lắk]{"entity":"location"}
+    - [Đắk Nông]{"entity":"location"}
+    - [Điện Biên]{"entity":"location"}
+    - [Đồng Nai]{"entity":"location"}
+    - [Đồng Tháp]{"entity":"location"}
+    - [Gia Lai]{"entity":"location"}
+    - [Hà Giang]{"entity":"location"}
+    - [Hà Nam]{"entity":"location"}
+    - [Hà Tây]{"entity":"location"}
+    - [Hà Tĩnh]{"entity":"location"}
+    - [Hải Dương]{"entity":"location"}
+    - [Hải Phòng]{"entity":"location"}
+    - [Hòa Bình]{"entity":"location"}
+    - [Hưng Yên]{"entity":"location"}
+    - [Khánh Hòa]{"entity":"location"}
+    - [Bình Thuận]{"entity":"location"}
+    - [Cao Bằng]{"entity":"location"}
+    - [Đà Nẵng]{"entity":"location"}
+    - [Đắk Lắk]{"entity":"location"}
+    - [Đắk Nông]{"entity":"location"}
+    - [Điện Biên]{"entity":"location"}
+    - [Đồng Nai]{"entity":"location"}
+    - [Đồng Tháp]{"entity":"location"}
+    - [Hà Giang]{"entity":"location"}
+    - [Hà Nam]{"entity":"location"}
+    - [Hà Tây]{"entity":"location"}
+    - [Hà Tĩnh]{"entity":"location"}
+    - [Hải Dương]{"entity":"location"}
+    - [Hải Phòng]{"entity":"location"}
+    - [Hòa Bình]{"entity":"location"}
+    - [Hưng Yên]{"entity":"location"}
+    - [Khánh Hòa]{"entity":"location"}
+    - [Kon Tum]{"entity":"location"}
+    - [Lai Châu]{"entity":"location"}
+    - [Lào Cai]{"entity":"location"}
+    - [Lạng Sơn]{"entity":"location"}
+    - [Lâm Đồng]{"entity":"location"}
+    - [Long An]{"entity":"location"}
+    - [Nam Định]{"entity":"location"}
+    - [Nghệ An]{"entity":"location"}
+    - [Ninh Bình]{"entity":"location"}
+    - [Ninh Thuận]{"entity":"location"}
+    - [Phú Thọ]{"entity":"location"}
+    - [Phú Yên]{"entity":"location"}
+    - [Quảng Bình]{"entity":"location"}
+    - [Quảng Nam]{"entity":"location"}
+    - [Quảng Ngãi]{"entity":"location"}
+    - [Quảng Ninh]{"entity":"location"}
+    - [Quảng Trị]{"entity":"location"}
+    - [Sóc Trăng]{"entity":"location"}
+    - [Sơn La]{"entity":"location"}
+    - [Tây Ninh]{"entity":"location"}
+    - [Thái Bình]{"entity":"location"}
+    - [Thái Nguyên]{"entity":"location"}
+    - [Thanh Hóa]{"entity":"location"}
+    - [Thừa Thiên Huế]{"entity":"location"}
+    - [Trà Vinh]{"entity":"location"}
+    - [Tuyên Quang]{"entity":"location"}
+    - [Vĩnh Phúc]{"entity":"location"}
+    - [Yên Bái]{"entity":"location"}
 
 - intent: corona_intro
   examples: |
@@ -452,218 +646,23 @@ nlu:
     - số ca nhiễm bệnh hồi phục
     - số bệnh nhân đã hồi phục
 
-- intent: ask_all
-  examples: |
-    - tình hình covid
-    - tình hình corrona
-    - tình hình corona
-    - tình hình covid 19
-    - tình hình covid-19
-    - tình hình dịch bệnh thế nào
-    - dịch bệnh tiến triển thế nào
-    - xem thống kê dịch bệnh
-    - xem chi tiết dịch bệnh
-    - dịch bệnh thế nào rồi
-    - dịch bệnh ra sao rồi
-    - thông tin tất cả về dịch bệnh corrona 2019
-    - tất cả về dịch bệnh corrona 2019
-    - tất tần tật về dịch bệnh corrona 2019
-    - tất tần tật về dịch bệnh vũ hán
-
-- intent: weather
-  examples: |
-    - thời tiết ra sao
-    - nhiệt độ hôm nay là bao nhiêu
-    - nhiệt độ là gì
-    - tôi muốn biết nhiệt độ
-    - tôi muốn biết thời tiết hôm nay
-    - cho tôi biết dự báo thời tiết
-    - cho tôi biết điều gì đó về thời tiết
-    - thời tiết hôm nay thế nào
-
-- intent: weather_specify_city
-  examples: |
-    - thời tiết [Cần Thơ]{"entity":"location"} ra sao
-    - nhiệt độ [Cần thơ]{"entity":"location"} hôm nay?
-    - nhiệt độ [Sài gòn]{"entity":"location"}?
-    - tôi muốn biết nhiệt độ [Cần Thơ]{"entity":"location"}
-    - tôi muốn biết thời tiết hôm nay ở [Ninh Kiều]{"entity":"location"}
-    - cho tôi biết dự báo thời tiết [Vĩnh Long]{"entity":"location"}
-    - cho tôi biết điều gì đó về thời tiết [Cần Thơ]{"entity":"location"}
-
-- intent: city
-  examples: |
-    - [delhi]{"entity":"location"}
-    - [chandigarh]{"entity":"location"}
-    - [london]{"entity":"location"}
-    - [berlin]{"entity":"location"}
-    - [ohio]{"entity":"location"}
-    - [france]{"entity":"location"}
-    - [bangalore]{"entity":"location"}
-    - [mumbai]{"entity":"location"}
-    - [jaipur]{"entity":"location"}
-    - [gorakhpur]{"entity":"location"}
-    - [sydney]{"entity":"location"}
-    - [melbourne]{"entity":"location"}
-    - [new york]{"entity":"location"}
-    - [tokyo]{"entity":"location"}
-    - [kanpur]{"entity":"location"}
-    - [faridabad]{"entity":"location"}
-    - [mexico]{"entity":"location"}
-    - [udaipur]{"entity":"location"}
-    - [nasik]{"entity":"location"}
-    - [nagpur]{"entity":"location"}
-    - [bhopal]{"entity":"location"}
-    - [indore]{"entity":"location"}
-    - [ranchi]{"entity":"location"}
-    - [patna]{"entity":"location"}
-    - [ahemdabad]{"entity":"location"}
-    - [panaji]{"entity":"location"}
-    - [dallas]{"entity":"location"}
-    - [las vegas]{"entity":"location"}
-    - [jerusalem]{"entity":"location"}
-    - [islamabad]{"entity":"location"}
-    - [karachi]{"entity":"location"}
-    - [rawalpindi]{"entity":"location"}
-    - [dhaka]{"entity":"location"}
-    - [colombo]{"entity":"location"}
-    - [kathamandu]{"entity":"location"}
-    - [shanghai]{"entity":"location"}
-    - [canberra]{"entity":"location"}
-    - [muzzafarnagar]{"entity":"location"}
-    - [Beijing]{"entity":"location"}
-    - [Cape town]{"entity":"location"}
-    - [Shimla]{"entity":"location"}
-    - [Rhotak]{"entity":"location"}
-    - [Baghpat]{"entity":"location"}
-    - [Ghaziabad]{"entity":"location"}
-    - [Moradabad]{"entity":"location"}
-    - [Thành phố Hồ Chí Minh]{"entity":"location"}
-    - [Hà Nội]{"entity":"location"}
-    - [Thành phố Cần Thơ]{"entity":"location"}
-    - [Kiên Giang]{"entity":"location"}
-    - [Tiền Giang]{"entity":"location"}
-    - [Vĩnh Long]{"entity":"location"}
-    - [Kiên Giang]{"entity":"location"}
-    - [An Giang]{"entity":"location"}
-    - [Cà Mau]{"entity":"location"}
-    - [Bà Rịa-Vũng Tàu]{"entity":"location"}
-    - [Bạc Liêu]{"entity":"location"}
-    - [Bắc Kạn]{"entity":"location"}
-    - [Bắc Giang]{"entity":"location"}
-    - [Bắc Ninh]{"entity":"location"}
-    - [Bến Tre]{"entity":"location"}
-    - [Bình Dương]{"entity":"location"}
-    - [Bình Định]{"entity":"location"}
-    - [Bình Phước]{"entity":"location"}
-    - [Bình Thuận]{"entity":"location"}
-    - [Cao Bằng]{"entity":"location"}
-    - [Đà Nẵng]{"entity":"location"}
-    - [Đắk Lắk]{"entity":"location"}
-    - [Đắk Nông]{"entity":"location"}
-    - [Điện Biên]{"entity":"location"}
-    - [Đồng Nai]{"entity":"location"}
-    - [Đồng Tháp]{"entity":"location"}
-    - [Gia Lai]{"entity":"location"}
-    - [Hà Giang]{"entity":"location"}
-    - [Hà Nam]{"entity":"location"}
-    - [Hà Tây]{"entity":"location"}
-    - [Hà Tĩnh]{"entity":"location"}
-    - [Hải Dương]{"entity":"location"}
-    - [Hải Phòng]{"entity":"location"}
-    - [Hòa Bình]{"entity":"location"}
-    - [Hưng Yên]{"entity":"location"}
-    - [Khánh Hòa]{"entity":"location"}
-    - [Bình Thuận]{"entity":"location"}
-    - [Cao Bằng]{"entity":"location"}
-    - [Đà Nẵng]{"entity":"location"}
-    - [Đắk Lắk]{"entity":"location"}
-    - [Đắk Nông]{"entity":"location"}
-    - [Điện Biên]{"entity":"location"}
-    - [Đồng Nai]{"entity":"location"}
-    - [Đồng Tháp]{"entity":"location"}
-    - [Gia Lai]{"entity":"location"}
-    - [Hà Giang]{"entity":"location"}
-    - [Hà Nam]{"entity":"location"}
-    - [Hà Tây]{"entity":"location"}
-    - [Hà Tĩnh]{"entity":"location"}
-    - [Hải Dương]{"entity":"location"}
-    - [Hải Phòng]{"entity":"location"}
-    - [Hòa Bình]{"entity":"location"}
-    - [Hưng Yên]{"entity":"location"}
-    - [Khánh Hòa]{"entity":"location"}
-    - [Kon Tum]{"entity":"location"}
-    - [Lai Châu]{"entity":"location"}
-    - [Lào Cai]{"entity":"location"}
-    - [Lạng Sơn]{"entity":"location"}
-    - [Lâm Đồng]{"entity":"location"}
-    - [Long An]{"entity":"location"}
-    - [Nam Định]{"entity":"location"}
-    - [Nghệ An]{"entity":"location"}
-    - [Ninh Bình]{"entity":"location"}
-    - [Ninh Thuận]{"entity":"location"}
-    - [Phú Thọ]{"entity":"location"}
-    - [Phú Yên]{"entity":"location"}
-    - [Quảng Bình]{"entity":"location"}
-    - [Quảng Nam]{"entity":"location"}
-    - [Quảng Ngãi]{"entity":"location"}
-    - [Quảng Ninh]{"entity":"location"}
-    - [Quảng Trị]{"entity":"location"}
-    - [Sóc Trăng]{"entity":"location"}\
-    - [Sơn La]{"entity":"location"}
-    - [Tây Ninh]{"entity":"location"}
-    - [Thái Bình]{"entity":"location"}
-    - [Thái Nguyên]{"entity":"location"}
-    - [Thanh Hóa]{"entity":"location"}
-    - [Thừa Thiên Huế]{"entity":"location"}
-    - [Trà Vinh]{"entity":"location"}
-    - [Tuyên Quang]{"entity":"location"}
-    - [Vĩnh Phúc]{"entity":"location"}
-    - [Yên Bái]{"entity":"location"}
-
-
-- intent: ask_weather
-  examples: |
-    - hiện tại thời tiết ở [Berlin]{"entity":"location"} như thế nào?
-    - thời tiết ở [London]{"entity":"location"} hôm nay như thế nào?
-    - cho tôi biết tình hình thời tiết ở [Paris]{"entity":"location"}
-    - tôi muốn biết thời tiết ở [Vilnius]{"entity":"location"} hiện tại như thế nào?
-    - hôm nay thời tiết ở [Barcelona]{"entity":"location"} có đẹp không?
-    - tôi sẽ đến [London]{"entity":"location"} hôm nay và tôi muốn biết thời tiết ngoài đó như thế nào?
-    - tôi đang lên kế hoạch cho chuyến đi tới [Amsterdam]{"entity":"location"} . Thời tiết ngoài đó thế nào?
-    - vui lòng cho tôi xem thời tiết ở [Dublin]{"entity":"location"}
-    - chi tiết thời tiết [Luân Đôn]{"entity":"location"}
-    - khí hậu ở [Litva]{"entity":"location"}
-    - cho tôi biết thời tiết ở [Vilnius]{"entity":"location"}
-    - điều kiện thời tiết ở [Ý]{"entity":"location"}
-    - thời tiết ở [Chennai]{"entity":"location"} như thế nào
-    - thời tiết ở [Hungary]{"entity":"location"}
-    - nhiệt độ ở [mumbai]{"entity":"location"}
-    - nhiệt độ tại [Paris]{"entity":"location"}
-    - áp suất ở [Chennai]{"entity":"location"}
-    - thời tiết ở [Berlin]{"entity":"location"} như thế nào
-    - thời tiết ở [Dublin]{"entity":"location"} như thế nào
-    - thời tiết ở [gurgaon]{"entity":"location"} thế nào
-    - thời tiết ở [Greater noida]{"entity":"location"} như thế nào
-    - tình hình thời tiết [Tình hình Chennai hôm nay]{"entity":"location"}
-    - ở [banglore]{"entity":"location"} hôm nay thế nào rồi?
-    - [lucknow]{"entity":"location"} hôm nay thế nào rồi?
-    - [Chennai]{"entity":"location"} hôm nay nào rồi?
-    - [Paris]{"entity":"location"} hôm nay thế nào?
-    - cho tôi biết thời tiết hôm nay]{"entity":"location"}
-    - nhiệt độ ở [hapur]{"entity":"location"}
-    - thời tiết ở [noida]{"entity":"location"} thế nào
-    - nhiệt độ ở [mohali]{"entity":"location"}
-    - thời tiết ở [pune]{"entity":"location"} thế nào
-    - thời tiết ở [kolkata]{"entity":"location"} thế nào
-    - thời tiết ở [Chennai]{"entity":"location"} thế nào
-    - thời tiết ở [Paris]{"entity":"location"}
-    - thới tiết Ở [Chennai]{"entity":"location"}
-    - thời tiết Ở [Mumbai]{"entity":"location"}
-    - thời tiết ở [London]{"entity":"location"}
-    - thời tiết ở [Việt Nam]{"entity":"location"}
-    - thời tiết ở [Hà nội]{"entity":"location"}
-    - thời tiết ở [Hồ Chí Minh]{"entity":"location"}
+# - intent: ask_all
+#   examples: |
+#     - tình hình covid
+#     - tình hình corrona
+#     - tình hình corona
+#     - tình hình covid 19
+#     - tình hình covid-19
+#     - tình hình dịch bệnh thế nào
+#     - dịch bệnh tiến triển thế nào
+#     - xem thống kê dịch bệnh
+#     - xem chi tiết dịch bệnh
+#     - dịch bệnh thế nào rồi
+#     - dịch bệnh ra sao rồi
+#     - thông tin tất cả về dịch bệnh corrona 2019
+#     - tất cả về dịch bệnh corrona 2019
+#     - tất tần tật về dịch bệnh corrona 2019
+#     - tất tần tật về dịch bệnh vũ hán
  
 - intent: ask_confirm_province
   examples: |

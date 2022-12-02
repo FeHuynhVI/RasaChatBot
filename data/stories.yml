@@ -31,6 +31,35 @@ stories:
   - intent: ask_for_lunch
   - action: utter_ask_for_lunch
 
+- story: scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+# - story: city_story
+#   steps:
+#   - intent: city
+#   - action: action_wiki_pedia_tracker
+
+# - story: weather_story1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: weather
+#   - action: utter_specify_city
+#   - intent: city
+#   - action: location_form
+#   - active_loop: location_form
+#   - active_loop: null
+#   - action: action_weather_tracker
+
+# - story: weather_story2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: weather_specify_city
+#   - action: action_weather_tracker
+
 - story: corona intro
   steps:
   - intent: corona_intro
@@ -117,55 +146,36 @@ stories:
   - intent: ask_resolve
   - action: action_rerecovered
 
-- story: corona ask_all
-  steps:
-  - intent: ask_all
-  - action: action_summary
+# - story: corona ask_all
+#   steps:
+#   - intent: ask_all
+#   - action: action_summary
 
 - story: corona ask_death_province
   steps:
   - intent: ask_death_province
+  - action: location_form
+  - active_loop: location_form
+  - active_loop: null
   - action: action_redeath_province
 
 - story: corona ask_confirm_province
   steps:
   - intent: ask_confirm_province
+  - action: location_form
+  - active_loop: location_form
+  - active_loop: null
   - action: action_reconfirm_province
 
 - story: corona ask_resolve_province
   steps:
   - intent: ask_resolve_province
+  - action: location_form
+  - active_loop: location_form
+  - active_loop: null
   - action: action_reresolve_province
   
 - story: corona ask_all_province
   steps:
   - intent: ask_all_province
   - action: action_reall_province
-
-- story: scope
-  steps:
-  - intent: out_of_scope
-  - action: utter_out_of_scope
-
-- story: city_story
-  steps:
-  - intent: city
-  - action: action_wiki_pedia_tracker
-
-- story: weather_story1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather
-  - action: utter_specify_city
-  - intent: city
-  - action: action_weather_tracker
-  - intent: ask_weather
-  - action: action_weather_tracker
-
-- story: weather_story2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather_specify_city
-  - action: action_weather_tracker

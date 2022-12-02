@@ -1,59 +1,64 @@
 version: "3.0"
 
 intents:
+  - city
   - greet
-  - goodbye
-  - ask_ability
-  - thankyou
-  - praise
   - decry
+  - praise
+  - goodbye
+  - weather
+  - thankyou
+  - name_entry
+  - ask_weather
+  - ask_ability
+  - out_of_scope
   - ask_for_lunch
+  - location_entry
+  - weather_specify_city
+
+
+  - ask_all
+  - ask_death
+  - ask_confirm
+  - ask_resolve
   - corona_intro
   - corona_spread
+  - corona_prevent
+  - corona_vaccine
+  - corona_symptoms
+  - corona_community
+  - ask_all_province
   - corona_food_spread
   - corona_spread_warm
   - corona_spread_risk
   - corona_states_stat
-  - name_entry
-  - location_entry
   - corona_stats_check
-  - corona_community
   - corona_mosq_spread
-  - corona_prevent
-  - corona_symptoms
-  - corona_vaccine
-  - out_of_scope
-  - corona_infected_person
-  - ask_death
-  - ask_confirm
-  - ask_resolve
-  - ask_all
-  - weather
-  - city
-  - ask_weather
-  - weather_specify_city
   - ask_death_province
   - ask_confirm_province
   - ask_resolve_province
-  - ask_all_province
+  - corona_infected_person
 
 actions:
-  - actions_corona_state_stat
-  - actions_name_show
   - action_get_loc
-  - action_recommend
+  - action_get_city
+  - actions_name_show
+  - action_weather_tracker
+  - action_wiki_pedia_tracker
+
+
   - action_redeath
+  - action_summary
+  - action_recommend
   - action_reconfirm
   - action_rerecovered
-  - action_summary
   - act_number_domestic
-  - action_weather_tracker
-  - action_get_city
-  - action_wiki_pedia_tracker
+  - action_reall_province
   - action_redeath_province
   - action_reconfirm_province
   - action_reresolve_province
-  - action_reall_province
+  - actions_corona_state_stat
+
 
 entities:
   - name
@@ -62,9 +67,9 @@ entities:
 
 slots:
   location:
-    type: any
+    type: text
     mappings:
-    - type: from_text
+    - type: from_entity
       entity: location
   name:
     type: text
@@ -75,6 +80,10 @@ slots:
     mappings:
     - type: custom
 
+forms:
+  location_form:
+    required_slots:
+      - location
 
 responses:
   utter_greet:
@@ -124,6 +133,17 @@ responses:
   - text: "Bún riêu cua"
   - text: "Bún chả"
   - text: "Bánh canh bò viên"
+
+  utter_out_of_scope:
+    - text: "Tôi ước tôi có thể trả lời câu hỏi của bạn, Vui lòng hỏi một số câu hỏi khác."
+    - text: "Sorry I don't know the answer."
+    - text: "Tôi vẫn đang học! Xin vui lòng hỏi tôi một số câu hỏi khác."
+    - text: "Yeah, bạn đã quay vào ô mất lượt"
+    - text: "Tuyệt cú mèo, câu hỏi không tồn tại trong bộ nhớ"
+
+  utter_specify_city:
+    - text: "Bạn có thể vui lòng chỉ định thành phố có thời tiết mà bạn muốn biết?"
+    - text: "Bạn nên cho tôi biết địa điểm truy vấn"
 
 
   utter_corona_intro:
@@ -175,7 +195,6 @@ responses:
   utter_corona_mosq_spread:
   - text: "Tại thời điểm này, CDC không có dữ liệu nào cho thấy loại vi-rút corona mới này hoặc các loại vi-rút corona tương tự khác lây lan qua muỗi hoặc bọ ve. Cách lây lan chính của COVID-19 là từ người sang người. Xem Cách Vi-rút Corona Lây Lan để biết thêm thông tin."
   
-  
   utter_corona_prevent:
   - text: "Cách tốt nhất để ngăn ngừa bệnh tật là tránh tiếp xúc với vi-rút. CDC khuyến nghị các hành động phòng ngừa hàng ngày để giúp ngăn ngừa sự lây lan của các bệnh về đường hô hấp. CDC khuyến nghị rửa tay thường xuyên bằng xà phòng và nước trong ít nhất 20 giây, đặc biệt là sau khi bạn ở nơi công cộng hoặc sau khi xì mũi, ho hoặc hắt hơi. Nếu không có xà phòng và nước, CDC khuyến nghị sử dụng chất khử trùng tay chứa cồn có chứa ít nhất 60 phần trăm cồn.
 Đeo khẩu trang ở những nơi công cộng khi xung quanh những người không sống cùng nhà với bạn và đặc biệt là những nơi khó duy trì các biện pháp giãn cách xã hội khác , chẳng hạn như cửa hàng tạp hóa, hiệu thuốc và trạm xăng. Khẩu trang có thể làm chậm sự lây lan của vi-rút và giúp những người có thể nhiễm vi-rút và không biết vi-rút truyền sang người khác. COVID-19 có thể lây lan bởi những người không có triệu chứng và không biết rằng họ bị nhiễm. Đó là lý do tại sao điều quan trọng là mọi người phải thực hành giãn cách xã hội (cách xa người khác ít nhất 6 feet) và đeo khẩu trang ở những nơi công cộng. Khẩu trang cung cấp thêm một lớp để giúp ngăn các giọt bắn từ đường hô hấp bay trong không khí và sang người khác. Loại khẩu trang được khuyên dùng không phải là khẩu trang phẫu thuật hoặc mặt nạ phòng độc N-95. Đó là những vật tư quan trọng phải tiếp tục được dành riêng cho nhân viên y tế và những người ứng phó y tế đầu tiên khác, theo khuyến nghị trong hướng dẫn hiện hành của CDC."
@@ -192,18 +211,6 @@ Tại thời điểm này, không có vắc-xin để ngăn ngừa bệnh do vi-
   - text: "Ở nhà trong 14 ngày sau lần tiếp xúc cuối cùng của bạn với người mắc COVID-19.
 Hãy cảnh giác với các triệu chứng. Theo dõi các triệu chứng sốt, ho, khó thở hoặc các triệu chứng khác của COVID-19.
 Nếu có thể, hãy tránh xa những người khác, đặc biệt là những người có nguy cơ cao mắc bệnh nặng do COVID-19."
-
-  utter_out_of_scope:
-    - text: "Tôi ước tôi có thể trả lời câu hỏi của bạn, Vui lòng hỏi một số câu hỏi khác."
-    - text: "Sorry I don't know the answer."
-    - text: "Tôi vẫn đang học! Xin vui lòng hỏi tôi một số câu hỏi khác."
-    - text: "Yeah, bạn đã quay vào ô mất lượt"
-    - text: "Tuyệt cú mèo, câu hỏi không tồn tại trong bộ nhớ"
-
-  utter_specify_city:
-    - text: "Bạn có thể vui lòng chỉ định thành phố có thời tiết mà bạn muốn biết?"
-    - text: "Bạn nên cho tôi biết địa điểm truy vấn"
-
 
 session_config:
   session_expiration_time: 60

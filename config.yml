@@ -22,7 +22,7 @@ pipeline:
     model_name: "roberta"
     model_weights: "vinai/phobert-base"
   - name: DIETClassifier
-    epochs: 200
+    epochs: 100
     constrain_similarities: true
   - name: "EntitySynonymMapper"
   - name: ResponseSelector
