@@ -13,3 +13,6 @@ CMD 1:
 +rasa run actions
 CMD 2: Để test
 +rasa run shell
+
+Cài đặt time chờ đợi lấy kết quả
+DEFAULT_STREAM_READING_TIMEOUT_IN_SECONDS = 20

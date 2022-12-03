@@ -1,10 +1,11 @@
 from __future__ import annotations
+import os
 from underthesea import word_tokenize
-from rasa.nlu.constants import TOKENS_NAMES, MESSAGE_ATTRIBUTES
 from underthesea import pos_tag
 from underthesea import word_tokenize
 from underthesea import sent_tokenize
 from underthesea import text_normalize
+from rasa.nlu.constants import TOKENS_NAMES, MESSAGE_ATTRIBUTES
 
 import re
 from typing import Any, Dict, List, Text
@@ -82,8 +83,10 @@ class VietnameseTokenizer(Tokenizer):
     def tokenize(self, message: Message, attribute: Text) -> List[Token]:
         text = message.get(attribute)
 
+        text = text_normalize(text)
+
         # remove 'not a word character' if
-        words = regex.sub(
+        text = regex.sub(
             # there is a space or an end of a string after it
             r"[^\w#@&]+(?=\s|$)|"
             # there is a space or beginning of a string before it
@@ -95,20 +98,28 @@ class VietnameseTokenizer(Tokenizer):
             r"(?<=[^0-9\s])[^\w._~:/?#\[\]()@!$&*+,;=-]+(?=[^0-9\s])",
             " ",
             text,
-        ).split()
+        )
 
-        words = [self.remove_emoji(w) for w in words]
-        words = [w for w in words if w]
+        words = word_tokenize(text)
 
-        # if we removed everything like smiles `:)`, use the whole text as 1 token
-        if not words:
-            words = [text]
+        words = [w.strip() for w in words if w]
 
-        if len(words) > 1:
-            text = " ".join(words)
-            textNomalize = text_normalize(text)
-            words = word_tokenize(textNomalize)
+        wordsRemoveEmojiGlobal = []
+        
+        for word in words:
+            wordsRemoveEmojiLocal = []
+            for oneWord in word.split(" "):
+                removes = self.remove_emoji(oneWord)
+                if removes:
+                    wordsRemoveEmojiLocal.append(removes)
+            if len(wordsRemoveEmojiLocal) > 0:
+                wordsRemoveEmojiGlobal.append(" ".join(wordsRemoveEmojiLocal).strip())
 
-        tokens = self._convert_words_to_tokens(words, text)
+        stopwords = set(open('C:/Users/pc/OneDrive/Máy tính/RasaChatBot/customs/stopwords.txt',
+             encoding="utf8").read().split(' ')[:-1])
+
+        words = [w for w in wordsRemoveEmojiGlobal if  w not in stopwords]
+
+        tokens = self._convert_words_to_tokens_v1(words, text)
         
         return self._apply_token_pattern(tokens) 

@@ -48,17 +48,16 @@ actions:
 
 
   - action_redeath
-  - action_summary
-  - action_recommend
   - action_reconfirm
   - action_rerecovered
   - act_number_domestic
+  - action_summary_covid
+  - action_recommend_food
   - action_reall_province
   - action_redeath_province
   - action_reconfirm_province
   - action_reresolve_province
   - actions_corona_state_stat
-
 
 entities:
   - name
