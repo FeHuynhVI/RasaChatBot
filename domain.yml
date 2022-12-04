@@ -39,6 +39,23 @@ intents:
   - ask_resolve_province
   - corona_infected_person
 
+  ########################
+  - corona_type
+  - corona_where_attack
+  - corona_find_on_wed
+  - understand_corona
+  - corona_start
+  - human_infect_corona
+  - corona_mechanism
+  - corona_with_other
+  - corona_with_economy
+  - corona_dangerous
+  - corona_determined
+  - corona_mutation
+  - corona_and_animal
+  - corona_behavior
+  - corona_effect
+  ############################3
 actions:
   - action_get_loc
   - action_get_city

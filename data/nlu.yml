@@ -378,6 +378,382 @@ nlu:
     - bạn có thể cho tôi biết về corona
     - bạn có thể cho tôi biết về covid-19
     - cho tôi biết về dịch bệnh vũ hán?
+    - nói cho tôi biết về vi-rút corona
+    - hãy cho tôi biết về bệnh Novel Coronavirus.
+    - tôi có thể có thông tin về virus corona không?
+    - bạn có thể cho tôi thông tin về Covid-19 không?
+    - bạn có thể cho tôi biết về Covid-19 không?
+    - bạn có thể cho tôi biết về virus corona?
+    - bạn có thể cho tôi biết thêm về COVID-19 không?
+    - bạn có thể cho tôi biết thêm về loại virus mới Covid19 này không?
+    - bạn có thể cho tôi biết virus corona là gì
+    - bạn có thể vui lòng cho tôi biết điều gì đó về virus corona
+    - bạn có thể cho tôi xem thông tin liên quan đến coronavirus không?
+    - định nghĩa virus corona cho tôi?
+    - định nghĩa về virus corona
+    - mô tả coronavirus.
+    - bạn có dữ kiện về COVID-19 không?
+    - bạn có thông tin về Covid-19?
+    - bạn có thông tin muốn chia sẻ về virus Corona là gì không?
+    - làm ơn giải thích về Covid?
+    - giải thích về Virus Corona
+    - hãy cho tôi cái nhìn tổng quan về COVID-19
+    - virus corona có thể được giải thích như thế nào
+    - tôi tò mò về virus corona
+    - tôi tò mò về loại virus mới
+    - tôi tò mò muốn tìm hiểu thêm về virus Corona?
+    - tôi háo hức muốn biết coronavirus là gì
+    - tôi khá háo hức muốn tìm hiểu về loại virus Covid19 này.
+    - tôi đang tìm kiếm thông tin chung về COVID-19.
+    - tôi đang băn khoăn về covid-19.
+    - tôi đang tự hỏi virus corona là gì.
+    - tôi tự hỏi coronavirus là gì
+    - tôi cần thêm thông tin chi tiết về virus Corona.
+    - tôi cần bạn Giải thích về virus corona hoặc Covid-19.
+    - tôi muốn có thông tin về COVID-19.
+    - tôi muốn thông tin chính thức về covid-19
+    - tôi muốn một số thông tin về virus corona.
+    - tôi muốn tìm hiểu về vi-rút corona.
+    - tôi tự hỏi liệu bạn có thể dạy tôi thêm về Covid19 không?
+    - bạn có thể khai sáng cho tôi về virus Corona không?
+    - tôi đã tự hỏi về virus Corona. Nó là gì?
+    - tra cứu virus corona
+    - tra cứu COVID-19
+    - hãy giải thích về virus corona
+    - xin vui lòng cho tôi biết thêm thông tin về covid19
+    - hãy chia sẻ những gì bạn biết về Virus Corona.
+    - tìm kiếm 'coronavirus' cho tôi
+    - tìm kiếm 'coronavirus là gì' cho tôi
+    - tìm kiếm thông tin liên quan đến COVID-19.
+    - chia sẻ với tôi tất cả thông tin về COVID-19.
+    - cho tôi xem thông tin về virus corona
+    
+#############################################################
+- intent: corona_type
+  examples: |
+    - vi rút corona có phải là bệnh không
+    - vi rút corona có phải là pheic không
+    - virus corona có phải là đường ruột không
+    - virus corona có phải là virus cúm không
+    - coronavirus có phải là bệnh dịch hạch không
+    - covid-19 là một căn bệnh
+    - COVID-19 có phải là bệnh không?
+    - covid-19 có phải là một retrovirus không
+    - covid-19 có phải là vi rút không
+    - COVID-19 khác với các bệnh khác như thế nào?
+    - vi rút corona có phải là bệnh không
+
+- intent: corona_where_attack
+  examples: |
+    - bạn có thể cho tôi biết virus corona tấn công ở đâu?
+
+- intent: corona_find_on_wed
+  examples: |
+    - tìm kiếm trên web cho covid-19?
+
+- intent: understand_corona
+  examples: |
+    - làm cách nào tôi có thể tìm hiểu thêm về covid-19?
+    - làm thế nào tôi có thể hiểu được thông tin chung về virus corona?
+    - làm thế nào tôi có thể hiểu virus corona là gì?
+    - tôi tự hỏi mình có thể làm gì để tìm hiểu thêm về vi-rút Corona
+    - có cách nào để tôi có thể tìm hiểu về virus Corona không?
+    - tôi cần trợ giúp để hiểu về virus corona
+
+- intent: corona_start
+  examples: |
+    - đại dịch virut Corna xảy ra khi nào.
+    - bạn có thể giải thích làm thế nào Covid19 bắt đầu?
+    - bạn có thể giải thích làm thế nào virus bắt đầu?
+    - bạn có thể giải thích làm thế nào virus này tồn tại?
+    - bạn có thể giải thích cho tôi làm thế nào virus bắt đầu?
+    - bạn có thể cho tôi biết làm thế nào mà coronavirus xuất hiện?
+    - bạn có thể cho tôi biết virus xuất hiện như thế nào không?
+    - bạn có thể cho tôi biết virus này bắt đầu như thế nào và khi nào không?
+    - bạn có thể cho tôi biết làm thế nào virus này bắt đầu?
+    - bạn có thể cho tôi biết nguồn gốc của covid?
+    - bạn có thể cho tôi biết virus Corona bắt đầu từ đâu không?
+    - nguồn gốc của coronavirus và SARS và MERS
+    - bạn có thể cho tôi biết COVID-19 xuất hiện lần đầu tiên ở đâu không?
+    - có phải coronavirus bắt đầu ở trung quốc
+    - có phải Covid bắt nguồn từ Trung Quốc?
+    - có phải COVID-19 đến từ một quốc gia cụ thể?
+    - có phải covid-19 đến từ Trung Quốc?
+    - có phải covid-19 bắt nguồn từ châu âu
+    - có phải Covid19 thực sự bắt đầu vào tháng 12 năm 2019?
+    - có phải covid-19 bắt đầu ở châu Âu
+    - có phải người Trung Quốc đã phát minh ra virus corona?
+    - bạn có thông tin về nguyên nhân của virus?
+    - chúng ta có biết virus này hình thành như thế nào không?
+    - bạn có biết Covid-19 bắt đầu như thế nào không?
+    - bạn có biết nguồn gốc của COVID-19?
+    - bạn có biết virus Corona bắt đầu từ khi nào không?
+    - bạn có biết virus Corona bắt đầu từ đâu không?
+    - bạn có biết virus corona bắt đầu từ đâu không?
+    - bạn có biết virus COVID-19 đến từ đâu không?
+    - biải thích cách virus Corona bắt đầu
+    - giải thích cách thức virus xuất hiện
+    - giải thích nguyên nhân nguồn gốc của virus
+    - coronavirus bắt đầu như thế nào
+    - covid-19 bắt đầu như thế nào
+    - virus corona bắt đầu như thế nào
+    - virus corona bắt đầu như thế nào?
+    - virus corona đã hình thành như thế nào
+    - làm thế nào mà coronavirus xuất hiện?
+    - COVID-19 đã ra đời như thế nào?
+    - COVID-19 ra đời như thế nào?
+    - làm thế nào mà coronavirus ra đời?
+    - virus phát sinh như thế nào?
+    - ban đầu virus ra đời như thế nào?
+    - virus corona được tạo ra như thế nào
+    - tôi tò mò về nguồn gốc của virus corona.
+    - tôi đang tự hỏi làm thế nào covid-19 xuất hiện
+    - tôi đang tự hỏi điều gì đã gây ra virus corona?
+    - tôi đang tự hỏi loại vi-rút nào gây ra Covid19.
+    - tôi đang tự hỏi điều gì đã kích hoạt COVID-19?
+    - tôi nghe nói rằng virus bắt đầu từ cửa hàng thịt ở Trung Quốc. Điều này có đúng không?
+    - tôi muốn nhận thông tin về nguồn gốc của coronavirus
+    - tôi muốn biết covid-19 bắt đầu như thế nào
+    - tôi muốn biết nguyên nhân của virus corona.
+    - tôi muốn biết virus gây ra bởi cái gì
+    - tôi muốn biết virus corona xuất hiện từ đâu.
+    - tôi muốn biết virus đến từ đâu.
+    - tôi muốn biết nơi bùng phát virus corona đầu tiên là ở đâu?
+    - tôi muốn tìm hiểu về nguồn gốc của virus corona.
+    - tôi muốn tìm hiểu làm thế nào mà coronavirus xuất hiện
+    - tôi muốn tìm hiểu làm thế nào virus xuất hiện.
+    - tôi muốn tìm hiểu thêm về nguồn gốc của virus corona
+    - tôi muốn tìm hiểu thêm về nguyên nhân gây ra COVID -19
+    - tôi muốn tìm hiểu xem coronavirus đã xuất hiện ở đâu
+    - tôi muốn tìm hiểu về nguồn gốc của virus Corona.
+    - tôi đang tự hỏi làm thế nào mà virus này bắt đầu?
+    - virus COVID-19 bắt nguồn từ quốc gia nào?
+    - virus corona xuất hiện theo con đường nào?
+    - thông tin về nguồn gốc của virus
+    - hãy tra cứu nguồn gốc virus corona.
+    - tìm kiếm nguyên nhân Covid19.
+    - tìm kiếm nguồn gốc covid-19.
+    - tìm kiếm cho tôi làm thế nào virus xuất hiện.
+    - tìm kiếm 'xuất xứ của covid
+    - tìm kiếm 'coronavirus đã xuất hiện ở đâu' cho tôi
+    - chia sẻ với tôi nơi virus xuất hiện lần đầu tiên.
+    - chỉ cho tôi cách coronavirus xuất hiện
+    - chỉ cho tôi cách coronavirus bắt đầu
+    - hãy cho tôi biết Vi-rút Corona hình thành như thế nào.
+    - tôi muốn tìm hiểu về cách thức virus bắt đầu
+    - chỉ cho tôi cách virus corona xuất hiện.
+    - chỉ cho tôi làm thế nào khi vi-rút được xác định lần đầu tiên.
+    - chỉ cho tôi thông tin về cách virus bắt đầu?
+    - cho tôi thấy sự thật về cách covid-19 xuất hiện.
+    - chỉ cho tôi nguyên nhân gây ra Covid19.
+    - nói cho tôi biết về cách virus corona bắt đầu
+    - hãy cho tôi biết làm thế nào virus corona xuất hiện?
+    - cho tôi biết virus bắt đầu như thế nào
+    - cho tôi biết nguồn gốc của virus corona.
+    - làm ơn-hãy cho tôi biết nguồn gốc của covid
+    - hãy cho tôi biết coronavirus đến từ đâu.
+    - hãy cho tôi biết coronavirus đến từ đâu.
+    - virus nổi lên là kết quả của cái gì?
+    - nguồn gốc của covid-19 là gì?
+    - điều gì đã gây ra COVID-19?
+    - bạn có thể cho tôi biết gì về sự xuất hiện của virus?
+    - điều gì đã gây ra vi rút corona
+    - điều gì đã khiến virus corona xuất hiện?
+    - điều gì đã gây ra vi rút COVID-19?
+    - nguồn gốc của virus là gì?
+    - nguồn gốc của virus Corona là gì?
+    - nguyên nhân gốc rễ của virus COVID-19 là gì?
+    - nguyên nhân gốc rễ của virus là gì
+    - điều gì đã dẫn đến bệnh Novel Coronavirus?
+    - điều gì đã bắt đầu virus corona?
+    - sự khởi đầu của virus corona là gì?
+    - virus corona bắt đầu từ năm nào
+    - virus corona bắt đầu bùng phát khi nào
+    - virus corona bùng phát khi nào
+    - virus corona Trung Quốc lần đầu tiên được phát hiện khi nào
+    - tôi có thể tìm thông tin về nguồn gốc của covid-19 ở đâu?
+    - tôi có thể tìm sự thật về nguồn gốc của virus corona ở đâu?
+
+- intent: human_infect_corona
+  examples: |
+    - tôi tự hỏi ai là người đầu tiên nhiễm virus
+    - trường hợp nhiễm virus corona đầu tiên là khi nào
+    - những người đầu tiên có dấu hiệu của Covid19 là ai?
+    - những bệnh nhân nhiễm virus corona đầu tiên được chẩn đoán đầu tiên ở đâu?
+
+- intent: corona_mechanism
+  examples: |
+    - cách thức hoạt động của coronavirus
+    - tôi đang tự hỏi điều gì khiến COVID-19 gây tử vong?
+
+- intent: corona_with_other
+  examples: |
+    - coronavirus và SARS và MERS.
+    - coronavirus sars and mers
+
+- intent: corona_with_economy
+  examples: |
+    - ảnh hưởng của coronavirus covid19 đối với nền kinh tế toàn cầu.
+  
+- intent: corona_dangerous
+  examples: |
+    - virus corona nguy hiểm như thế nào?
+    - không biết virus corona có nguy hiểm không
+    - virus corona có thực sự nguy hiểm
+    - coronavirus có gây tử vong không?
+    - sự nguy hiểm corona và tác hại của nó.
+    - corona và sự nguy hiểm
+
+- intent: corona_determined
+  examples: |
+    - cách xác định tôi bị nhiễm Virus Corona
+    - làm thế nào có thể phát hiện virus
+    - làm sao tôi biết mình bị nhiễm vi-rút corona?
+    - làm thế nào để tôi biết tôi có vi-rút?
+    - làm thế nào để tôi biết nếu tôi có Covid 19?
+    - làm thế nào để biết nếu bạn có virus corona
+    - làm thế nào để biết tôi có hoặc ai đó có thể có vi-rút
+    - làm cách nào để biết liệu tôi có nên đi xét nghiệm vi-rút hay không?
+    - làm thế nào để tôi biết nếu tôi bị nhiễm coronavirus?
+    - làm thế nào tôi có thể biết nếu tôi có các triệu chứng của virus corona?
+    - làm thế nào tôi có thể biết rằng tôi bị nhiễm vi-rút nếu tôi không có bất kỳ triệu chứng nào?
+
+- intent: corona_symptoms
+  examples: |
+    - triệu chứng
+    - dấu hiệu của virus corona
+    - tôi tò mò về các triệu chứng của virus corona.
+    - các triệu chứng có giống nhau ở tất cả các bệnh nhân không?
+    - bạn có thể liệt kê các triệu chứng của covid không?
+    - bạn có thể giải thích tất cả các triệu chứng của Covid19 không?
+    - bạn có thể liệt kê các triệu chứng của virus corona?
+    - bạn có thể cho tôi biết một số triệu chứng của Virus?
+    - bạn có thể cho tôi biết các triệu chứng của coronavirus?
+    - bạn có thể cho tôi biết các triệu chứng?
+    - điều kiện của một người bị nhiễm virus corona
+    - các triệu chứng của corona.
+    - các triệu chứng nhiễm vi-rút corona
+    - bạn có thể vui lòng cho tôi biết các triệu chứng của covid là gì không?
+    - bạn có thể cho biết các triệu chứng của covid-19 là gì không?
+    - mô tả các đặc điểm của coronavirus
+    - mô tả cho tôi các triệu chứng của coronavirus.
+    - chi tiết cho tôi các triệu chứng của coronavirus.
+    - thực hiện tìm kiếm các triệu chứng của virus Corona
+    - bạn có thể cho tôi biết các triệu chứng của COVID-19 xuất hiện theo thứ tự cụ thể không?
+    - các triệu chứng của coronavirus mới là gì?
+    - các triệu chứng của virus corona mới là gì?
+    - các triệu chứng của virus covid-19 mới là gì?
+    - tôi cần biết các triệu chứng của virus corona là gì
+    - các triệu chứng của virus corona là gì?
+    - triệu chứng của virus corona?
+    - triệu chứng của virus covid19?
+    - tôi muốn thông tin về các triệu chứng của virus
+    - tôi muốn tìm hiểu về các Triệu chứng của Virus Corona.
+    - tôi muốn tìm hiểu thêm về các triệu chứng của vi-rút corona.
+    - điều kiện của một người bị nhiễm virus corona
+    - tôi muốn tìm hiểu thêm về các triệu chứng covid
+    - tôi muốn biết các triệu chứng của covid-19 là gì
+    - bạn có biết các triệu chứng của covid-19 là gì không?
+    - tôi muốn tìm hiểu về các triệu chứng của virus Corona.
+    - tra cứu triệu chứng virus corona
+    - tra cứu triệu chứng COVID-19
+    - vui lòng xác định các triệu chứng của virus covid-19
+    - xin vui lòng giải thích các triệu chứng của virus corona cho tôi?
+    - tìm kiếm các triệu chứng coronavirus.
+    - tìm kiếm cho tôi các triệu chứng của Covid-19.
+    - tìm kiếm cho tôi các triệu chứng là gì.
+    - cho tôi xem các triệu chứng của COVID-19
+    - chỉ cho tôi các triệu chứng để tìm ra virus corona
+
+- intent: corona_behavior
+  examples: |
+    - xin bác sĩ cho biết sốt có được coi là triệu chứng của virus không?
+    - có phải triệu chứng duy nhất của Covid19 là ho và sốt?
+    - các triệu chứng của COVID-19 có giống với triệu chứng của bệnh cúm không?
+    - các triệu chứng của virus corona có giống cảm cúm không
+    - có phải tất cả bệnh nhân Covid19 đều sốt và ho?
+    - điều kiện của một người bị nhiễm virus corona là ho và sốt
+    - gần đây tôi bị ho dai dẳng, điều này có nghĩa là tôi bị nhiễm virut không?
+    - có phải covid-19 bắt đầu bằng cảm lạnh không
+    - tôi bị ho và sốt nhẹ. Tôi có nên lo lắng rằng mình bị nhiễm Covid19 không?
+    - tôi bị cảm lạnh và ớn lạnh, điều đó có nghĩa là tôi bị nhiễm virus corona
+    - nếu tôi bị sốt thì tôi có bị nhiễm virus corona không
+    - ho khan có phải là dấu hiệu tôi đã nhiễm virus corona
+    - ho hai tuần có phải là dấu hiệu của coronavirus không?
+    - khó thở có phải là triệu chứng đặc trưng của virus corona?
+    - tiêu chảy có phải là triệu chứng của coronavirus không?
+    - mệt mỏi có phải là triệu chứng của virus corona?
+    - sốt có phải là triệu chứng của virus corona?
+    - sổ mũi có phải là triệu chứng của COVID-19 không?
+    - khó thở có phải là triệu chứng phổ biến của virus corona?
+    - khó thở có phải là dấu hiệu của virus corona?
+    - có phải đau họng là một triệu chứng của coronavirus?
+    - mất khứu giác có phải là dấu hiệu nhận biết bạn mắc COVID-19 không?
+
+- intent: corona_effect
+  examples: |
+    - corona ảnh hưởng đến thị lực.
+    - vi-rút corona ảnh hưởng bệnh hen suyễn.
+    - coronavirus ảnh hưởng bệnh dị ứng hô hấp.
+    - coronavirus gây nhiễm trùng phổi.
+    - coronavirus gây chứng đau cổ.
+    - virus corona gây bệnh đường hô hấp
+    - virus corona làm sốt siêu vi
+    - bệnh nhân coronavirus có ho ra máu không
+    - bệnh Covid19 có gây dị ứng.
+    - covid-19 có gây cục máu đông không
+    - coronavirus có thể gây phát ban không
+    - covid-19 có làm giảm cân không
+    - coronavirus có gây đau ngực không
+    - coronavirus có thể gây tiêu chảy không
+    - covid-19 có gây đau tim không
+    - coronavirus ảnh hưởng đến phổi như thế nào
+    - coronavirus và chứng đau cổ
+    - coronavirus ảnh hưởng đến cơ thể như thế nào
+    - covid19 có gây ngứa da, nổi mẩn đỏ và đỏ mắt.
+    - covid-19 có gây viêm thanh quản không
+    - coronavirus có thể gây tiêu chảy không
+    - covid19 gây tắc nghẽn đường hô hấp trong giai đoạn cấp tính và được biết là làm suy yếu quá trình hô hấp bình thường.
+
+#############################################################
+
+- intent: corona_mutation
+  examples: |
+    - coronavirus có đột biến không?
+
+- intent: corona_and_animal
+  examples: |
+    - covid-19 đến từ động vật nào?
+    - coronavirus là từ dơi
+    - có đúng là Covid lây lan qua việc ăn thịt dơi?
+    - dơi có thực sự là nguyên nhân gây ra virus ở Trung Quốc?
+    - virus corona Covid19 ở loài dơi.
+    - virus Corona có thực sự bắt đầu từ loài dơi?
+    - có phải coronavirus đến từ một con dơi
+    - có phải coronavirus đến từ phòng thí nghiệm
+    - coronavirus có đến từ động vật không
+    - có phải coronavirus đến từ động vật
+    - có phải coronavirus đến từ súp dơi
+    - có phải coronavirus đến từ dơi
+    - có phải coronavirus đến từ gà
+    - có phải coronavirus đến từ trung quốc
+    - có phải coronavirus đến từ việc ăn dơi
+    - có phải coronavirus đến từ tê tê
+    - có phải coronavirus đến từ rắn
+    - có phải coronavirus đến từ phòng thí nghiệm vũ hán
+    - có phải coronavirus bắt đầu từ một con dơi
+    - có phải coronavirus bắt đầu từ dơi
+    - có phải coronavirus bắt đầu từ việc ăn dơi
+    - có phải coronavirus bắt đầu từ dơi
+    - có phải covid-19 đến từ những người ăn thịt dơi?
+    - có phải virus corona đến từ động vật?
+    - có phải virus đến từ động vật?
+    - có phải coronavirus đến từ dơi
+    - có thật virus corona bắt nguồn từ dơi ở Trung Quốc?
+    - có phải virus thực sự từ một con dơi đã được ăn ở Trung Quốc?
+    - phác thảo cách thức virus corona xuất hiện.
+
+##########################################################################
 
 - intent: corona_spread
   examples: |
@@ -387,6 +763,9 @@ nlu:
     - lây lan corona?
     - sự lây lan của covid.
     - sự lây lan covid-19.
+    - virus corona có lây qua không khí không
+    - coronavirus có lây theo theo mùa không?
+    - covid-19 lan truyền trong không khí hoặc giọt
 
 - intent: corona_food_spread
   examples: |
@@ -410,15 +789,6 @@ nlu:
     - lây lan cộng đồng là gì
     - Làm thế nào để lây lan cộng đồng xảy ra?
     - lây lan trong cộng đồng
-
-- intent: corona_symptoms
-  examples: |
-    - các triệu chứng của coronavirus mới là gì?
-    - các triệu chứng của virus corona mới là gì?
-    - các triệu chứng của virus covid-19 mới là gì?
-    - các triệu chứng của virus corona là gì?
-    - triệu chứng của virus corona?
-    - triệu chứng của virus covid19?
 
 - intent: corona_mosq_spread
   examples: |

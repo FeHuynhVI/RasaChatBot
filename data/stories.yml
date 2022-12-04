@@ -65,6 +65,83 @@ stories:
   - intent: corona_intro
   - action: utter_corona_intro
 
+##################################
+- story: corona type
+  steps:
+  - intent: corona_type
+  - action: utter_corona_intro
+
+- story: corona where attack
+  steps:
+  - intent: corona_where_attack
+  - action: utter_corona_intro
+
+- story: corona find wed
+  steps:
+  - intent: corona_find_on_wed
+  - action: utter_corona_intro
+
+- story: understand corona
+  steps:
+  - intent: understand_corona
+  - action: utter_corona_intro
+
+- story: corona start
+  steps:
+  - intent: corona_start
+  - action: utter_corona_intro
+
+- story: human infect corona
+  steps:
+  - intent: human_infect_corona
+  - action: utter_corona_intro
+
+- story: corona mechanism
+  steps:
+  - intent: corona_mechanism
+  - action: utter_corona_intro
+
+- story: corona with other
+  steps:
+  - intent: corona_with_other
+  - action: utter_corona_intro
+
+- story: corona with economy
+  steps:
+  - intent: corona_with_economy
+  - action: utter_corona_intro
+
+- story: corona dangerous
+  steps:
+  - intent: corona_dangerous
+  - action: utter_corona_intro
+
+- story: corona determined
+  steps:
+  - intent: corona_determined
+  - action: utter_corona_intro
+
+- story: corona mutation
+  steps:
+  - intent: corona_mutation
+  - action: utter_corona_intro
+
+- story: corona and animal
+  steps:
+  - intent: corona_and_animal
+  - action: utter_corona_intro
+
+- story: corona behavior
+  steps:
+  - intent: corona_behavior
+  - action: utter_corona_intro
+
+- story: corona effect
+  steps:
+  - intent: corona_effect
+  - action: utter_corona_intro
+##################################
+
 - story: corona spread
   steps:
   - intent: corona_spread
