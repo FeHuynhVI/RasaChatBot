@@ -28,12 +28,10 @@ intents:
   - corona_symptoms
   - corona_community
   - ask_all_province
-  - corona_food_spread
   - corona_spread_warm
   - corona_spread_risk
   - corona_states_stat
   - corona_stats_check
-  - corona_mosq_spread
   - ask_death_province
   - ask_confirm_province
   - ask_resolve_province
@@ -55,6 +53,9 @@ intents:
   - corona_and_animal
   - corona_behavior
   - corona_effect
+  - human_tired
+  - place_come_covid
+  - contact_emergency_number
   ############################3
 actions:
   - action_get_loc
@@ -188,10 +189,7 @@ responses:
                   trong cộng đồng (“lây lan trong cộng đồng”) ở một số khu vực địa lý bị ảnh hưởng. Cộng đồng
                   lây lan có nghĩa là mọi người đã bị nhiễm vi-rút trong một khu vực, bao gồm
                   một số người không chắc họ đã bị nhiễm bệnh như thế nào hoặc ở đâu."
-
-  utter_corona_food_spread:
-  - text: "Rất khó có khả năng mọi người có thể nhiễm COVID-19 từ thực phẩm hoặc bao bì thực phẩm. COVID-19 là một bệnh về đường hô hấp và đường lây truyền chính là qua tiếp xúc giữa người với người và qua tiếp xúc trực tiếp với các giọt hô hấp được tạo ra khi người nhiễm bệnh ho hoặc hắt hơi."
-
+                  
   utter_corona_spread_warm:
   - text: "Khi mùa hè sắp bắt đầu, nhiều người hy vọng rằng thời tiết ấm hơn sẽ làm chậm sự lây lan của SARS-CoV-2, loại vi-rút corona mới gây ra COVID-19. Đã có gợi ý từ các thí nghiệm trong phòng thí nghiệm rằng nhiệt độ và độ ẩm tăng lên có thể làm giảm khả năng tồn tại của SARS-CoV-2. Trong khi đó, các loại vi-rút corona khác gây ra các bệnh ít nghiêm trọng hơn, chẳng hạn như cảm lạnh thông thường, lây lan chậm hơn giữa mọi người trong mùa hè."
 
@@ -208,9 +206,6 @@ responses:
   utter_corona_community:
   - text: "Lây lan trong cộng đồng có nghĩa là mọi người đã bị nhiễm vi-rút trong một khu vực, bao gồm cả một số người không chắc chắn về cách thức hoặc nơi họ bị nhiễm bệnh. Mỗi sở y tế xác định mức độ lây lan trong cộng đồng khác nhau dựa trên các điều kiện địa phương. Để biết thông tin về sự lây lan trong cộng đồng trong khu vực của bạn, vui lòng truy cập trang web của sở y tế.​"
 
-  utter_corona_mosq_spread:
-  - text: "Tại thời điểm này, CDC không có dữ liệu nào cho thấy loại vi-rút corona mới này hoặc các loại vi-rút corona tương tự khác lây lan qua muỗi hoặc bọ ve. Cách lây lan chính của COVID-19 là từ người sang người. Xem Cách Vi-rút Corona Lây Lan để biết thêm thông tin."
-  
   utter_corona_prevent:
   - text: "Cách tốt nhất để ngăn ngừa bệnh tật là tránh tiếp xúc với vi-rút. CDC khuyến nghị các hành động phòng ngừa hàng ngày để giúp ngăn ngừa sự lây lan của các bệnh về đường hô hấp. CDC khuyến nghị rửa tay thường xuyên bằng xà phòng và nước trong ít nhất 20 giây, đặc biệt là sau khi bạn ở nơi công cộng hoặc sau khi xì mũi, ho hoặc hắt hơi. Nếu không có xà phòng và nước, CDC khuyến nghị sử dụng chất khử trùng tay chứa cồn có chứa ít nhất 60 phần trăm cồn.
 Đeo khẩu trang ở những nơi công cộng khi xung quanh những người không sống cùng nhà với bạn và đặc biệt là những nơi khó duy trì các biện pháp giãn cách xã hội khác , chẳng hạn như cửa hàng tạp hóa, hiệu thuốc và trạm xăng. Khẩu trang có thể làm chậm sự lây lan của vi-rút và giúp những người có thể nhiễm vi-rút và không biết vi-rút truyền sang người khác. COVID-19 có thể lây lan bởi những người không có triệu chứng và không biết rằng họ bị nhiễm. Đó là lý do tại sao điều quan trọng là mọi người phải thực hành giãn cách xã hội (cách xa người khác ít nhất 6 feet) và đeo khẩu trang ở những nơi công cộng. Khẩu trang cung cấp thêm một lớp để giúp ngăn các giọt bắn từ đường hô hấp bay trong không khí và sang người khác. Loại khẩu trang được khuyên dùng không phải là khẩu trang phẫu thuật hoặc mặt nạ phòng độc N-95. Đó là những vật tư quan trọng phải tiếp tục được dành riêng cho nhân viên y tế và những người ứng phó y tế đầu tiên khác, theo khuyến nghị trong hướng dẫn hiện hành của CDC."

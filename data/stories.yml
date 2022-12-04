@@ -140,17 +140,32 @@ stories:
   steps:
   - intent: corona_effect
   - action: utter_corona_intro
+
+- story: human tired
+  steps:
+  - intent: human_tired
+  - action: utter_corona_intro
+
+- story: place come covid
+  steps:
+  - intent: place_come_covid
+  - action: utter_corona_intro
+
+- story: contact emergency number
+  steps:
+  - intent: contact_emergency_number
+  - action: utter_corona_intro
+
+- story: human tired
+  steps:
+  - intent: human_tired
+  - action: utter_corona_intro
 ##################################
 
 - story: corona spread
   steps:
   - intent: corona_spread
   - action: utter_corona_spread
-
-- story: corona food spread
-  steps:
-  - intent: corona_food_spread
-  - action: utter_corona_food_spread
 
 - story: corona warm weather
   steps:
@@ -182,11 +197,6 @@ stories:
   steps:
   - intent: corona_community
   - action: utter_corona_community
-
-- story: corona mosquito path
-  steps:
-  - intent: corona_mosq_spread
-  - action: utter_corona_mosq_spread
 
 - story: corona prevent path
   steps:

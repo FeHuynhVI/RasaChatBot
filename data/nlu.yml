@@ -99,7 +99,6 @@ nlu:
     - cùi bắp
     - đồ con gà
 
-
 - intent: out_of_scope
   examples: |
     - làm ơn giúp tôi với kem đang nhỏ giọt
@@ -446,10 +445,13 @@ nlu:
 - intent: corona_where_attack
   examples: |
     - bạn có thể cho tôi biết virus corona tấn công ở đâu?
+    - corona sẽ tấn công vào bộ phận nào của cơ thể tôi
 
 - intent: corona_find_on_wed
   examples: |
     - tìm kiếm trên web cho covid-19?
+    - tìm kiếm trang web cho biết về thông tin virut
+    - tìm kiếm page cho biết về thông tin virut
 
 - intent: understand_corona
   examples: |
@@ -594,6 +596,8 @@ nlu:
 - intent: corona_with_economy
   examples: |
     - ảnh hưởng của coronavirus covid19 đối với nền kinh tế toàn cầu.
+    - ảnh hưởng của covid19 đối với nền kinh tế toàn cầu.
+    - ảnh hưởng của covid19 đối với nền kinh tế thế giới.
   
 - intent: corona_dangerous
   examples: |
@@ -603,6 +607,7 @@ nlu:
     - coronavirus có gây tử vong không?
     - sự nguy hiểm corona và tác hại của nó.
     - corona và sự nguy hiểm
+    - bệnh nhân coronavirus có chết vì viêm phổi không
 
 - intent: corona_determined
   examples: |
@@ -617,6 +622,8 @@ nlu:
     - làm thế nào để tôi biết nếu tôi bị nhiễm coronavirus?
     - làm thế nào tôi có thể biết nếu tôi có các triệu chứng của virus corona?
     - làm thế nào tôi có thể biết rằng tôi bị nhiễm vi-rút nếu tôi không có bất kỳ triệu chứng nào?
+    - Làm thế nào tôi có thể biết nếu tôi có các triệu chứng covid-19?
+    - Làm cách nào để biết các triệu chứng của tôi là do vi-rút corona hay dị ứng?
 
 - intent: corona_symptoms
   examples: |
@@ -664,6 +671,7 @@ nlu:
     - tìm kiếm cho tôi các triệu chứng là gì.
     - cho tôi xem các triệu chứng của COVID-19
     - chỉ cho tôi các triệu chứng để tìm ra virus corona
+    - Bệnh nhân COVID-19 có những triệu chứng gì?
 
 - intent: corona_behavior
   examples: |
@@ -689,6 +697,28 @@ nlu:
     - khó thở có phải là dấu hiệu của virus corona?
     - có phải đau họng là một triệu chứng của coronavirus?
     - mất khứu giác có phải là dấu hiệu nhận biết bạn mắc COVID-19 không?
+    - Virus Corona có gây sốt không?
+    - Xin BS cho biết khó thở có phải là triệu chứng không?
+    - Xin bác sĩ cho tôi biết ho và hắt hơi có phải là dấu hiệu của virus corona không?
+    - Xin BS cho biết khó thở của tôi có liên quan đến virus corona không?
+    - Bạn có biết ho khan có phải là triệu chứng của virus corona?
+    - Bạn có biết sốt có phải là triệu chứng của Covid-19 không?
+    - Bạn có nghĩ rằng tôi bị nhiễm vi-rút Corona vì tôi bị ho không?
+    - Có ai bị sốt có nghĩa là họ có vi-rút không?
+    - Khó thở có thể có nghĩa là một người bị nhiễm bệnh
+    - Tôi tự hỏi liệu cơn sốt cao của tôi có phải là dấu hiệu của virus corona hay không.
+    - Tôi tự hỏi nếu tôi có virus corona.
+    - Tôi muốn tìm hiểu thêm về cơn sốt liên quan đến vi-rút corona.
+    - Nếu tôi có nhiệt độ cao thì đó có phải là virus Corona không?
+    - Nếu tôi bị đổ mồ hôi ban đêm, tôi có bị nhiễm virus corona không?
+    - Sốt có phải là triệu chứng của Virus Corona?
+    - Thông tin về sốt là triệu chứng của corona
+    - Đau đầu có phải là triệu chứng của corona không
+    - sốt có phải là triệu chứng của corona
+    - Sốt có phải là triệu chứng của virus không?
+    - Có phải chỉ sốt là mối lo ngại đối với covid-19
+
+
 
 - intent: corona_effect
   examples: |
@@ -714,12 +744,307 @@ nlu:
     - covid-19 có gây viêm thanh quản không
     - coronavirus có thể gây tiêu chảy không
     - covid19 gây tắc nghẽn đường hô hấp trong giai đoạn cấp tính và được biết là làm suy yếu quá trình hô hấp bình thường.
+    - Tôi cảm thấy ổn, ngoại trừ tôi bị ho nhẹ. Điều đó có nghĩa là tôi có các triệu chứng của covid-19?
+    - Tôi bị sốt nhưng nó đã biến mất. Bây giờ tôi bị ho. Tôi có các triệu chứng của covid-19 không?
+    - Tôi bị ho khan hơn 1 tuần, có phải tôi bị virus không?
+    - Tôi bị sốt có phải tôi nhiễm virus Corona không?
+    - Tôi bị đau họng, đó có phải là corona không?
+    - Tôi bị hen suyễn, nó có che giấu một triệu chứng tiềm ẩn không?
+    - Tôi có các triệu chứng giống như cảm cúm và đau nhức cơ thể, liệu tôi có bị nhiễm covid-19 không
+    - Nếu tôi bị mất vị giác và khứu giác, điều này có nghĩa là tôi bị nhiễm vi-rút corona không?
+    - Tôi đang bị sốt cao và đổ mồ hôi. Bạn có thể cho tôi biết nếu đây là coronavirus?
+    - Tôi đang tự hỏi liệu bệnh tiêu chảy của tôi có thể là do virus corona hay không.
+    - Cơn sốt của tôi có phải là triệu chứng của Covid19 không?
+    - Đau họng có phải là triệu chứng của corona
+    - Tôi đã bị sốt từ đêm qua. Bạn có thể cho tôi biết đây có phải là Virus Corona không
+    - Chảy máu mũi và covid19.
 
+- intent: human_tired
+  examples: |
+    - tôi ê ẩm toàn thân
+    - tôi luôn luôn mệt mỏi.
+    - Tôi toát mồ hôi lạnh.
+    - Tôi đang ho rất nhiều.
+    - Tôi đang bị sốt và ớn lạnh
+    - Tôi đang trải qua nhiệt độ cơ thể cao.
+    - Tôi đang cảm thấy khó thở.
+    - Tôi cảm thấy bị bệnh, mất vị giác và khứu giác.
+    - tôi đang sốt
+    - Tôi thấy khó thở, có phải virus Corona không?
+    - Tôi đang ớn lạnh.
+    - Tôi đang có một số nhiệt độ
+    - tôi khó thở
+    - Tôi đang khó thở.
+    - tôi đang cảm thấy không khỏe
+    - Tôi đang hắt hơi rất nhiều.
+    - tôi đang bị sốt
+    - Tôi đổ mồ hôi nhưng cảm thấy lạnh và ớn lạnh
+    - Tôi tự hỏi liệu tôi có bị nhiễm Corona nếu cơ thể tôi bị đau không?
+    - Tôi tự hỏi liệu đau răng có phải là triệu chứng của virus corona hay không.
+    - Tôi không thể đứng lâu trước khi cảm thấy muốn ngất đi.
+    - tôi không thể nếm bất cứ thứ gì
+    - Tôi không thở được.
+    - Tôi không thể ra khỏi giường.
+    - tôi không thể ngửi thấy bất cứ thứ gì
+    - Tôi không thể ngửi thấy những thứ
+    - Tôi không thể ngừng ho
+    - tôi không thể nếm bất cứ thứ gì
+    - Tôi ho ra đờm.
+    - Tôi không cảm thấy bất kỳ mùi vị nào trong thức ăn
+    - Tôi cảm thây chóng mặt.
+    - Tôi cảm thấy bị bệnh.
+    - Tôi cảm thấy mệt mỏi hơn bình thường.
+    - Tôi cảm thấy cổ họng mình tăng vọt
+    - tôi cảm thấy thực sự mệt mỏi
+    - Tôi cảm thấy bệnh
+    - tôi cảm thấy mệt
+    - tôi cảm thấy mệt mỏi và yếu ớt
+    - tôi bị ho nặng
+    - Tôi bị đau nhức cơ thể.
+    - Tôi bị bệnh mãn tính và tôi có các triệu chứng giống như cúm, tôi có nên lo lắng không
+    - Tôi bị ho
+    - Tôi bị ho, sổ mũi và sốt.
+    - Tôi bị ho khan.
+    - tôi bị đau đầu
+    - tôi bị sốt cao
+    - Tôi bị sốt cao hơn bình thường.
+    - Tôi bị sổ mũi và đau đầu
+    - Tôi bị đau họng nặng
+    - Tôi bị đau họng và sốt.
+    - tôi bị đau bao tử
+    - Tôi bị ho rất nặng, đó có phải là do virus không?
+    - Tôi có nhiệt độ cơ thể cao bất thường
+    - Tôi đã bị sốt trong vài ngày qua.
+    - Tôi bị đau nhức cơ thể.
+    - Tôi đã phát triển các triệu chứng sau: ho và sốt.
+    - Tôi đã bị ho trong nhiều ngày.
+    - Tôi đã bị sổ mũi trong vài ngày.
+    - Tôi đã mất khứu giác và vị giác.
+    - Tôi buồn nôn
+    - tôi không có cảm giác thèm ăn
+    - tôi không có khứu giác
+    - Tôi bị khó thở.
+    - Tôi dường như đã mất khứu giác
+    - Nếu tôi bị sốt, tôi có cần phải hoảng sợ không?
+    - Nếu tôi bị sốt cao, tôi có cần phải lo lắng không?
+    - Tôi đang ho rất nặng.
+    - toàn bộ cơ thể của tôi đau
+    - Cơn sốt của tôi đã đi kèm với đau nhức cơ thể.
+    - Chân tay tôi đau nhức
+    - Vị giác của tôi đã biến mất
+    - Nhiệt độ của tôi khá cao.
+    - Nhiệt độ của tôi đang tăng lên
+    - Nhiệt độ của tôi có vẻ cao hơn bình thường.
+
+- intent: place_come_covid
+  examples: |
+    - Tôi có thể đến bất kỳ bệnh viện nào nếu tôi có các triệu chứng không?
+    - Tôi nên đi đâu nếu tôi cảm thấy bị bệnh
+    - Tôi nên đi đâu trong trường hợp tôi có các triệu chứng?
+
+- intent: contact_emergency_number
+  examples: |
+    - Có bất kỳ số điện thoại khẩn cấp nào về virus corona trong khu vực của tôi không?
+    - Có phương tiện liên lạc nào để bệnh nhân Covid19 đến được cơ quan chức năng?
+    - Có cách nào khác ngoài email hoặc điện thoại để liên hệ với chính quyền không?
+    - Đây có phải là những số duy nhất có sẵn trong trường hợp khẩn cấp?
+    - Tôi có thể gửi thư trong trường hợp khẩn cấp về virus corona khôn
+    - Tôi có thể gửi thư cho chính quyền địa phương được không? Địa chỉ là gì?
+    - Bạn có thể xác nhận các số và email cho chính quyền của chúng tôi nếu tôi cần chúng không?
+    - Bạn có thể cho tôi số điện thoại của cơ quan y tế địa phương không?
+    - Bạn có thể cho tôi số điện thoại?
+    - Bạn có thể cung cấp cho tôi các số khẩn cấp không?
+    - Bạn có thể chỉ cho tôi số điện thoại cấp cứu y tế
+    - Bạn có thể cho tôi biết số điện thoại?
+    - Bạn có thể cho tôi biết số nào để gọi về virus không?
+    - Bạn có thể cho biết tôi nên gọi số nào không?
+    - địa chỉ liên hệ của bệnh viện virus corona ở
+    - Số liên lạc khẩn cấp của coronavirus.
+    - Số liên lạc khẩn cấp của coronavirus.
+    - Số điện thoại khẩn cấp coronavirus.
+    - Đường dây trợ giúp của chính phủ coronavirus.
+    - Số liên lạc thông tin về coronavirus.
+    - Số khẩn cấp của tiểu bang coronavirus.
+    - Bạn có thể vui lòng gửi cho tôi số điện thoại để liên hệ với các cơ quan chức năng?
+    - Bạn có địa chỉ liên lạc?
+    - Bạn có biết làm thế nào tôi nên liên hệ với chính quyền?
+    - Bạn có biết chi tiết liên lạc cho các tình huống khẩn cấp về virus corona không?
+    - Bạn có biết số nào để gọi không?
+    - Làm thế nào tôi có thể liên lạc với chính quyền
+    - Làm thế nào tôi có thể cho chính quyền biết tôi nghi ngờ mình nhiễm vi-rút corona?
+    - Làm thế nào tôi có thể liên hệ với chính quyền địa phương?
+    - Làm cách nào để liên hệ với chính quyền
+    - Làm thế nào để tôi nhận được sự giúp đỡ từ các cơ quan chức năng?
+    - Làm cách nào để nhận trợ giúp nếu tôi bị nhiễm vi-rút Corona?
+    - Làm thế nào để tôi nhận được sự giúp đỡ?
+    - Làm cách nào để tôi liên lạc về COVID-19?
+    - Làm thế nào để tôi biết nơi để đi cho virus corona?
+    - Làm cách nào để biết ai là người liên hệ khẩn cấp của tôi về vi-rút corona?
+    - Làm thế nào để tôi liên hệ để được giúp đỡ?
+    - Làm cách nào để chúng tôi liên hệ với các cơ quan có liên quan trong đại dịch?
+    - Tôi đang tự hỏi tôi nên gọi số nào
+    - Tôi cần một số điện thoại để gọi
+    - Tôi cần thông tin liên lạc cho trường hợp khẩn cấp
+    - Tôi cần những con số để gọi.
+    - Tôi muốn biết làm cách nào tôi có thể liên hệ với những người liên hệ trong trường hợp khẩn cấp.
+    - Tôi muốn biết những đường dây khẩn cấp nào đang hoạt động trong trường hợp có các triệu chứng vi-rút.
+    - Tôi muốn tìm hiểu nếu có một số điện thoại
+    - Tôi muốn tìm hiểu nếu có một địa chỉ email
+    - Tôi muốn biết tôi nên gọi số nào.
+    - Nếu tôi có các triệu chứng của Covid, tôi nên gọi cho ai?
+    - Có một đường dây nóng cho virus corona?
+    - Có số nào tôi nên gọi nếu tôi bị nhiễm vi-rút Corona không?
+    - Có số điện thoại nào tôi có thể gọi nếu tôi có thắc mắc không?
+    - Có một bệnh viện cụ thể tôi nên gọi?
+    - Tôi có thể liên hệ với số điện thoại miễn phí nào không?
+    - Ngoài ra còn có một địa chỉ email cho chính quyền địa phương?
+    - Có một e-mail tôi có thể liên hệ cho câu hỏi?
+    - Có số nào mà tôi có thể gọi đến không
+    - Có cách nào liên hệ với cơ quan chức năng trong trường hợp tôi mắc Covid19 không?
+    - Cho xin số phone để liên hệ.
+    - Vui lòng cho tôi biết phải gọi cho ai nếu tôi muốn được xét nghiệm COVID-19.
+    - Tìm kiếm cho tôi 'số điện thoại bác sĩ'
+    - Tìm kiếm thông tin liên hệ khẩn cấp về virus corona.
+    - Tìm kiếm thông tin liên hệ khẩn cấp cho các trường hợp liên quan đến vi-rút corona.
+    - Tôi có nên gọi nếu tôi nghĩ mình bị nhiễm vi-rút corona không?
+    - Tôi có nên gọi ai đó không?
+    - Tôi có nên gửi email hoặc gọi điện cho cơ quan chức năng nếu nghi ngờ mình nhiễm vi-rút corona không?
+    - Tôi có nên thông báo cho chính quyền?
+    - Cho tôi xem thông tin liên lạc khẩn cấp của chính quyền địa phương.
+    - Cho tôi xem số liên lạc khẩn cấp trong khu vực của tôi.
+    - Cho tôi xem các số điện thoại khẩn cấp về virus corona.
+    - Cho tôi biết số điện thoại liên lạc của các cơ quan có liên quan
+    - Cho tôi xem số thông tin về virus corona.
+    - Chỉ cho tôi số nào tôi nên gọi.
+    - Chỉ cho tôi người cần liên hệ để báo cáo trường hợp nghi ngờ mắc COVID-19.
+    - Cho tôi biết thông tin liên lạc của chính quyền địa phương.
+    - Cho tôi biết thông tin liên lạc khẩn cấp
+    - Cho tôi biết phải làm gì nếu tôi nghĩ mình bị nhiễm covid-19
+    - Các liên hệ khẩn cấp cho đại dịch virus corona là gì
+    - địa chỉ liên lạc khẩn cấp của là gì
+    - Số điện thoại và thông tin e-mail của chính quyền địa phương là gì?
+    - Địa chỉ email nào sẽ sử dụng nếu tôi nghĩ rằng mình bị nhiễm vi-rút corona?
+    - Thông tin liên lạc của các cơ quan chức năng trong đại dịch là gì?
+    - Thông tin liên lạc cho các trường hợp khẩn cấp là gì
+    - đường dây nóng virus corona là gì
+    - Số điện thoại thông tin về virus corona là gì?
+    - Tôi nên gọi số nào nếu tôi nghĩ mình bị nhiễm vi-rút corona?
+    - Tôi nên gọi số nào cho các dịch vụ xe cứu thương?
+    - Cơ quan chính phủ nào có thẩm quyền về virus corona?
+    - Số nào sẽ là tốt nhất để liên hệ nếu đó là trường hợp khẩn cấp?
+    - Tôi có thể gọi cho ai nếu nghi ngờ mình nhiễm vi-rút corona?
+    - Tôi có thể đến gặp ai để được giúp đỡ?
+    - Tôi có thể nói chuyện với ai về những loại thuốc cần dùng để điều trị vi-rút corona?
+    - Tôi gọi cho ai nếu tôi bị nhiễm virus corona
+    - Tôi phải gọi cho ai để được xét nghiệm vi-rút corona?
+    - Tôi phải liên hệ với ai để biết thông tin về COVID-19?
+    - Tôi phải gọi ai trong trường hợp khẩn cấp?
+    - Tôi phải liên hệ với ai?
+    - Bạn sẽ gọi cho ai để biết bạn có nên đến bệnh viện hay không?
+    - Ai là người có thẩm quyền chính để liên hệ trong trường hợp tôi có các triệu chứng?
+    - Tôi nên liên hệ với ai nếu nghi ngờ mình nhiễm vi-rút corona
+    - Tôi nên liên hệ với ai bây giờ?
+    - Tôi phải liên hệ với ai nếu có lo ngại về sức khỏe của mình?
+
+- intent: corona_prevent
+  examples: |
+    - làm thế nào tôi có thể ngăn chặn dịch bệnh vũ hán
+    - làm thế nào tôi có thể ngăn chặn covid19?
+    - Làm thế nào tôi có thể ngăn ngừa virus corona?
+    - làm thế nào tôi có thể ngăn chặn covid-19?
+    - ngăn ngừa covid19?
+    - ngăn ngừa dịch bệnh vũ hán?
+    - ngăn chặn corona
+    - làm thế nào một lần có thể ngăn ngừa bản thân khỏi bị nhiễm covid19?
+    - làm thế nào một lần có thể ngăn bản thân khỏi bị nhiễm corona?
+    - Mặt nạ có hiệu quả chống lại covid không?
+    - Khẩu trang có quan trọng trong mùa dịch virus Covid19?
+    - Có phải khẩu trang là lựa chọn duy nhất để ngăn ngừa Covid19?
+    - Có cách nào để ngăn chặn virus corona
+    - Có thể ngăn chặn sự lây lan của virus không?
+    - Chúng ta có thể ngăn chặn sự lây lan của Covid19 hay không và bằng cách nào?
+    - Đeo khẩu trang có thể giúp ngăn chặn sự lây lan của virus corona?
+    - Bạn có thể ngăn ngừa nhiễm virus corona không?
+    - Bạn có thể ngăn ngừa nhiễm COVID-19 không?
+    - Bạn có thể cho tôi biết làm thế nào tôi có thể tránh bị nhiễm vi-rút
+    - Bạn có thể cho tôi biết làm thế nào để ngăn ngừa virus Corona?
+    - Bạn có thể cho tôi biết cách tự bảo vệ mình trước COVID-19 không?
+    - Bạn có thể cho tôi biết một số lời khuyên để phòng ngừa coronavirus?
+    - Bạn có thể cho tôi biết biện pháp tốt nhất cần thực hiện để tránh nhiễm vi-rút không.
+    - Mặt nạ làm tại nhà có thể tái sử dụng của Conavirus.
+    - Corona và các biện pháp phòng ngừa.
+    - Corona và chất khử trùng của nó.
+    - Khẩu trang phòng chống corona.
+    - Thuốc sát trùng corona.
+    - Thuốc khử trùng tay Covid 19 và tần suất làm sạch.
+    - Thuốc khử trùng tay coronavirus.
+    - Bạn có biết biện pháp phòng ngừa và khắc phục virus corona nào không?
+    - Bạn có biết làm thế nào tôi có thể tự bảo vệ mình khỏi virus corona không?
+    - Đeo khẩu trang có giúp ngăn ngừa virus không?
+    - đeo khẩu trang có bảo vệ khỏi bị nhiễm virus corona không
+    - Giải thích cho tôi những cách mà tôi có thể ngăn ngừa nhiễm vi-rút Corona?
+    - Làm thế nào tôi có thể giữ cho ông bà của tôi không bị nhiễm vi-rút Corona?
+    - Làm thế nào tôi có thể ngăn ngừa nhiễm vi-rút?
+    - Làm cách nào để tôi có thể tự bảo vệ mình trước COVID-19?
+    - Làm thế nào tôi có thể giữ an toàn trong trường hợp khẩn cấp vi-rút corona
+    - Làm thế nào tôi có thể ngăn chặn sự lây lan của Covid19?
+    - Làm thế nào chúng ta có thể làm việc cùng nhau để ngăn chặn sự lây lan của Covid19?
+    - Làm cách nào để tránh bị nhiễm hoặc lây lan vi-rút
+    - Làm cách nào để tránh covid-19?
+    - Làm cách nào để ngăn chặn sự lây lan của vi-rút
+    - Làm cách nào để bảo vệ bản thân và gia đình khỏi nhiễm vi-rút Corona?
+    - Làm cách nào để bảo vệ bản thân và gia đình khỏi covid-19
+    - Làm thế nào để tôi ngăn chặn sự lây lan?
+    - Làm thế nào để bạn không bị nhiễm covid 19?
+    - cách phòng tránh nhiễm virus corona
+    - Làm thế nào để giữ cho xung quanh chúng ta sạch sẽ khỏi corona?
+    - cách phòng tránh nhiễm virus corona
+    - cách bảo vệ người lớn tuổi khỏi virus corona
+    - Làm thế nào để giữ an toàn khỏi Covid19
+    - Tôi tò mò về cách bảo vệ bản thân khỏi covid-19.
+    - Tôi tự hỏi làm thế nào tôi có thể tự bảo vệ mình khỏi coronavirus.
+    - Tôi tự hỏi liệu đeo khẩu trang có hiệu quả trong việc ngăn ngừa coronavirus hay không
+    - Tôi đang tự hỏi tôi có thể thực hiện những bước nào để giữ an toàn khỏi Covid19?
+    - Tôi muốn biết liệu rửa tay có phải là cách tốt nhất để bảo vệ bản thân khỏi vi-rút corona hay không.
+    - Tôi muốn biết thêm về các biện pháp phòng ngừa
+    - Tôi muốn biết những biện pháp phòng ngừa cần thực hiện để chống nhiễm vi-rút.
+    - Tôi muốn biết giao thức tốt nhất để tránh vi-rút.
+    - Tôi muốn tìm hiểu một số biện pháp chống lại virus corona.
+    - Thông tin về các biện pháp phòng ngừa về corona
+    - Có cần thiết phải đeo khẩu trang để tránh nhiễm COVID-19 không?
+    - Có bất cứ điều gì tôi có thể làm để ngăn mình khỏi bị bệnh?
+    - Có bất cứ điều gì tôi có thể thực hiện để ngăn tôi nhiễm vi-rút corona không?
+    - Tra cứu 'cách tốt nhất để ngăn ngừa nhiễm COVID-19'
+    - Tra cứu 'biện pháp phòng ngừa' và 'virus corona'
+    - Xin vui lòng cho tôi biết tôi nên làm gì để ngăn mình khỏi bị nhiễm vi-rút.
+    - Phòng chống virus corona
+    - Tìm kiếm cho tôi các biện pháp phòng ngừa cần thực hiện để ngăn ngừa nhiễm covid-19.
+    - Tìm kiếm 'làm thế nào để tránh nhiễm coronavirus'
+    - Tìm kiếm 'phòng ngừa cho corona' cho tôi
+    - Chỉ cho tôi cách tôi có thể ngăn ngừa nhiễm vi-rút corona.
+    - Chỉ cho tôi thông tin về cách giữ an toàn khỏi vi-rút.
+    - Chỉ cho tôi một số mẹo để bảo vệ bản thân khỏi vi-rút corona.
+    - Cho tôi biết làm thế nào để ngăn chặn bản thân khỏi virus.
+    - Cho tôi biết thêm về cách tránh bị nhiễm vi-rút.
+    - Nên và không nên làm gì để phòng ngừa corona
+    - Các biện pháp phòng ngừa cho Covid19 là gì?
+    - Các phương pháp phòng ngừa được đề xuất là gì?
+    - Các đề xuất để ngăn chặn corona là gì
+    - Tôi có thể làm gì để tránh nhiễm vi-rút?
+    - Tôi có thể làm gì để giúp ngăn chặn sự lây lan của vi-rút?
+    - Tôi có thể làm gì để bảo vệ mình khỏi vi-rút?
+    - Tôi phải làm gì để ngăn ngừa nhiễm vi-rút?
+    - Phương pháp tốt nhất để tránh bị nhiễm vi-rút là gì?
+    - Tôi cần thực hiện những biện pháp nào để tránh nhiễm vi-rút
+    - Nên làm gì ở nhà để phòng lây nhiễm corona
+    - Tôi nên làm gì để không bị nhiễm vi-rút
+    - Liệu cách ly xã hội có thực sự giúp ngăn chặn việc nhiễm vi-rút?
 #############################################################
 
 - intent: corona_mutation
   examples: |
     - coronavirus có đột biến không?
+    - coronavirus có biến dị không?
 
 - intent: corona_and_animal
   examples: |
@@ -766,12 +1091,103 @@ nlu:
     - virus corona có lây qua không khí không
     - coronavirus có lây theo theo mùa không?
     - covid-19 lan truyền trong không khí hoặc giọt
-
-- intent: corona_food_spread
-  examples: |
+    - Động vật có thể lây lan vi rút covid-19 không?
+    - Những người không có triệu chứng có thể lây lan vi-rút không?
+    - coronavirus có thể lây lan qua đường bưu điện không
     - thức ăn lây lan virus corona như thế nào?
     - ăn đồ ăn vặt có làm lây lan virus corona không?
     - corona sẽ lây lan từ thực phẩm như thế nào?
+    - coronavirus có thể truyền qua thực phẩm không
+    - coronavirus có thể sống trong nước không
+    - coronavirus có thể sống trên bìa cứng không
+    - coronavirus có thể sống trên quần áo không
+    - coronavirus có thể sống trên quần áo không
+    - coronavirus có thể sống trên vải không
+    - coronavirus có thể sống trên thực phẩm không
+    - coronavirus có thể sống trên tóc không
+    - coronavirus có thể sống trên thư không
+    - coronavirus có thể sống trên tiền không
+    - coronavirus có thể sống trên báo không
+    - coronavirus có thể sống trên các vật thể không
+    - coronavirus có thể sống trên bao bì không
+    - coronavirus có thể sống trên giấy không
+    - coronavirus có thể lây lan từ thư hoặc gói hàng không
+    - coronavirus có thể lây lan qua không khí
+    - coronavirus có thể lây lan qua thực phẩm không
+    - coronavirus có thể lây lan qua nước không
+    - coronavirus có thể tồn tại trên giấy không
+    - covid-19 có thể lây lan qua không khí không?
+    - covid-19 có thể sống trong tủ đông không
+    - covid-19 có thể sống trong nước
+    - covid-19 có thể sống trên thực phẩm
+    - covid-19 có thể sống trên giấy
+    - covid-19 có thể sống trên các bề mặt không
+    - covid-19 có thể tồn tại trong tủ đông
+    - Chó có thể lây lan coronavirus không?
+    - Tôi có thể bị nhiễm vi-rút Corona khi bơi ở biển không?
+    - Tôi có thể bị nhiễm virus corona từ thú cưng của mình không
+    - Tôi có thể bị nhiễm coronavirus khi hôn ai đó không?
+    - Tôi có thể bị nhiễm covid từ con chó của mình không?
+    - Tôi có thể lấy nó từ thú cưng của mình không?
+    - Tôi có thể lấy vi-rút corona từ thư của mình không?
+    - Tôi có thể bị nhiễm vi-rút khi nói chuyện với ai đó cách tôi 6 feet không?
+    - Tôi có thể bị nhiễm vi-rút khi chạm vào thứ mà người bị nhiễm bệnh đã chạm vào không?
+    - Tôi có thể lây vi-rút bằng cách chạm vào ai đó không?
+    - Thú cưng của tôi có thể truyền vi-rút corona không?
+    - Một người có thể lây nhiễm COVID-19 cho cả một nhóm người không?
+    - Chuột có thể truyền virus corona không
+    - Virus Corona có lây qua muỗi không?
+    - Virus có thể lây lan qua rắm không?
+    - Vi-rút có thể lây lan từ phụ nữ mang thai sang con của cô ấy không?
+    - Virus có thể lây lan từ máy thở điều hòa không khí?
+    - Virus có thể lây từ người sang động vật không?
+    - Virus có thể lây lan qua tinh dịch không?
+    - Virus có thể lây lan qua đường tình dục không?
+    - muỗi có thể lây lan virus corona?
+    - muỗi truyền virus corona như thế nào?
+    - muỗi truyền virus covid-19.
+    - muỗi truyền virut covid.
+    - muỗi truyền virut vũ hán.
+    - Virus có thể lây lan từ động vật sang người?
+    - Bạn có thể bị nhiễm virus corona từ bia corona?
+    - Động vật có truyền virus corona cho bạn không?
+    - Chúng ta có biết chắc chắn rằng muỗi không thể truyền vi-rút không?
+    - Bạn có biết virus lây lan như thế nào không?
+    - Bạn có biết Virus Corona lây truyền như thế nào không?
+    - Bạn có biết virus lây lan như thế nào không?
+    - Bạn có biết virus có thể được chuyển giao?
+    - Virus corona có lây lan qua việc trao đổi chất dịch cơ thể không?
+    - coronavirus có sống trong không khí không
+    - coronavirus có sống trong nước không
+    - coronavirus có sống trên quần áo không
+    - coronavirus có sống trên vải không
+    - coronavirus có sống trên thực phẩm không
+    - coronavirus có sống trên giấy không
+    - covid-19 có sống trên bề mặt không
+    - COVID-19 có lây lan qua các giọt bắn không?
+    - Có phải corona lây lan qua chạm?
+    - Virus có lây lan qua không khí không?
+    - Virus có di chuyển trên nhựa không?
+    - Đã có ai tuyên bố rằng họ bị nhiễm bệnh qua muỗi chưa?
+    - Virus corona lây lan như thế nào
+    - virus corona lây truyền như thế nào
+    - Làm thế nào để nó lây lan?
+    - COVID-19 lây lan như thế nào?
+    - Virus có thể lây lan từ người này sang người khác nhanh như thế nào?
+    - Tôi nghe nói mèo có thể nhiễm virus corona. Con mèo của tôi có thể lây cho tôi covid-19 không?
+    - Tôi muốn tìm hiểu các trường hợp chính mà vi-rút lây lan.
+    - Tôi muốn biết nếu muỗi có thể lây lan nó.
+    - Tôi muốn tìm hiểu về sự lây lan của Virus.
+    - Tôi muốn tìm hiểu xem covid-19 đang lây lan như thế nào
+    - Tôi muốn tìm hiểu thêm về cách thức lây lan của virus.
+    - Chúng ta hiểu gì về sự lây lan của virus Corona?
+    - Những cách mà virus Corona đang lây lan là gì?
+    - Các phương tiện lây truyền phổ biến nhất của virus là gì
+    - Chỉ cho tôi cách vi-rút lây lan khắp thế giới.
+    - Cho tôi biết COVID-19 lây truyền như thế nào?
+    - Tôi có nên lo lắng rằng muỗi truyền vi-rút Corona?
+    - Tìm kiếm cho tôi nếu COVID-19 có thể lây lan qua các bề mặt.
+
 
 - intent: corona_spread_warm
   examples: |
@@ -790,14 +1206,6 @@ nlu:
     - Làm thế nào để lây lan cộng đồng xảy ra?
     - lây lan trong cộng đồng
 
-- intent: corona_mosq_spread
-  examples: |
-    - muỗi có thể lây lan virus corona?
-    - muỗi truyền virus corona như thế nào?
-    - muỗi truyền virus covid-19.
-    - muỗi truyền virut covid.
-    - muỗi truyền virut vũ hán.
-
 - intent: corona_vaccine
   examples: |
     - đã có vắc xin phòng ngừa virus corona chưa?
@@ -809,18 +1217,6 @@ nlu:
     - có vắc xin phòng virus corona chưa?
     - có vắc xin nào cho virus covid19 không?
     - có vắc xin nào cho virus vũ hán?
-
-- intent: corona_prevent
-  examples: |
-    - làm thế nào tôi có thể ngăn chặn dịch bệnh vũ hán
-    - làm thế nào tôi có thể ngăn chặn covid19?
-    - Làm thế nào tôi có thể ngăn ngừa virus corona?
-    - làm thế nào tôi có thể ngăn chặn covid-19?
-    - ngăn ngừa covid19?
-    - ngăn ngừa dịch bệnh vũ hán?
-    - ngăn chặn corona
-    - làm thế nào một lần có thể ngăn ngừa bản thân khỏi bị nhiễm covid19?
-    - làm thế nào một lần có thể ngăn bản thân khỏi bị nhiễm corona?
 
 - intent: corona_infected_person
   examples: |
@@ -834,6 +1230,8 @@ nlu:
     - ai đó bị nhiễm corona mà tôi đã tiếp xúc?
     - ai đó bị nhiễm covid mà tôi đã tiếp xúc?
     - phải làm gì nếu ai đó bị nhiễm covid mà tôi đã tiếp xúc?
+    - Tôi đã tiếp xúc với một người dương tính và bây giờ tôi bị ho.
+    - Tôi đã tiếp xúc với một người có kết quả xét nghiệm dương tính nhưng không có triệu chứng.
 
 - intent: corona_states_stat
   examples: |
