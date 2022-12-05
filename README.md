@@ -36,3 +36,6 @@
 - Run 
     ```ngrok http 5002```
 - Change config in file: credentials.yml
+- Run in local
+    ```rasa run --port 5002 --connector slack --credentials credentials.yml --cors * --enable-api --debug```
+    ```rasa run actions```
