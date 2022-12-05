@@ -31,7 +31,7 @@
     ```rasa run shell```
 ----------------------------------------------------------------------------------------------------
 ## Connect bot to slack:
-[Connect bot with rasa](https://rasa.com/docs/rasa/connectors/slack/)
+- [Connect bot with rasa](https://rasa.com/docs/rasa/connectors/slack/)
 - You also need install ngrok [Download ngrok](https://ngrok.com/) or ```pip install pyngrok```
 - Run 
     ```ngrok http 5002```
