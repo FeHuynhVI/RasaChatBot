@@ -24,6 +24,8 @@ from rasa.engine.recipes.default_recipe import DefaultV1Recipe
 
 from typing import Any, Dict, List, Optional, Text
 
+PATH_STOP_WORD = "C:/Users/pc/OneDrive/Máy tính/RasaChatBot/customs/stopwords.txt"
+
 @DefaultV1Recipe.register(
     DefaultV1Recipe.ComponentType.MESSAGE_TOKENIZER, is_trainable=False
 )
@@ -115,7 +117,7 @@ class VietnameseTokenizer(Tokenizer):
             if len(wordsRemoveEmojiLocal) > 0:
                 wordsRemoveEmojiGlobal.append(" ".join(wordsRemoveEmojiLocal).strip())
 
-        stopwords = set(open('C:/Users/pc/OneDrive/Máy tính/RasaChatBot/customs/stopwords.txt',
+        stopwords = set(open(PATH_STOP_WORD,
              encoding="utf8").read().split(' ')[:-1])
 
         words = [w for w in wordsRemoveEmojiGlobal if  w not in stopwords]
