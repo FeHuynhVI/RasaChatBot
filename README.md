@@ -9,9 +9,13 @@
 ----------------------------------------------------------------------------------------------------
 ## Setting:
 - Open file: 
+
 ```custom\vi_tokenize.py```
--- change path url to stopwords file 'PATH_STOP_WORD'
--- Copy 3 file from directory custom overwrite to rasa directory of you:
+
+- change path url to stopwords file 'PATH_STOP_WORD'
+
+- Copy 3 file from directory custom overwrite to rasa directory of you:
+
 ### Examples:
     C:\Users\Admin\anaconda3\Lib\site-packages\rasa\nlu\utils\hugging_face\registry.py
     C:\Users\Admin\anaconda3\Lib\site-packages\rasa\engine\recipes\default_components.py
@@ -21,17 +25,17 @@
 ----------------------------------------------------------------------------------------------------
 ## Train:
 - CMD: 
-```rasa train```
+    ```rasa train```
 ## Run:
 - OPEN 2 CMD (Command line)
 - CMD 1: 
-```rasa run actions```
+    ```rasa run actions```
 - CMD 2: 
-```rasa run shell```
+    ```rasa run shell```
 ----------------------------------------------------------------------------------------------------
 ## Connect bot to slack:
 [Connect bot with rasa](https://rasa.com/docs/rasa/connectors/slack/)
 - You also need install ngrok [Download ngrok](https://ngrok.com/) or ```pip install pyngrok```
 - Run 
-```ngrok http 5002```
+    ```ngrok http 5002```
 - Change config in file: credentials.yml
