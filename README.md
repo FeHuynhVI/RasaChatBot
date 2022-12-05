@@ -10,7 +10,7 @@
 ## Setting:
 - Open file: 
 
-```custom\vi_tokenize.py```
+    ```custom\vi_tokenize.py```
 
 - change path url to stopwords file 'PATH_STOP_WORD'
 
