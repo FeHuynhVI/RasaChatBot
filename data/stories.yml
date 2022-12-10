@@ -64,10 +64,14 @@ stories:
   steps:
   - intent: corona_intro
   - action: utter_corona_intro
+  - checkpoint: check_asked_question
+
 
 ##################################
 - story: corona type
   steps:
+  - intent: greet
+  - action: utter_greet
   - intent: corona_type
   - action: utter_corona_intro
 
@@ -274,3 +278,24 @@ stories:
   - action: utter_greet
   - intent: ask_all_province
   - action: action_reall_province
+
+###########################################################################################
+- story: handle user affirm
+  steps:
+  - checkpoint: check_asked_question
+  - intent: affirm
+  - action: utter_great
+  - checkpoint: check_flow_finished
+
+- story: handle user deny
+  steps:
+  - checkpoint: check_asked_question
+  - intent: mood_bad
+  - action: utter_bad
+  - checkpoint: check_flow_finished
+
+- story: finish flow
+  steps:
+  - checkpoint: check_flow_finished
+  - intent: goodbye
+  - action: utter_goodbye

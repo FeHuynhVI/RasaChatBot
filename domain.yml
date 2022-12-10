@@ -5,8 +5,10 @@ intents:
   - greet
   - decry
   - praise
+  - affirm
   - goodbye
   - weather
+  - mood_bad
   - thankyou
   - name_entry
   - ask_weather
@@ -108,6 +110,12 @@ responses:
   - text: "Chào! bạn tôi có thể giúp gì cho bạn?"
   - text: "Bạn cần gì?"
   - text: "Rất vui khi bạn đã hỏi"
+
+  utter_great:
+  - text: Rất tuyệt khi nghe điều này!
+
+  utter_bad:
+  - text: Tôi rất tiếc khi nghe điều đó.
 
   utter_goodbye:
   - text: "Tạm biệt! Hy vọng sớm gặp lại bạn! Chỉ cần nhập 'hey' hoặc 'hi' bất cứ lúc nào để chuyển hướng đến Phần giới thiệu của Bot :))"
