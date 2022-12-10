@@ -16,6 +16,7 @@ import {
     MessageInput,
     TypingIndicator
 } from '@chatscope/chat-ui-kit-react';
+
 import {
     useState,
     useCallback,
@@ -74,12 +75,10 @@ const muiStyles = {
 const Chat = ({user}: { user: User }) => {
 
     // Message input value
-    const [value,
-        setValue] = useState('');
+    const [value, setValue] = useState('');
 
     const {
         currentMessages,
-
         conversations,
         activeConversation,
         setActiveConversation,
@@ -92,9 +91,8 @@ const Chat = ({user}: { user: User }) => {
     } = useChat();
 
     useEffect(() => {
-            setCurrentUser(user);
-        },
-        [user, setCurrentUser]);
+        setCurrentUser(user);
+    }, [user, setCurrentUser]);
 
     // Get current user data
     const [currentUserAvatar, currentUserName] = useMemo(() => {
@@ -170,11 +168,9 @@ const Chat = ({user}: { user: User }) => {
             }
 
             return undefined;
+        }, [activeConversation, getUser],);
 
-        },
-        [activeConversation, getUser],);
-
-    return (<div style={{position: 'relative', height: '500px'}}>
+    return (<div style={{position: 'relative', height: 'calc(100vh - 65px)'}}>
         <MainContainer responsive>
             <Sidebar position="left" scrollable>
                 <ConversationHeader style={{backgroundColor: '#fff'}}>
@@ -185,13 +181,17 @@ const Chat = ({user}: { user: User }) => {
                 </ConversationHeader>
                 <ConversationList>
                     {conversations.map(c => {
+
                         // Helper for getting the data of the first participant
                         const [avatar, name] = (() => {
+
                             const participant = c.participants.length > 0 ? c.participants[0] : undefined;
                             if (participant) {
                                 const user = getUser(participant.id);
                                 if (user) {
+
                                     return [<Avatar src={user.avatar}/>, user.username];
+
                                 }
                             }
 
@@ -220,15 +220,15 @@ const Chat = ({user}: { user: User }) => {
                 </ConversationHeader>
 
                 <MessageList typingIndicator={getTypingIndicator()}>
-                    <Message
-                        model={{
-                            message: 'Hello my friend',
-                            sentTime: 'just now',
-                            sender: 'Joe',
-                        }}
-                    />
                     {activeConversation && currentMessages.map(g => <MessageGroup key={g.id} direction={g.direction}>
                         <MessageGroup.Messages>
+                            <Message
+                                model={{
+                                    message: 'Hello my friend',
+                                    sentTime: 'just now',
+                                    sender: 'Joe',
+                                }}
+                            />
                             {g.messages.map(m => <Message key={m.id} model={{
                                 type: 'text',
                                 payload: m.content

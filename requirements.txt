@@ -1,0 +1,10 @@
+rasa>=3.3.3
+underthesea
+flask
+python-dotenv
+flask-socketio
+numpy
+pandas
+scikit-learn
+transformers
+wikipedia
