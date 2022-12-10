@@ -226,6 +226,7 @@ class ActionWeatherTracker(Action):
             if (loc is None):
                 dispatcher.utter_message(text=actionFormat)
 
+            print(loc)
             URL = BASE_URL + "q=" + loc + "&key=" + API_KEY
             response = requests.get(URL)
             if response.status_code == 200:
@@ -298,8 +299,9 @@ class ActionRedeathProvince(Action):
 
             if (loc is None):
                 dispatcher.utter_message(text=actionFormat)
-
+            dispatcher.utter_message(text=loc)
             loc = loc.lower()
+            return []
 
             if (loc in PROVINCE.keys()):
                 dataLocD = utils.get_province_data(PROVINCE[loc])

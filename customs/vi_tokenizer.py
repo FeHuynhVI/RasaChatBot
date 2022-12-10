@@ -24,7 +24,7 @@ from rasa.engine.recipes.default_recipe import DefaultV1Recipe
 
 from typing import Any, Dict, List, Optional, Text
 
-PATH_STOP_WORD = "stopwords.txt"
+PATH_STOP_WORD = "/home/ninepoints/Documents/RiN/rasa/RasaChatBot/customs/stopwords.txt"
 
 
 @DefaultV1Recipe.register(
