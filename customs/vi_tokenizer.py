@@ -122,6 +122,6 @@ class VietnameseTokenizer(Tokenizer):
 
         words = [w for w in wordsRemoveEmojiGlobal if  w not in stopwords]
 
-        tokens = self._convert_words_to_tokens_v1(words, text)
+        tokens = self._convert_words_to_tokens(words, text)
         
         return self._apply_token_pattern(tokens) 
