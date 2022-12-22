@@ -24,17 +24,17 @@ FOOD = constants.getFood()
 PROVINCE = constants.getProvince()
 
 reresolveProvinceOutput = "{}\nNgày {} có thêm {} ca hồi phục"
-reDeathOutput = "Tổng sô ca tử vong: '{}' \nNgày ghi nhận '{}'"
+reDeathOutput = "Ở Việt Nam:\nTổng sô ca tử vong: '{}' \nNgày ghi nhận '{}'"
 numberOutPutException = "Bạn quay vào ô mất lượt. Xin cảm ơn!"
-reconfirmOutput = "Tổng sô ca nhiễm bệnh: '{}' \nNgày ghi nhận '{}'"
+reconfirmOutput = "Ở Việt Nam:\nTổng sô ca nhiễm bệnh: '{}' \nNgày ghi nhận '{}'"
 redeathVietnameseProvinceDateOutput = "Tại Việt Nam\nTổng sô ca tử vong là: '{}' \nNgày ghi nhận '{}'"
 reresolveVietnameseProvinceOutput = "Tại Việt Nam\nTổng sô ca hồi phục là: '{}' \nNgày ghi nhận '{}'"
 reallProvinceLOutput_2 = "Ngày {}\n\tcó {} ca tử vong\n\tCó {} ca nhiễm mới\n\tCó thêm {} ca hồi phục"
 reconfirmVietnameseProvinceOutput = "Tại Việt Nam\nTổng số ca nhiễm bệnh là: '{}' \nNgày ghi nhận '{}'"
 redeathProvinceDateOutput = "{}\nĐến ngày '{}', Tổng số ca tử vong được ghi nhận là {}\nNgày {} có thêm {} ca tử vong"
 reconfirmProvinceOutput = "{}\nĐến ngày '{}', Tổng số ca nhiễm bệnh được ghi nhận là {}\n Ngày {} có thêm {} ca nhiễm mới"
-reallProvinceLOutput_1 = "{}\nĐến ngày '{}'\n\tTổng số ca tử vong được ghi nhận là {}\n\tTổng số ca nhiễm mới được ghi nhận là {}"
-summaryOutput = "Ngày '{}' có tổng sô ca nhiễm bệnh: '{}' \nNgày '{}' có tổng số ca tử vong: '{}' \nNgày '{}' có tổng số ca hồi phục: '{}'"
+reallProvinceLOutput_1 = "{}\nĐến ngày '{}'\n\tTổng số ca tử vong được ghi nhận là {}\n\tTổng số ca nhiễm được ghi nhận là {}"
+summaryOutput = "Ở Việt Nam:\nNgày '{}' có tổng sô ca nhiễm bệnh: '{}' \nNgày '{}' có tổng số ca tử vong: '{}' \nNgày '{}' có tổng số ca hồi phục: '{}'"
 reallVietnameseProvinceLOutput_2 = "Tại Việt Nam\nNgày '{}' có tổng số ca nhiễm bệnh: '{}' \nNgày '{}' có tổng số ca tử vong: '{}' \nNgày '{}' có tổng số ca hồi phục: '{}'"
 
 
@@ -130,7 +130,7 @@ class ActionRerecovered(Action):
 
         dataR = utils.get_data('recovered_global')
 
-        dispatcher.utter_message(text="Tổng sô ca khỏi bênh: '{}' \nNgày ghi nhận '{}'".format(
+        dispatcher.utter_message(text="Ở Việt Nam:\nTổng sô ca khỏi bênh: '{}' \nNgày ghi nhận '{}'".format(
             dataR['vn_latest'], dataR['latest_date']))
 
         return []
@@ -226,7 +226,6 @@ class ActionWeatherTracker(Action):
             if (loc is None):
                 dispatcher.utter_message(text=actionFormat)
 
-            print(loc)
             URL = BASE_URL + "q=" + loc + "&key=" + API_KEY
             response = requests.get(URL)
             if response.status_code == 200:
@@ -292,16 +291,12 @@ class ActionRedeathProvince(Action):
         return "action_redeath_province"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        logging.info('Call action_redeath_province')
+        loc = tracker.get_slot('location')
+        logging.info("{}{}".format('Call action_redeath_province: ', loc))
 
         try:
-            loc = tracker.get_slot('location')
-
-            if (loc is None):
-                dispatcher.utter_message(text=actionFormat)
-            dispatcher.utter_message(text=loc)
-            loc = loc.lower()
-            return []
+            if (loc):
+                 loc = loc.lower()
 
             if (loc in PROVINCE.keys()):
                 dataLocD = utils.get_province_data(PROVINCE[loc])
@@ -318,7 +313,6 @@ class ActionRedeathProvince(Action):
             logging.error('Call action_redeath_province error: {0}'.format(err))
             
             dispatcher.utter_message(text=numberOutPutException)
-            
         return []
 
 
@@ -328,15 +322,13 @@ class ActionReconfirmProvince(Action):
         return "action_reconfirm_province"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        logging.info('Call action_reconfirm_province')
+        loc = tracker.get_slot('location')
+        logging.info("{}{}".format('Call action_reconfirm_province: ', loc))
 
         try:
-            loc = tracker.get_slot('location')
+            if (loc):
+                loc = loc.lower()
 
-            if (loc is None):
-                dispatcher.utter_message(text=actionFormat)
-
-            loc = loc.lower()
             if (loc in PROVINCE.keys()):
                 dataLocD = utils.get_province_data(PROVINCE[loc])
                 yesterday = utils.get_yesterday()
@@ -361,15 +353,12 @@ class ActionReresolveProvince(Action):
         return "action_reresolve_province"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        logging.info('Call action_reresolve_province')
+        loc = tracker.get_slot('location')
+        logging.info("{}{}".format('Call action_reresolve_province: ', loc))
 
         try:
-            loc = tracker.get_slot('location')
-
-            if (loc is None):
-                dispatcher.utter_message(text=actionFormat)
-
-            loc = loc.lower()
+            if (loc):
+                loc = loc.lower()
 
             if (loc in PROVINCE.keys()):
                 dataLocD = utils.get_province_data(PROVINCE[loc])
@@ -395,15 +384,13 @@ class ActionReallProvince(Action):
         return "action_reall_province"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        logging.info('Call action_reall_province')
+        loc = tracker.get_slot('location')
+        logging.info("{}{}".format('Call action_reall_province: ', loc))
 
         try:
-            loc = tracker.get_slot('location')
 
-            if (loc is None):
-                dispatcher.utter_message(text=actionFormat)
-
-            loc = loc.lower()
+            if (loc):
+                loc = loc.lower()
             if (loc in PROVINCE.keys()):
                 dataLocD = utils.get_province_data(PROVINCE[loc])
                 yesterday = utils.get_yesterday()
@@ -421,7 +408,149 @@ class ActionReallProvince(Action):
 
             dispatcher.utter_message(text)
         except Exception as err:
-            logging.error('Call action_reresolve_province error: {0}'.format(err))
+            logging.error('Call action_reall_province error: {0}'.format(err))
 
+            dispatcher.utter_message(text=numberOutPutException)
+        return []
+
+class ActionGgSearch(Action):
+
+    def name(self) -> Text:
+        return "action_gg_search"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logging.info('action_gg_search')
+
+        try:
+            message = tracker.latest_message["text"]
+            print(message)
+            text = utils.get_search(message)
+            dispatcher.utter_message(text)
+        except Exception as err:
+            logging.error('Call action_gg_search error: {0}'.format(err))
+            dispatcher.utter_message(text=numberOutPutException)
+        return []
+
+class ActionCoronaSymptoms(Action):
+    def name(self) -> Text:
+        return "action_corona_symptoms"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logging.info('action_corona_symptoms')
+
+        try:
+            message = """
+Tùy theo thể trạng và sức đề kháng, triệu chứng nhiễm corona qua từng ngày của mỗi cá thể là khác nhau, tuy nhiên những triệu chứng này đều biểu hiện rõ từ 2-14 ngày. Do đó, ngay khi có các dấu hiệu nghi ngờ, người bệnh cần đến ngay các cơ sở y tế gần nhất để được chẩn đoán kịp thời.
+
+Ngày 1 đến ngày 3:
+
+Dấu hiệu giống bệnh cảm thông thường.
+Viêm họng nhẹ, không sốt, không mệt mỏi.
+Ăn uống và hoạt động bình thường.
+Ngày 4:
+
+Cổ họng bắt đầu đau nhẹ, người lờ đờ.
+Bắt đầu khan tiếng.
+Nhiệt độ cơ thể tăng nhẹ.
+Đau đầu nhẹ, tiêu chảy nhẹ.
+Bắt đầu chán ăn.
+Ngày 5:
+
+Đau họng nhiều hơn, khan tiếng nhiều hơn.
+Nhiệt độ cơ thể tăng nhẹ
+Cơ thể mệt mỏi, đau nhức các khớp xương.
+Ngày 6:
+
+Triệu chứng của virus Corona 2019 là bắt đầu sốt nhẹ.
+Ho có đàm hoặc ho khan không đàm.
+Đau họng nhiều hơn, đau khi nuốt nước bọt, khi ăn hoặc nói.
+Cơ thể mệt mỏi, buồn nôn.
+Tiêu chảy, có thể nôn ói.
+Lưng hoặc ngón tay đau nhức.
+Ngày 7:
+
+Sốt cao dưới 38o.
+Ho nhiều hơn, đàm nhiều hơn.
+Toàn thân đau nhức.
+Khó thở.
+Tiêu chảy và nôn ói nhiều hơn.
+Ngày 8:
+
+Sốt khoảng trên dưới 38o.
+Khó thở, hơi thở khò khè, nặng lồng ngực.
+Ho liên tục, đàm nhiều, tắt tiếng.
+Đau khớp xương, đau đầu, đau lưng.
+Ngày 9:
+
+Các tình trạng như sốt, ho, khó thở, nặng lồng ngực… trở nên nặng nề hơn.
+"""
+
+            dispatcher.utter_message(message)
+            dispatcher.utter_message("https://vnvc.vn/virus-corona-2019/")
+        except Exception as err:
+            logging.error('Call action_corona_symptoms error: {0}'.format(err))
+            dispatcher.utter_message(text=numberOutPutException)
+        return []
+
+class ActionCoronaDangerous(Action):
+
+    def name(self) -> Text:
+        return "action_corona_dangerous"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logging.info('action_corona_dangerous')
+
+        try:
+            message = """
+Người nhiễm COVID-19 nhiều tuần đến nhiều tháng sau khi khỏi bệnh vẫn còn đối mặt với hàng loạt triệu chứng và di chứng kéo dài như sốt nhẹ, khó thở, ho kéo dài, mệt mỏi, đau cơ, khớp, rụng tóc, xơ phổi, tim đập nhanh hoặc đánh trống ngực, rối loạn nội tiết, huyết học bị huyết khối… Có trường hợp xuất hiện rối loạn tiêu hóa (ăn không ngon miệng, chán ăn, đau dạ dày, tiêu chảy…), rối loạn vị giác hoặc khứu giác, phát ban…
+Người bệnh trong giai đoạn hậu COVID-19 cũng có thể gặp các triệu chứng về tâm thần kinh như rối loạn tâm lý, giảm sự tập trung, lo âu, trầm cảm, bồn chồn, rối loạn giấc ngủ, mau quên, không tập trung. Thường xuất hiện tình trạng não sương mù, nhận thức kém, đọc chậm, giảm trí nhớ ngắn hạn, thay đổi tâm trạng.
+Với người có sẵn bệnh nền như bệnh tim mạch, tiểu đường, đặc biệt là hô hấp, viêm phổi tắc nghẽn mạn tính COPD, viêm phế quản mạn… khi COVID-19 xảy ra trên nền bệnh đó có thể khiến tổn thương vốn có của họ trở nên nặng hơn.
+"""
+            dispatcher.utter_message(message)
+            text = utils.get_search("tác hại của covid đối với con người")
+            dispatcher.utter_message(text)
+        except Exception as err:
+            logging.error('Call action_corona_dangerous error: {0}'.format(err))
+            dispatcher.utter_message(text=numberOutPutException)
+        return []
+
+class ActionCoronaDetermined(Action):
+
+    def name(self) -> Text:
+        return "action_corona_determined"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logging.info('action_corona_determined')
+
+        try:
+            message = """Một số dấu hiệu giúp bạn nhận ra bản thân có thể đã mắc Covid là:
+        Cơ thể có biểu hiện ngạt mũi, nghẹn ở họng và lồng ngực dẫn đến khó thở.
+        Ho khan hoặc ho có đờm, đau rát cổ họng khả năng cao là triệu chứng sau khi virus tấn công vào phổi. Đối với tình trạng ho do Covid, các loại thuốc điều trị thông thường sẽ không có tác dụng.
+        Sốt, mệt mỏi là dấu hiệu sớm và xuất hiện ở rất nhiều bệnh nhân Covid, đây cũng là triệu chứng được sử dụng để sàng lọc các ca nhiễm Covid trong cộng đồng.
+        Ngoài ra, những trường hợp mắc Covid hiện nay còn có thể có triệu chứng tức ngực, đau đầu, mệt mỏi, chóng mặt, tim đập nhanh, chán ăn, tiêu chảy,…
+"""
+            dispatcher.utter_message(message)
+            text = utils.get_search("Dấu hiệu nhận biết bản thân bị nhiễm Covid")
+            dispatcher.utter_message(text)
+        except Exception as err:
+            logging.error('Call action_corona_determined error: {0}'.format(err))
+            dispatcher.utter_message(text=numberOutPutException)
+        return []
+
+class ActionCoronaService(Action):
+
+    def name(self) -> Text:
+        return "action_corona_service"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logging.info('action_corona_service')
+
+        try:
+            message = "Bạn có thể liên hệ đường dây nóng hỗ trợ covid để hỗ trợ"
+            dispatcher.utter_message(message)
+            text = utils.get_search("tổng đài tư vấn covid việt nam")
+            dispatcher.utter_message(text)
+        except Exception as err:
+            logging.error('Call action_corona_service error: {0}'.format(err))
             dispatcher.utter_message(text=numberOutPutException)
         return []

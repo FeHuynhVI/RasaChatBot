@@ -78,6 +78,11 @@ actions:
   - action_reconfirm_province
   - action_reresolve_province
   - actions_corona_state_stat
+  - action_gg_search
+  - action_corona_symptoms
+  - action_corona_dangerous
+  - action_corona_determined
+  - action_corona_service
 
 entities:
   - name
@@ -218,9 +223,6 @@ responses:
   - text: "Cách tốt nhất để ngăn ngừa bệnh tật là tránh tiếp xúc với vi-rút. CDC khuyến nghị các hành động phòng ngừa hàng ngày để giúp ngăn ngừa sự lây lan của các bệnh về đường hô hấp. CDC khuyến nghị rửa tay thường xuyên bằng xà phòng và nước trong ít nhất 20 giây, đặc biệt là sau khi bạn ở nơi công cộng hoặc sau khi xì mũi, ho hoặc hắt hơi. Nếu không có xà phòng và nước, CDC khuyến nghị sử dụng chất khử trùng tay chứa cồn có chứa ít nhất 60 phần trăm cồn.
 Đeo khẩu trang ở những nơi công cộng khi xung quanh những người không sống cùng nhà với bạn và đặc biệt là những nơi khó duy trì các biện pháp giãn cách xã hội khác , chẳng hạn như cửa hàng tạp hóa, hiệu thuốc và trạm xăng. Khẩu trang có thể làm chậm sự lây lan của vi-rút và giúp những người có thể nhiễm vi-rút và không biết vi-rút truyền sang người khác. COVID-19 có thể lây lan bởi những người không có triệu chứng và không biết rằng họ bị nhiễm. Đó là lý do tại sao điều quan trọng là mọi người phải thực hành giãn cách xã hội (cách xa người khác ít nhất 6 feet) và đeo khẩu trang ở những nơi công cộng. Khẩu trang cung cấp thêm một lớp để giúp ngăn các giọt bắn từ đường hô hấp bay trong không khí và sang người khác. Loại khẩu trang được khuyên dùng không phải là khẩu trang phẫu thuật hoặc mặt nạ phòng độc N-95. Đó là những vật tư quan trọng phải tiếp tục được dành riêng cho nhân viên y tế và những người ứng phó y tế đầu tiên khác, theo khuyến nghị trong hướng dẫn hiện hành của CDC."
 
-  utter_corona_symptoms:
-  - text: "COVID-19 symptoms include:\nCough\nFever or chills\nShortness of breath or \ndifficulty breathing\nMuscle or body aches\nSore throat\nNew loss of taste or smell\nDiarrhea\nHeadache\nNew fatigue\nNausea or vomiting\nCongestion or runny noseIn confirmed cases of illness in humans, common symptoms have been acute, serious respiratory illness with fever, cough, shortness of breath, and breathing difficulties. Based on current clinical experience, the infection generally presents as pneumonia. It has caused kidney failure and death in some cases. It is important to note that the current understanding of the illness caused by this infection is based on a limited number of cases and may change as more information becomes available."
-  
   utter_corona_vaccine:
   - text: "Các thử nghiệm lâm sàng trên người đối với vắc xin Covid-19 được khởi xướng ở Ấn Độ: ICMR. Các thử nghiệm lâm sàng trên người đối với vắc-xin Covid-19 đã được bắt đầu với khoảng 1.000 tình nguyện viên tham gia thử nghiệm cho mỗi trong số hai ứng cử viên vắc-xin được phát triển trong nước
 Mặc dù một số biện pháp khắc phục phương Tây, truyền thống hoặc tại nhà có thể mang lại sự thoải mái và giảm bớt các triệu chứng của COVID-19 nhẹ , không có loại thuốc nào được chứng minh là ngăn ngừa hoặc chữa khỏi bệnh. WHO không khuyến nghị tự dùng thuốc với bất kỳ loại thuốc nào, kể cả thuốc kháng sinh, như một biện pháp phòng ngừa hoặc chữa bệnh cho COVID-19. Tuy nhiên, có một số thử nghiệm lâm sàng đang diễn ra đối với cả thuốc tây và thuốc truyền thống. WHO đang phối hợp các nỗ lực để phát triển vắc-xin và thuốc để ngăn ngừa và điều trị COVID-19, đồng thời sẽ tiếp tục cung cấp thông tin cập nhật
@@ -231,7 +233,36 @@ Tại thời điểm này, không có vắc-xin để ngăn ngừa bệnh do vi-
 Hãy cảnh giác với các triệu chứng. Theo dõi các triệu chứng sốt, ho, khó thở hoặc các triệu chứng khác của COVID-19.
 Nếu có thể, hãy tránh xa những người khác, đặc biệt là những người có nguy cơ cao mắc bệnh nặng do COVID-19."
 
+  utter_corona_mutation:
+  - text: "Hiện tại, Tổ chức Y tế Thế giới (WHO) chia các biến thể của SARS-CoV-2 làm 2 nhóm: Biến thể đáng quan tâm (VOIs) và Biến thể đáng quan ngại (VOCs).
+Biến thể đáng quan tâm (VOIs): khi có thay đổi về kiểu hình hoặc có 1 gen với nhiều đột biến có khả năng làm thay đổi acid amin liên quan đến kiểu hình; và gây lây lan dịch trong cộng đồng hoặc có nhiều ca/chùm ca bệnh xuất hiện cùng lúc; hoặc được phát hiện ở nhiều quốc gia.
+Biến thể đáng quan ngại (VOCs): là những biến thể được khẳng định có liên quan đến gia tăng đáng kể khả năng lây lan; làm thay đổi đáng kể tình hình dịch tễ Covid-19 một cách tiêu cực; tăng độc lực virus/làm nặng lên biểu hiện lâm sàng; giảm hiệu quả các biện pháp y tế công cộng; hay giảm hiệu quả của các vaccine, xét nghiệm chẩn đoán, liệu pháp điều trị hiện hành."
+
+  utter_corona_type:
+  - text: "COVID-19 (từ tiếng Anh: coronavirus disease 2019 nghĩa là bệnh virus corona 2019) là một bệnh đường hô hấp cấp tính truyền nhiễm gây ra bởi chủng virus corona SARS-CoV-2 và các biến thể của nó. Đây là một loại virus được phát hiện điều tra ổ dịch bắt nguồn từ khu chợ lớn chuyên bán hải sản và động vật ở Vũ Hán, tỉnh Hồ Bắc, Trung Quốc. Virus gây viêm đường hô hấp cấp ở người và cho thấy có sự lây lan từ người sang người. Ngoài chủng virus corona mới phát hiện này, đã có 6 chủng virus corona khác được biết tới ngày nay có khả năng lây nhiễm ở người sang người. Bệnh được phát hiện lần đầu tiên trong đại dịch COVID-19 năm 2019–2020."
+
+  utter_corona_where_attack:
+  - text: "Virus corona chủ yếu ảnh hưởng đến đường hô hấp dưới (cũng có các triệu chứng ở đường hô hấp trên nhưng ít gặp hơn) và dẫn đến một loạt các triệu chứng được mô tả giống như cúm, bao gồm sốt, ho, khó thở, đau cơ và mệt mỏi, với sự phát triển cao hơn nữa sẽ dẫn đến viêm phổi, hội chứng suy hô hấp cấp tính, nhiễm trùng huyết, sốc nhiễm trùng và có thể gây tử vong. Các phản ứng y tế đối với căn bệnh này thường là cố gắng kiểm soát các triệu chứng lâm sàng vì hiện tại[khi nào?] chưa tìm thấy phương pháp điều trị hiệu quả nào."
+
+  utter_corona_find_on_wed:
+  - text: "https://news.google.com/covid19/map?hl=vi&gl=VN&ceid=VN%3Avi\n
+https://gisanddata.maps.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6\n
+https://covid19.gov.vn/\n
+https://www.who.int/\n
+https://covid19.sccgov.org/dashboards-vietnamese
+https://covid19.who.int/
+"
+  utter_human_infect_corona:
+    - text: "Trong báo cáo của nhà vi rút học Michael Worobey, được Reuters trích dẫn, các triệu chứng bệnh của người kế toán, thực ra xuất hiện vào ngày 16/12/2019, muộn hơn vài ngày so với những gì được biết ban đầu. Sự nhầm lẫn là do người này gặp vấn đề về răng miệng vào ngày 8/12/2019. Do đó, người phụ nữ bán hải sản ở chợ Vũ Hán là trường hợp được biết đến sớm nhất, với các triệu chứng bệnh khởi phát vào ngày 11/12/2019. "
+
+  utter_corona_start:
+    - text: "Hiện tại, vẫn chưa xác định được nguồn SARS-CoV-2 lây truyền từ động vật sang người. Các trường hợp đầu tiên ở người về COVID-19, lần đầu tiên được báo cáo từ thành phố Vũ Hán, Trung Quốc, vào tháng 12 năm 2019.
+Tất cả SARS-CoV-2 được phân lập từ người cho đến nay đều có liên quan chặt chẽ về mặt di truyền với các coronavirus được phân lập từ quần thể dơi, cụ thể là loài dơi thuộc chi Rhinolophus. SARS-CoV, nguyên nhân bùng phát dịch SARS năm 2003, cũng có liên quan mật thiết với
+coronavirus được phân lập từ dơi. Những mối quan hệ di truyền gần gũi này cho thấy rằng tất cả chúng đều có nguồn gốc sinh thái trong quần thể dơi. SARS-CoV-2 không liên quan về mặt di truyền với các loại coronavirus đã biết khác được tìm thấy ở vật nuôi hoặc vật nuôi trong trang trại. Phân tích trình tự bộ gen của virus cũng chỉ ra rằng SARS-CoV-2 thích nghi rất tốt với các thụ thể của tế bào người, giúp nó xâm nhập vào tế bào người và dễ dàng lây nhiễm sang người.
+
+https://www.who.int/emergencies/diseases/novel-coronavirus-2019/origins-of-the-virus
+"
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
