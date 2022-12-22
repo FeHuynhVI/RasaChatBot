@@ -73,22 +73,22 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: corona_type
-  - action: utter_corona_intro
+  - action: utter_corona_type
 
 - story: corona where attack
   steps:
   - intent: corona_where_attack
-  - action: utter_corona_intro
+  - action: utter_corona_where_attack
 
 - story: corona find wed
   steps:
   - intent: corona_find_on_wed
-  - action: utter_corona_intro
+  - action: utter_corona_find_on_wed
 
 - story: understand corona
   steps:
   - intent: understand_corona
-  - action: utter_corona_intro
+  - action: utter_corona_find_on_wed
 
 - story: corona start
   steps:
@@ -98,7 +98,7 @@ stories:
 - story: human infect corona
   steps:
   - intent: human_infect_corona
-  - action: utter_corona_intro
+  - action: utter_human_infect_corona
 
 - story: corona mechanism
   steps:
@@ -108,62 +108,62 @@ stories:
 - story: corona with other
   steps:
   - intent: corona_with_other
-  - action: utter_corona_intro
+  - action: action_gg_search
 
 - story: corona with economy
   steps:
   - intent: corona_with_economy
-  - action: utter_corona_intro
+  - action: action_gg_search
 
 - story: corona dangerous
   steps:
   - intent: corona_dangerous
-  - action: utter_corona_intro
+  - action: action_corona_dangerous
 
 - story: corona determined
   steps:
   - intent: corona_determined
-  - action: utter_corona_intro
+  - action: action_corona_determined
 
 - story: corona mutation
   steps:
   - intent: corona_mutation
-  - action: utter_corona_intro
+  - action: utter_corona_mutation
 
 - story: corona and animal
   steps:
   - intent: corona_and_animal
-  - action: utter_corona_intro
+  - action: action_gg_search
 
 - story: corona behavior
   steps:
   - intent: corona_behavior
-  - action: utter_corona_intro
+  - action: action_corona_symptoms
 
 - story: corona effect
   steps:
   - intent: corona_effect
-  - action: utter_corona_intro
+  - action: action_gg_search
 
 - story: human tired
   steps:
   - intent: human_tired
-  - action: utter_corona_intro
+  - action: action_corona_service
 
 - story: place come covid
   steps:
   - intent: place_come_covid
-  - action: utter_corona_intro
+  - action: action_corona_service
 
 - story: contact emergency number
   steps:
   - intent: contact_emergency_number
-  - action: utter_corona_intro
+  - action: action_corona_service
 
 - story: human tired
   steps:
   - intent: human_tired
-  - action: utter_corona_intro
+  - action: action_corona_service
 ##################################
 
 - story: corona spread
@@ -210,7 +210,7 @@ stories:
 - story: corona symptoms path
   steps:
   - intent: corona_symptoms
-  - action: utter_corona_symptoms
+  - action: action_corona_symptoms
 
 - story: corona vaccine path
   steps:

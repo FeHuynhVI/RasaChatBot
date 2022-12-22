@@ -7,6 +7,7 @@ from dateutil import tz
 from dateutil.parser import parse
 from cachetools import cached, TTLCache
 from datetime import date, datetime, timedelta
+from googlesearch import search
 
 base_url = 'https://raw.githubusercontent.com/CSSEGISandData/2019-nCoV/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_%s.csv'
 
@@ -96,3 +97,15 @@ class Utils:
         request = requests.get(url % id)
         data = json.loads(request.text)
         return data
+
+    def get_search(seft, loc, numResults = 5):
+        text = ""
+        result = search(loc, num_results = numResults, lang = "vi")
+        if not result:
+            text = ""
+        else:
+            text = "Bạn có thể tham khảo tại các trang:"
+        for link in list(result)[:numResults]:
+            text = "{}\n{}".format(text, link)
+
+        return text
